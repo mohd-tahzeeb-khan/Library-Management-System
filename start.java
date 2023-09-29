@@ -4,8 +4,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
-
 import javax.swing.*;
+
 public class start extends JFrame  implements ActionListener{
     JButton login_button, clear_Button, exit;
     JFrame login;
@@ -99,6 +99,7 @@ public class start extends JFrame  implements ActionListener{
             String Pass=new String(password.getPassword());
             System.out.println(Username);
             System.out.println(Pass);
+
             
             
         }
