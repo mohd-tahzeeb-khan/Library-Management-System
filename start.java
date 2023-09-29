@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
@@ -10,7 +11,8 @@ public class start extends JFrame  implements ActionListener{
     JFrame login;
     JTextField username;
     JPasswordField password;
-    JLabel heading, passwordlabel, usernamelabel,subheading;
+    JLabel heading, passwordlabel, usernamelabel,subheading, Login_heading, bg;
+    ImageIcon icon;
     start(){
         login=new JFrame("Login");
         heading=new JLabel("Library Management System");
@@ -19,15 +21,24 @@ public class start extends JFrame  implements ActionListener{
         Font originalfont=heading.getFont();//Getting the size of existing font in JTextField
         Font newFont = originalfont.deriveFont(originalfont.getSize() + 40.0f);//Increasing the font size by 10pixels.
         heading.setFont(newFont);
+        Login_heading=new JLabel("LOGIN");
+        Login_heading.setBounds(250, 200, 300, 70);
+        Login_heading.setForeground(Color.BLACK);
+        Font originalfont_login=Login_heading.getFont();//Getting the size of existing font in JTextField
+        Font newFont_login = originalfont.deriveFont(originalfont.getSize() + 40.0f);//Increasing the font size by 10pixels.
+        Login_heading.setFont(newFont);
         JPanel jpanel=new JPanel();
         jpanel.setBounds(10, 0, 1465, 90);
         jpanel.setBackground(Color.BLACK);
         JPanel jpanelimage =new JPanel();
         jpanelimage.setBounds(750, 100, 725, 650);
         jpanelimage.setBackground(Color.WHITE);
+        ImageIcon icon=new ImageIcon("images/loginimage.png");
         JPanel jpanel_login_bg =new JPanel();
         jpanel_login_bg.setBounds(50, 150, 550, 500);
         jpanel_login_bg.setBackground(Color.LIGHT_GRAY);
+        bg=new JLabel(icon);
+        bg.setBounds(750,150,750,600);
         JPanel jpanellogin =new JPanel();
         jpanellogin.setBounds(10, 100, 745, 650);
         jpanellogin.setBackground(Color.WHITE);
@@ -62,8 +73,10 @@ public class start extends JFrame  implements ActionListener{
         login.add(exit);
         login.add(login_button);
         login.add(clear_Button);
+        login.add(bg);
         login.add(jpanel);
         login.add(jpanelimage);
+        login.add(Login_heading);
         login.add(jpanel_login_bg);
         login.add(jpanellogin);
         // login.addWindowListener(this);
