@@ -1,7 +1,10 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
-public class start extends JFrame{
+public class start extends JFrame implements ActionListener{
     JButton login_button, clear_Button, exit;
     JFrame login;
     JTextField username;
@@ -58,9 +61,27 @@ public class start extends JFrame{
         login.add(jpanel);
         login.add(jpanelimage);
         login.add(jpanellogin);
+        exit.addActionListener(this);
+        login_button.addActionListener(this);
+        clear_Button.addActionListener(this);
+
         login.setVisible(true);
         login.setSize(1500, 800);
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource()==login_button){
+            String Username=username.getText();
+            String Pass=new String(password.getPassword());
+            
+        }
+        if (e.getSource()==clear_Button) {
+            username.setText("");
+            password.setText("");
+        }
+        if(e.getSource()==exit){
+            login.dispose();
+        }
     }
     public static void main(String args[]){
         start login=new start();
