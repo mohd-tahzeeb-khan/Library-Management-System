@@ -25,6 +25,9 @@ public class start extends JFrame  implements ActionListener{
         JPanel jpanelimage =new JPanel();
         jpanelimage.setBounds(750, 100, 725, 650);
         jpanelimage.setBackground(Color.WHITE);
+        JPanel jpanel_login_bg =new JPanel();
+        jpanel_login_bg.setBounds(50, 150, 550, 500);
+        jpanel_login_bg.setBackground(Color.LIGHT_GRAY);
         JPanel jpanellogin =new JPanel();
         jpanellogin.setBounds(10, 100, 745, 650);
         jpanellogin.setBackground(Color.WHITE);
@@ -61,6 +64,7 @@ public class start extends JFrame  implements ActionListener{
         login.add(clear_Button);
         login.add(jpanel);
         login.add(jpanelimage);
+        login.add(jpanel_login_bg);
         login.add(jpanellogin);
         // login.addWindowListener(this);
         exit.addActionListener(this);
