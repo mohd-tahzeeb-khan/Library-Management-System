@@ -2,9 +2,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 
 import javax.swing.*;
-public class start extends JFrame implements ActionListener{
+public class start extends JFrame  implements ActionListener{
     JButton login_button, clear_Button, exit;
     JFrame login;
     JTextField username;
@@ -61,6 +62,7 @@ public class start extends JFrame implements ActionListener{
         login.add(jpanel);
         login.add(jpanelimage);
         login.add(jpanellogin);
+        // login.addWindowListener(this);
         exit.addActionListener(this);
         login_button.addActionListener(this);
         clear_Button.addActionListener(this);
@@ -70,9 +72,17 @@ public class start extends JFrame implements ActionListener{
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public void actionPerformed(ActionEvent e){
+
         if(e.getSource()==login_button){
+            if(username.getText().equals("")){
+                System.out.println("tahzeeb"); 
+                JOptionPane.showMessageDialog(login,"Please Enter all the Details");  
+            }
             String Username=username.getText();
             String Pass=new String(password.getPassword());
+            System.out.println(Username);
+            System.out.println(Pass);
+            
             
         }
         if (e.getSource()==clear_Button) {
@@ -84,6 +94,6 @@ public class start extends JFrame implements ActionListener{
         }
     }
     public static void main(String args[]){
-        start login=new start();
+        start loogin=new start();
     }
 }
