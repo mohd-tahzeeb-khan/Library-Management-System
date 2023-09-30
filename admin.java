@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 
@@ -37,6 +38,43 @@ public class admin extends JFrame{
         cardlayoutinstance=new CardLayout();
         dynamicpanel=new JPanel(cardlayoutinstance);
         JPanel dashboard=new JPanel();
+        JPanel book= new JPanel();
+        JPanel student=new JPanel();
+        JPanel staff=new JPanel();
+        JPanel publication=new JPanel();
+        JPanel admin=new JPanel();
+        JPanel account=new JPanel();
+        JPanel setting=new JPanel();
+        dynamicpanel.add(dashboard, "Dashboard");
+        dynamicpanel.add(book, "Books");
+        dynamicpanel.add(student, "Students");
+        dynamicpanel.add(staff, "Staff");
+        dynamicpanel.add(publication, "Publications");
+        dynamicpanel.add(admin, "Admin");
+        dynamicpanel.add(account, "Accounts");
+        dynamicpanel.add(setting, "Setting");
+        getContentPane().add(dynamicpanel, BorderLayout.CENTER);
+        JMenuBar menubar = new JMenuBar();
+        setJMenuBar(menubar);
+        JMenu dashboardmenu=new JMenu("DASHBOARD");
+        JMenu bookmenu=new JMenu("BOOKS");
+        JMenu studentmenu=new JMenu("STUDENTS");
+        JMenu staffmenu=new JMenu("STAFF");
+        JMenu publicationmenu=new JMenu("PUBLICATIONS");
+        JMenu adminmenu=new JMenu("ADMIN");
+        JMenu accountmenu=new JMenu("ACCOUNTS");
+        JMenu settingmenu=new JMenu("SETTING");
+        menubar.add(dashboardmenu);
+        menubar.add(accountmenu);
+        menubar.add(staffmenu);
+        menubar.add(settingmenu);
+        menubar.add(bookmenu);
+        menubar.add(adminmenu);
+        menubar.add(publicationmenu);
+        menubar.add(studentmenu);
+        menubar.setBounds(600,65,600, 50);
+        menubar.setBackground(Color.WHITE);
+
 
         Admin.setVisible(true);
         Admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,6 +84,7 @@ public class admin extends JFrame{
         Admin.add(logo_images);
         Admin.add(help);
         Admin.add(logout);
+        Admin.add(menubar);
         Admin.add(plain_Panel);
         Admin.add(heading_Panel);
 
