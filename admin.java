@@ -15,6 +15,7 @@ public class admin extends JFrame implements ActionListener{
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
     viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff;
+    JMenu requirementmenu, helpmenu, adminmenu, dashboardmenu;
     ImageIcon icon;
 
     admin(){
@@ -42,16 +43,16 @@ public class admin extends JFrame implements ActionListener{
         JMenuBar menubar=new JMenuBar();
         menubar.setBounds(450,61,1000,40);
         menubar.setBackground(Color.WHITE);
-        JMenu dashboardmenu=new JMenu("     DASHBOARD    ");
+        dashboardmenu=new JMenu("     DASHBOARD    ");
         JMenu settingmenu=new JMenu("   SETTING    ");
-        JMenu adminmenu=new JMenu("     ADMIN   ");
+        adminmenu=new JMenu("     ADMIN   ");
         JMenu bookmenu=new JMenu("     BOOKS    ");
         JMenu staffmenu=new JMenu("   STAFF    ");
         JMenu publicationmenu=new JMenu("     PUBLICATIONS   ");
-        JMenu requirementmenu=new JMenu("     REQUIREMENT    ");
+        requirementmenu=new JMenu("     REQUIREMENT    ");
         JMenu studentmenu=new JMenu("   STUDENTS    ");
         JMenu overduemenu=new JMenu("     OVERDUE   ");
-        JMenu helpmenu=new JMenu("     HELP   ");
+        helpmenu=new JMenu("     HELP   ");
         //----------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------
         addbook=new JMenuItem("ADD");
@@ -115,13 +116,19 @@ public class admin extends JFrame implements ActionListener{
 
 
         Admin.add(menubar);
-        Admin.add(name);
+        //Admin.add(name);
         Admin.add(logo_images);
+        //Admin.add(name);
        
         Admin.add(logout);
         Admin.add(plain_Panel);
         Admin.add(heading_Panel);
 
+        logout.addActionListener(this);
+        adminmenu.addActionListener(this);
+        requirementmenu.addActionListener(this);
+        helpmenu.addActionListener(this);
+        dashboardmenu.addActionListener(this);
         viewbook.addActionListener(this);
         addbook.addActionListener(this);
         removebook.addActionListener(this);
@@ -143,11 +150,29 @@ public class admin extends JFrame implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e){
+        if(e.getSource()==logout){
+            Admin.dispose();
+        }
+        if(e.getSource()==dashboardmenu){
+            System.out.println("dashboard");
+        }
+        if(e.getSource()==helpmenu){
+            System.out.println("help");
+        }
+        if(e.getSource()==adminmenu){
+            System.out.println("admin");
+        }
+        if(e.getSource()==requirementmenu){
+            System.out.println("require");
+        }
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
+            
         }
         if(e.getSource()==addbook){
             System.out.println("addbook");
+            
+            Admin.validate();
         }
         if(e.getSource()==removebook){
             System.out.println("removebook");
