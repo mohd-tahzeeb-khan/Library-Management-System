@@ -10,11 +10,11 @@ public class admin extends JFrame implements ActionListener{
     JFrame Admin;
     JLabel name, logo_images;
     JButton logout, help;
-    JPanel heading_Panel, plain_Panel, dynamicpanel;
+    JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel;
     CardLayout cardlayoutinstance;
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
-    viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff;
+    viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff, helpItem, dashboaderItem, requirItem, adminItem;
     JMenu requirementmenu, helpmenu, adminmenu, dashboardmenu;
     ImageIcon icon;
 
@@ -96,13 +96,30 @@ public class admin extends JFrame implements ActionListener{
         staffmenu.add(updatestaff);
         //----------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------
+        adminItem=new JMenuItem("ADMIN PANEL");
+        adminmenu.add(adminItem);
+        dashboaderItem=new JMenuItem("DASHBOARD PANEL");
+        dashboardmenu.add(dashboaderItem);
+        requirItem=new JMenuItem("REQUIREMENT PANEL");
+        requirementmenu.add(requirItem);
+        helpItem=new JMenuItem("HELP PANEL");
+        helpmenu.add(helpItem);
+        //---------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------
+        dynamicpanel=new JPanel();
+        dynamicpanel.setBackground(Color.GRAY);
+        dynamicpanel.setSize(1020, 630);
+        dynamicpanel.setLocation(450, 115);
 
-
-
+        sidepanel=new JPanel();
+        sidepanel.setBackground(Color.GRAY);
+        sidepanel.setSize(420, 630);
+        sidepanel.setLocation(15, 115);
 
         Admin.setVisible(true);
         Admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    
         menubar.add(dashboardmenu);
         menubar.add(adminmenu);
         menubar.add(bookmenu);
@@ -116,7 +133,8 @@ public class admin extends JFrame implements ActionListener{
 
 
         Admin.add(menubar);
-        //Admin.add(name);
+        Admin.add(dynamicpanel);
+        Admin.add(sidepanel);
         Admin.add(logo_images);
         //Admin.add(name);
        
@@ -125,10 +143,10 @@ public class admin extends JFrame implements ActionListener{
         Admin.add(heading_Panel);
 
         logout.addActionListener(this);
-        adminmenu.addActionListener(this);
-        requirementmenu.addActionListener(this);
-        helpmenu.addActionListener(this);
-        dashboardmenu.addActionListener(this);
+        helpItem.addActionListener(this);
+        requirItem.addActionListener(this);
+        dashboaderItem.addActionListener(this);
+        adminItem.addActionListener(this);
         viewbook.addActionListener(this);
         addbook.addActionListener(this);
         removebook.addActionListener(this);
@@ -148,21 +166,22 @@ public class admin extends JFrame implements ActionListener{
         
 
     }
+
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==logout){
             Admin.dispose();
         }
-        if(e.getSource()==dashboardmenu){
+        if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
         }
-        if(e.getSource()==helpmenu){
+        if(e.getSource()==helpItem){
             System.out.println("help");
         }
-        if(e.getSource()==adminmenu){
+        if(e.getSource()==adminItem){
             System.out.println("admin");
         }
-        if(e.getSource()==requirementmenu){
+        if(e.getSource()==requirItem){
             System.out.println("require");
         }
         if(e.getSource()==viewbook){
