@@ -110,12 +110,15 @@ public class admin extends JFrame implements ActionListener{
         dynamicpanel.setBackground(Color.GRAY);
         dynamicpanel.setSize(1020, 630);
         dynamicpanel.setLocation(450, 115);
-
+        //------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------
         sidepanel=new JPanel();
         sidepanel.setBackground(Color.GRAY);
         sidepanel.setSize(420, 630);
         sidepanel.setLocation(15, 115);
-
+        //----------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------
+        
         Admin.setVisible(true);
         Admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

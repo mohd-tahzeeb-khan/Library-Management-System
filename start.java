@@ -99,7 +99,8 @@ public class start extends JFrame implements ActionListener{
             String Pass=new String(password.getPassword());
             System.out.println(Username);
             System.out.println(Pass);
-            admin admininstance=new admin();
+            //admin admininstance=new admin();
+            database insert=new database();
             
 
             
@@ -114,6 +115,6 @@ public class start extends JFrame implements ActionListener{
         }
     }
     public static void main(String args[]){
-        start loogin=new start();
+        start login=new start();
     }
 }

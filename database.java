@@ -1,6 +1,6 @@
 import java.sql.*;
-public class setup{
-    setup(){
+public class database{
+    database(){
         Connection c=null;
         Statement stmt=null;
         ResultSet rs;
@@ -18,6 +18,6 @@ public class setup{
         }
     }
     public static void main(String args[]){
-        setup insert=new setup();
+        database insert=new database();
     }
 }
