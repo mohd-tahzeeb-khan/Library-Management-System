@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -11,7 +12,7 @@ public class admin extends JFrame implements ActionListener{
     JLabel name, logo_images;
     JButton logout, help;
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
-    TotalPublicerPanel, requirementPanel, TotalStaffPanel;
+    TotalPublicerPanel, RequirementPanel, TotalStaffPanel, TotalBookAvailable;
     CardLayout cardlayoutinstance;
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
@@ -107,11 +108,11 @@ public class admin extends JFrame implements ActionListener{
         helpmenu.add(helpItem);
         //---------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------
-        dynamicpanel=new JPanel();
+        dynamicpanel=new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 20));
         dynamicpanel.setBackground(Color.GRAY);
         dynamicpanel.setSize(1020, 630);
         dynamicpanel.setLocation(450, 115);
-        //dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 25, 25));
+    
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
         sidepanel=new JPanel();
@@ -121,10 +122,47 @@ public class admin extends JFrame implements ActionListener{
         //----------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------
         TotalBooksPanel=new JPanel();
-        TotalBooksPanel.setBackground(Color.ORANGE);
-        TotalBooksPanel.setBounds(150,150,150,150);
+        TotalBooksPanel.setBackground(Color.LIGHT_GRAY);
+       
+        TotalBooksPanel.setPreferredSize(new Dimension(240, 290));
+        
         //----------------------------------------------------------------------------------
+        TotalBookAvailable=new JPanel();
+        TotalBookAvailable.setBackground(Color.LIGHT_GRAY);
+        
+        TotalBookAvailable.setPreferredSize(new Dimension(240, 290));
+        
+        //----------------------------------------------------------------------------------
+        TotalDepartmentPanel=new JPanel();
+        TotalDepartmentPanel.setBackground(Color.LIGHT_GRAY);
+        TotalDepartmentPanel.setPreferredSize(new Dimension(240, 290));
+        //--------------------------------------------------------------------------------------
+        TotalIssuedBooksPanel=new JPanel();
+        TotalIssuedBooksPanel.setBackground(Color.LIGHT_GRAY);
+        TotalIssuedBooksPanel.setPreferredSize(new Dimension(240, 290));
+        
+        //-----------------------------------------------------------------------------------------
+        TotalStaffPanel=new JPanel();
+        TotalStaffPanel.setBackground(Color.LIGHT_GRAY);
+        TotalStaffPanel.setPreferredSize(new Dimension(240, 290));
+        //--------------------------------------------------------------------------------------
+        TotalStudentPanel=new JPanel();
+        TotalStudentPanel.setBackground(Color.LIGHT_GRAY);
+        TotalStudentPanel.setPreferredSize(new Dimension(240, 290));
+        //--------------------------------------------------------------------------------------
+        TotalPublicerPanel=new JPanel();
+        TotalPublicerPanel.setBackground(Color.LIGHT_GRAY);
+        TotalPublicerPanel.setPreferredSize(new Dimension(240, 290));
+        //--------------------------------------------------------------------------------------
+        RequirementPanel=new JPanel();
+        RequirementPanel.setBackground(Color.LIGHT_GRAY);
+        RequirementPanel.setPreferredSize(new Dimension(240, 290));
+        //--------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------
 
+        help=new JButton("Help");
+        help.setBounds(50,50,100,40);
+        //-----------------------------------------------------------------------------------
 
 
 
@@ -144,9 +182,18 @@ public class admin extends JFrame implements ActionListener{
         
         
         Admin.add(menubar);
+        dynamicpanel.add(TotalBookAvailable);
+        dynamicpanel.add(TotalDepartmentPanel);
+        dynamicpanel.add(TotalIssuedBooksPanel);
+        dynamicpanel.add(TotalStaffPanel);
+        dynamicpanel.add(TotalPublicerPanel);
+        dynamicpanel.add(RequirementPanel);
+        dynamicpanel.add(TotalStudentPanel);
+        dynamicpanel.add(TotalBooksPanel);
+        //TotalBooksPanel.add(help);
         dynamicpanel.add(TotalBooksPanel);
         Admin.add(dynamicpanel);
-        Admin.add(sidepanel);
+        //Admin.add(sidepanel);
         Admin.add(logo_images);
         //Admin.add(name);
        
@@ -186,15 +233,15 @@ public class admin extends JFrame implements ActionListener{
         }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
-            Admin.getContentPane().remove(dynamicpanel);
-            Admin.getContentPane().invalidate();
-            Admin.getContentPane().validate();
         }
         if(e.getSource()==helpItem){
             System.out.println("help");
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
+            Admin.remove(dynamicpanel);
+            Admin.add(sidepanel);
+            Admin.validate();
         }
         if(e.getSource()==requirItem){
             System.out.println("require");
