@@ -10,7 +10,8 @@ public class admin extends JFrame implements ActionListener{
     JFrame Admin;
     JLabel name, logo_images;
     JButton logout, help;
-    JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel;
+    JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
+    TotalPublicerPanel, requirementPanel, TotalStaffPanel;
     CardLayout cardlayoutinstance;
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
@@ -118,11 +119,18 @@ public class admin extends JFrame implements ActionListener{
         sidepanel.setLocation(15, 115);
         //----------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------
-        
+        TotalBooksPanel=new JPanel();
+        TotalBooksPanel.setSize(150, 150);
+        TotalBooksPanel.setLocation(150, 150);
+        TotalBooksPanel.setBackground(Color.ORANGE);
+        //----------------------------------------------------------------------------------
+
+
+
+
         Admin.setVisible(true);
         Admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    
         menubar.add(dashboardmenu);
         menubar.add(adminmenu);
         menubar.add(bookmenu);
@@ -133,10 +141,11 @@ public class admin extends JFrame implements ActionListener{
         menubar.add(requirementmenu);
         menubar.add(settingmenu);
         menubar.add(helpmenu);
-
-
+        
+        
         Admin.add(menubar);
         Admin.add(dynamicpanel);
+        dynamicpanel.add(TotalBooksPanel);
         Admin.add(sidepanel);
         Admin.add(logo_images);
         //Admin.add(name);
