@@ -99,8 +99,8 @@ public class start extends JFrame implements ActionListener{
             String Pass=new String(password.getPassword());
             System.out.println(Username);
             System.out.println(Pass);
-            //admin admininstance=new admin();
-            database insert=new database();
+            admin admininstance=new admin();
+            //database insert=new database();
             
 
             
