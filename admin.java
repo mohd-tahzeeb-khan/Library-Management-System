@@ -111,6 +111,7 @@ public class admin extends JFrame implements ActionListener{
         dynamicpanel.setBackground(Color.GRAY);
         dynamicpanel.setSize(1020, 630);
         dynamicpanel.setLocation(450, 115);
+        //dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 25, 25));
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
         sidepanel=new JPanel();
@@ -120,9 +121,8 @@ public class admin extends JFrame implements ActionListener{
         //----------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------
         TotalBooksPanel=new JPanel();
-        TotalBooksPanel.setSize(150, 150);
-        TotalBooksPanel.setLocation(150, 150);
         TotalBooksPanel.setBackground(Color.ORANGE);
+        TotalBooksPanel.setBounds(150,150,150,150);
         //----------------------------------------------------------------------------------
 
 
@@ -144,8 +144,8 @@ public class admin extends JFrame implements ActionListener{
         
         
         Admin.add(menubar);
-        Admin.add(dynamicpanel);
         dynamicpanel.add(TotalBooksPanel);
+        Admin.add(dynamicpanel);
         Admin.add(sidepanel);
         Admin.add(logo_images);
         //Admin.add(name);
@@ -186,6 +186,9 @@ public class admin extends JFrame implements ActionListener{
         }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
+            Admin.getContentPane().remove(dynamicpanel);
+            Admin.getContentPane().invalidate();
+            Admin.getContentPane().validate();
         }
         if(e.getSource()==helpItem){
             System.out.println("help");
