@@ -193,7 +193,7 @@ public class admin extends JFrame implements ActionListener{
         //TotalBooksPanel.add(help);
         dynamicpanel.add(TotalBooksPanel);
         Admin.add(dynamicpanel);
-        //Admin.add(sidepanel);
+        Admin.add(sidepanel);
         Admin.add(logo_images);
         //Admin.add(name);
        
@@ -239,9 +239,10 @@ public class admin extends JFrame implements ActionListener{
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
-            Admin.remove(dynamicpanel);
+            Admin.getContentPane().remove(dynamicpanel);
             Admin.add(sidepanel);
-            Admin.validate();
+            Admin.revalidate();
+            Admin.repaint();
         }
         if(e.getSource()==requirItem){
             System.out.println("require");
