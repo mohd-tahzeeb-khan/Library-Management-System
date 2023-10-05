@@ -11,6 +11,7 @@ import java.awt.Font;
 public class admin extends JFrame implements ActionListener{
     JFrame Admin;
     Font myFont = new Font("Serif", Font.BOLD, 100);
+    Color blue=new Color(0, 0, 204);
     JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
     TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel;
     JButton logout, help;
@@ -230,6 +231,7 @@ public class admin extends JFrame implements ActionListener{
             TotalBookslabel=new JLabel("25");
             TotalBookslabel.setBounds(15,15,50,50);
             TotalBookslabel.setFont(myFont);
+            TotalBookslabel.setForeground(blue);
             TotalStudentlabel=new JLabel();
             TotalIssuedBookslabel=new JLabel();
             TotalDepartmentlabel=new JLabel();
