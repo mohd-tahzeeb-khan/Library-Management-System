@@ -122,13 +122,13 @@ public class admin extends JFrame implements ActionListener{
         //----------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------
         TotalBooksPanel=new JPanel();
-        TotalBooksPanel.setBackground(Color.LIGHT_GRAY);
+        TotalBooksPanel.setBackground(Color.WHITE);
        
         TotalBooksPanel.setPreferredSize(new Dimension(240, 290));
         
         //----------------------------------------------------------------------------------
         TotalBookAvailable=new JPanel();
-        TotalBookAvailable.setBackground(Color.LIGHT_GRAY);
+        TotalBookAvailable.setBackground(Color.RED);
         
         TotalBookAvailable.setPreferredSize(new Dimension(240, 290));
         
@@ -143,7 +143,7 @@ public class admin extends JFrame implements ActionListener{
         
         //-----------------------------------------------------------------------------------------
         TotalStaffPanel=new JPanel();
-        TotalStaffPanel.setBackground(Color.LIGHT_GRAY);
+        TotalStaffPanel.setBackground(Color.YELLOW);
         TotalStaffPanel.setPreferredSize(new Dimension(240, 290));
         //--------------------------------------------------------------------------------------
         TotalStudentPanel=new JPanel();
@@ -151,7 +151,7 @@ public class admin extends JFrame implements ActionListener{
         TotalStudentPanel.setPreferredSize(new Dimension(240, 290));
         //--------------------------------------------------------------------------------------
         TotalPublicerPanel=new JPanel();
-        TotalPublicerPanel.setBackground(Color.LIGHT_GRAY);
+        TotalPublicerPanel.setBackground(Color.GREEN);
         TotalPublicerPanel.setPreferredSize(new Dimension(240, 290));
         //--------------------------------------------------------------------------------------
         RequirementPanel=new JPanel();
@@ -163,7 +163,7 @@ public class admin extends JFrame implements ActionListener{
         help=new JButton("Help");
         help.setBounds(50,50,100,40);
         //-----------------------------------------------------------------------------------
-
+        cardlayoutinstance=new CardLayout();
 
 
         Admin.setVisible(true);
@@ -182,16 +182,6 @@ public class admin extends JFrame implements ActionListener{
         
         
         Admin.add(menubar);
-        dynamicpanel.add(TotalBookAvailable);
-        dynamicpanel.add(TotalDepartmentPanel);
-        dynamicpanel.add(TotalIssuedBooksPanel);
-        dynamicpanel.add(TotalStaffPanel);
-        dynamicpanel.add(TotalPublicerPanel);
-        dynamicpanel.add(RequirementPanel);
-        dynamicpanel.add(TotalStudentPanel);
-        dynamicpanel.add(TotalBooksPanel);
-        //TotalBooksPanel.add(help);
-        dynamicpanel.add(TotalBooksPanel);
         Admin.add(dynamicpanel);
         Admin.add(sidepanel);
         Admin.add(logo_images);
@@ -233,16 +223,30 @@ public class admin extends JFrame implements ActionListener{
         }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
+            dynamicpanel.removeAll();
+            dynamicpanel.add(TotalBookAvailable);
+            dynamicpanel.add(TotalDepartmentPanel);
+            dynamicpanel.add(TotalIssuedBooksPanel);
+            dynamicpanel.add(TotalStaffPanel);
+            dynamicpanel.add(TotalPublicerPanel);
+            dynamicpanel.add(RequirementPanel);
+            dynamicpanel.add(TotalStudentPanel);
+            dynamicpanel.add(TotalBooksPanel);
+            
+        //TotalBooksPanel.add(help);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
         }
         if(e.getSource()==helpItem){
             System.out.println("help");
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
-            Admin.getContentPane().remove(dynamicpanel);
-            Admin.add(sidepanel);
-            Admin.revalidate();
-            Admin.repaint();
+            dynamicpanel.removeAll();
+            dynamicpanel.add(TotalBookAvailable);
+            dynamicpanel.add(TotalPublicerPanel);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
         }
         if(e.getSource()==requirItem){
             System.out.println("require");
@@ -273,13 +277,16 @@ public class admin extends JFrame implements ActionListener{
         }
         if(e.getSource()==removepublication){
             System.out.println("removepublication");
+            dynamicpanel.removeAll();
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
         }
         if(e.getSource()==viewstaff){
             System.out.println("viewstaff");
         }
         if(e.getSource()==removestaff){
             System.out.println("removestaff");
-        }
+        } 
         if(e.getSource()==updatestaff){
             System.out.println("updatestaff");
         }
