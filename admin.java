@@ -6,10 +6,13 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.awt.Font;
  
 public class admin extends JFrame implements ActionListener{
     JFrame Admin;
-    JLabel name, logo_images;
+    Font myFont = new Font("Serif", Font.BOLD, 100);
+    JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
+    TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel;
     JButton logout, help;
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
     TotalPublicerPanel, RequirementPanel, TotalStaffPanel, TotalBookAvailable;
@@ -224,6 +227,17 @@ public class admin extends JFrame implements ActionListener{
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
             dynamicpanel.removeAll();
+            TotalBookslabel=new JLabel("25");
+            TotalBookslabel.setBounds(15,15,50,50);
+            TotalBookslabel.setFont(myFont);
+            TotalStudentlabel=new JLabel();
+            TotalIssuedBookslabel=new JLabel();
+            TotalDepartmentlabel=new JLabel();
+            TotalPublicerlabel=new JLabel();
+            Requirementlabel=new JLabel();
+            TotalStafflabel=new JLabel();
+            TotalBookAvailablelabel=new JLabel();
+            TotalBookAvailable.add(TotalBookslabel);
             dynamicpanel.add(TotalBookAvailable);
             dynamicpanel.add(TotalDepartmentPanel);
             dynamicpanel.add(TotalIssuedBooksPanel);
@@ -243,6 +257,7 @@ public class admin extends JFrame implements ActionListener{
         if(e.getSource()==adminItem){
             System.out.println("admin");
             dynamicpanel.removeAll();
+
             dynamicpanel.add(TotalBookAvailable);
             dynamicpanel.add(TotalPublicerPanel);
             dynamicpanel.revalidate();
