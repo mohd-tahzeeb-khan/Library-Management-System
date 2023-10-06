@@ -44,9 +44,11 @@ public class admin extends JFrame implements ActionListener{
         logo_images.setBounds(30,20,80,65);
         name=new JLabel("Tahzeeb");
         name.setBounds(150,20,150,60);
-       
-        logout=new JButton("LOGOUT");
-        logout.setBounds(1350, 20, 100, 35);
+        //...........................................................
+
+        icon=new ImageIcon("images/exit-logo-for-panel.png");
+        logout=new JButton("LOGOUT", icon);
+        logout.setBounds(1310, 20, 150, 35);
         logout.setBackground(Color.RED);
         logout.setForeground(Color.WHITE);
        
