@@ -134,8 +134,8 @@ public class admin extends JFrame implements ActionListener{
         
         //----------------------------------------------------------------------------------
         TotalBookAvailable=new JPanel();
-        TotalBookAvailable.setBackground(Color.RED);
-        TotalBookAvailable.setLayout(new FlowLayout(FlowLayout.CENTER));
+        TotalBookAvailable.setBackground(Color.LIGHT_GRAY);
+        TotalBookAvailable.setLayout(new FlowLayout(FlowLayout.CENTER, 40,40));
         TotalBookAvailable.setPreferredSize(new Dimension(240, 290));
         
         //----------------------------------------------------------------------------------
@@ -232,7 +232,7 @@ public class admin extends JFrame implements ActionListener{
             dynamicpanel.removeAll();
             TotalBookslabel=new JLabel("1125");
             TotalBookslabel.setFont(myFont);
-            TotalBookslabel.setForeground(Color.WHITE);
+            TotalBookslabel.setForeground(Color.BLACK);
             TotalStudentlabel=new JLabel();
             TotalIssuedBookslabel=new JLabel();
             TotalDepartmentlabel=new JLabel();
@@ -241,7 +241,8 @@ public class admin extends JFrame implements ActionListener{
             TotalStafflabel=new JLabel();
             TotalBookAvailablelabel=new JLabel("Total Books");
             TotalBookAvailablelabel.setFont(font);
-            TotalBookAvailablelabel.setForeground(Color.WHITE);
+            TotalBookAvailablelabel.setForeground(Color.BLACK);
+            TotalBookAvailable.setBorder(BorderFactory.createLineBorder(Color.black));
             TotalBookAvailable.add(TotalBookslabel);
             TotalBookAvailable.add(TotalBookAvailablelabel);
             dynamicpanel.add(TotalBookAvailable);
