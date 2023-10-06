@@ -11,6 +11,8 @@ import java.awt.Font;
 public class admin extends JFrame implements ActionListener{
     JFrame Admin;
     Font myFont = new Font("Serif", Font.BOLD, 100);
+    Font font = new Font("Serif", Font.BOLD, 30);
+
     Color blue=new Color(0, 0, 204);
     JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
     TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel;
@@ -133,7 +135,7 @@ public class admin extends JFrame implements ActionListener{
         //----------------------------------------------------------------------------------
         TotalBookAvailable=new JPanel();
         TotalBookAvailable.setBackground(Color.RED);
-        
+        TotalBookAvailable.setLayout(new FlowLayout(FlowLayout.CENTER));
         TotalBookAvailable.setPreferredSize(new Dimension(240, 290));
         
         //----------------------------------------------------------------------------------
@@ -228,18 +230,20 @@ public class admin extends JFrame implements ActionListener{
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
             dynamicpanel.removeAll();
-            TotalBookslabel=new JLabel("25");
-            TotalBookslabel.setBounds(15,15,50,50);
+            TotalBookslabel=new JLabel("1125");
             TotalBookslabel.setFont(myFont);
-            TotalBookslabel.setForeground(blue);
+            TotalBookslabel.setForeground(Color.WHITE);
             TotalStudentlabel=new JLabel();
             TotalIssuedBookslabel=new JLabel();
             TotalDepartmentlabel=new JLabel();
             TotalPublicerlabel=new JLabel();
             Requirementlabel=new JLabel();
             TotalStafflabel=new JLabel();
-            TotalBookAvailablelabel=new JLabel();
+            TotalBookAvailablelabel=new JLabel("Total Books");
+            TotalBookAvailablelabel.setFont(font);
+            TotalBookAvailablelabel.setForeground(Color.WHITE);
             TotalBookAvailable.add(TotalBookslabel);
+            TotalBookAvailable.add(TotalBookAvailablelabel);
             dynamicpanel.add(TotalBookAvailable);
             dynamicpanel.add(TotalDepartmentPanel);
             dynamicpanel.add(TotalIssuedBooksPanel);
