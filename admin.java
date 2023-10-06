@@ -280,8 +280,6 @@ public class admin extends JFrame implements ActionListener{
             dynamicpanel.add(TotalIssuedBooksPanel);
             dynamicpanel.add(TotalPublicerPanel);
             dynamicpanel.add(RequirementPanel);
-            
-        //TotalBooksPanel.add(help);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
