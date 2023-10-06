@@ -155,6 +155,7 @@ public class admin extends JFrame implements ActionListener{
         //--------------------------------------------------------------------------------------
         TotalStudentPanel=new JPanel();
         TotalStudentPanel.setBackground(Color.LIGHT_GRAY);
+        TotalStudentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 40,40)) ;
         TotalStudentPanel.setPreferredSize(new Dimension(240, 290));
         //--------------------------------------------------------------------------------------
         TotalPublicerPanel=new JPanel();
@@ -231,29 +232,54 @@ public class admin extends JFrame implements ActionListener{
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
             dynamicpanel.removeAll();
+            //Total no of books Panel...........................................
             TotalBookslabel=new JLabel("1125");
             TotalBookslabel.setFont(font_100_bold);
             TotalBookslabel.setForeground(Color.BLACK);
-            // TotalStudentlabel=new JLabel();
+            TotalBookslabeltext=new JLabel("Total Books");
+            TotalBookslabeltext.setFont(font_30_bold);
+            TotalBookslabeltext.setForeground(Color.BLACK);
+            //...................................................................
+            //Total no of students panel.........................................
+            TotalStudentlabel=new JLabel("10526");
+            TotalStudentlabel.setFont(font_100_bold);
+            TotalStudentlabel.setForeground(Color.BLACK);
+            TotalStudentlabeltext=new JLabel("Total Students");
+            TotalStudentlabeltext.setFont(font_30_bold);
+            TotalStudentlabeltext.setForeground(Color.BLACK);
+            //....................................................................
+            //Total no of books available.........................................
+            TotalBookAvailablelabel=new JLabel("1550");
+            TotalBookAvailablelabel.setFont(font_100_bold);
+            TotalBookAvailablelabel.setForeground(Color.BLACK);
+            TotalBookAvailablelabeltext=new JLabel("Available Books");
+            TotalBookAvailablelabeltext.setFont(font_30_bold);
+            TotalBookAvailablelabeltext.setForeground(Color.BLACK);
+            //....................................................................
             // TotalIssuedBookslabel=new JLabel();
             // TotalDepartmentlabel=new JLabel();
             // TotalPublicerlabel=new JLabel();
             // Requirementlabel=new JLabel();
             // TotalStafflabel=new JLabel();
-            TotalBookslabeltext=new JLabel("Total Books");
-            TotalBookslabeltext.setFont(font_30_bold);
-            TotalBookslabeltext.setForeground(Color.BLACK);
+            //......................................................................
             TotalBookAvailable.setBorder(BorderFactory.createLineBorder(Color.black));
-            TotalBookAvailable.add(TotalBookslabel);
-            TotalBookAvailable.add(TotalBookslabeltext);
-            dynamicpanel.add(TotalBookAvailable);
+            TotalBookAvailable.add(TotalBookAvailablelabel);
+            TotalBookAvailable.add(TotalBookAvailablelabeltext);
+            //.......................................................................
+            TotalStudentPanel.add(TotalStudentlabel);
+            TotalStudentPanel.add(TotalStudentlabeltext);
+            //........................................................................
+            TotalBooksPanel.add(TotalBookslabel);
+            TotalBooksPanel.add(TotalBookslabeltext);
+            //.........................................................................
+            dynamicpanel.add(TotalBooksPanel);
             dynamicpanel.add(TotalDepartmentPanel);
-            dynamicpanel.add(TotalIssuedBooksPanel);
             dynamicpanel.add(TotalStaffPanel);
+            dynamicpanel.add(TotalStudentPanel);
+            dynamicpanel.add(TotalBookAvailable);
+            dynamicpanel.add(TotalIssuedBooksPanel);
             dynamicpanel.add(TotalPublicerPanel);
             dynamicpanel.add(RequirementPanel);
-            dynamicpanel.add(TotalStudentPanel);
-            dynamicpanel.add(TotalBooksPanel);
             
         //TotalBooksPanel.add(help);
             dynamicpanel.revalidate();
