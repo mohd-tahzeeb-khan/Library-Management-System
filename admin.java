@@ -10,12 +10,13 @@ import java.awt.Font;
  
 public class admin extends JFrame implements ActionListener{
     JFrame Admin;
-    Font myFont = new Font("Serif", Font.BOLD, 100);
-    Font font = new Font("Serif", Font.BOLD, 30);
-
+    Font font_100_bold = new Font("Serif", Font.BOLD, 100);
+    Font font_30_bold = new Font("Serif", Font.BOLD, 30);
     Color blue=new Color(0, 0, 204);
+
     JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
-    TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel;
+    TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel,TotalBookslabeltext, TotalStudentlabeltext, TotalIssuedBookslabeltext, TotalDepartmentlabeltext,
+    TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext;
     JButton logout, help;
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
     TotalPublicerPanel, RequirementPanel, TotalStaffPanel, TotalBookAvailable;
@@ -231,20 +232,20 @@ public class admin extends JFrame implements ActionListener{
             System.out.println("dashboard");
             dynamicpanel.removeAll();
             TotalBookslabel=new JLabel("1125");
-            TotalBookslabel.setFont(myFont);
+            TotalBookslabel.setFont(font_100_bold);
             TotalBookslabel.setForeground(Color.BLACK);
-            TotalStudentlabel=new JLabel();
-            TotalIssuedBookslabel=new JLabel();
-            TotalDepartmentlabel=new JLabel();
-            TotalPublicerlabel=new JLabel();
-            Requirementlabel=new JLabel();
-            TotalStafflabel=new JLabel();
-            TotalBookAvailablelabel=new JLabel("Total Books");
-            TotalBookAvailablelabel.setFont(font);
-            TotalBookAvailablelabel.setForeground(Color.BLACK);
+            // TotalStudentlabel=new JLabel();
+            // TotalIssuedBookslabel=new JLabel();
+            // TotalDepartmentlabel=new JLabel();
+            // TotalPublicerlabel=new JLabel();
+            // Requirementlabel=new JLabel();
+            // TotalStafflabel=new JLabel();
+            TotalBookslabeltext=new JLabel("Total Books");
+            TotalBookslabeltext.setFont(font_30_bold);
+            TotalBookslabeltext.setForeground(Color.BLACK);
             TotalBookAvailable.setBorder(BorderFactory.createLineBorder(Color.black));
             TotalBookAvailable.add(TotalBookslabel);
-            TotalBookAvailable.add(TotalBookAvailablelabel);
+            TotalBookAvailable.add(TotalBookslabeltext);
             dynamicpanel.add(TotalBookAvailable);
             dynamicpanel.add(TotalDepartmentPanel);
             dynamicpanel.add(TotalIssuedBooksPanel);
