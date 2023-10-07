@@ -45,13 +45,12 @@ public class admin extends JFrame implements ActionListener{
         name=new JLabel("Tahzeeb");
         name.setBounds(150,20,150,60);
         //...........................................................
-
         icon=new ImageIcon("images/exit-logo-for-panel.png");
         logout=new JButton("LOGOUT", icon);
         logout.setBounds(1310, 20, 150, 35);
         logout.setBackground(Color.RED);
         logout.setForeground(Color.WHITE);
-       
+       //.............................................................
         JMenuBar menubar=new JMenuBar();
         menubar.setBounds(450,61,1000,40);
         menubar.setBackground(Color.WHITE);
@@ -238,10 +237,10 @@ public class admin extends JFrame implements ActionListener{
             //Total no of books Panel...........................................
             TotalBookslabel=new JLabel("1125");
             TotalBookslabel.setFont(font_100_bold);
-            TotalBookslabel.setForeground(Color.BLACK);
+            TotalBookslabel.setForeground(black);
             TotalBookslabeltext=new JLabel("Total Books");
             TotalBookslabeltext.setFont(font_30_bold);
-            TotalBookslabeltext.setForeground(Color.BLACK);
+            TotalBookslabeltext.setForeground(black);
             //...................................................................
             //Total no of students panel.........................................
             TotalStudentlabel=new JLabel("10526");
@@ -259,7 +258,13 @@ public class admin extends JFrame implements ActionListener{
             TotalBookAvailablelabeltext.setFont(font_30_bold);
             TotalBookAvailablelabeltext.setForeground(black);
             //....................................................................
-            // TotalIssuedBookslabel=new JLabel();
+            TotalIssuedBookslabel=new JLabel("5k");
+            TotalIssuedBookslabel.setFont(font_100_bold);
+            TotalIssuedBookslabel.setForeground(black);
+            TotalIssuedBookslabeltext=new JLabel("Issued Books");
+            TotalIssuedBookslabeltext.setFont(font_30_bold);
+            TotalIssuedBookslabeltext.setForeground(black);
+            //...................................................................
             // TotalDepartmentlabel=new JLabel();
             // TotalPublicerlabel=new JLabel();
             // Requirementlabel=new JLabel();
@@ -276,6 +281,10 @@ public class admin extends JFrame implements ActionListener{
             TotalBooksPanel.setBorder(BorderFactory.createLineBorder(black));
             TotalBooksPanel.add(TotalBookslabel);
             TotalBooksPanel.add(TotalBookslabeltext);
+            //.........................................................................
+            TotalIssuedBooksPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalIssuedBooksPanel.add(TotalIssuedBookslabel);
+            TotalIssuedBooksPanel.add(TotalIssuedBookslabeltext);
             //.........................................................................
             dynamicpanel.add(TotalBooksPanel);
             dynamicpanel.add(TotalDepartmentPanel);
