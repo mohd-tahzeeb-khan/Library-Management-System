@@ -17,9 +17,9 @@ public class admin extends JFrame implements ActionListener{
     Color white =new Color(255,255,255);
 
 
-    JLabel name, logo_images, TotalBookslabel,no, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
+    JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
     TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel,TotalBookslabeltext, TotalStudentlabeltext, TotalIssuedBookslabeltext, TotalDepartmentlabeltext,
-    TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext;
+    TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon;
     JButton logout, help;
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
     TotalPublicerPanel, RequirementPanel, TotalStaffPanel, TotalBookAvailable;
@@ -119,7 +119,7 @@ public class admin extends JFrame implements ActionListener{
         helpmenu.add(helpItem);
         //---------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------
-        dynamicpanel=new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 20));
+        dynamicpanel=new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 40));
         dynamicpanel.setBackground(Color.GRAY);
         dynamicpanel.setSize(1450, 630);
         dynamicpanel.setLocation(20, 115);
@@ -242,6 +242,8 @@ public class admin extends JFrame implements ActionListener{
             System.out.println("dashboard");
             dynamicpanel.removeAll();
             //Total no of books Panel...........................................
+            icon=new ImageIcon("images/totalbooks.png");
+            TotalBookslabelicon=new JLabel(icon);
             TotalBookslabel=new JLabel("1125");
             TotalBookslabel.setFont(font_100_bold);
             TotalBookslabel.setForeground(black);
@@ -249,7 +251,9 @@ public class admin extends JFrame implements ActionListener{
             TotalBookslabeltext.setFont(font_30_bold);
             TotalBookslabeltext.setForeground(black);
             //...................................................................
-            //Total no of students panel.........................................
+            //Total no of students panel.........................................\
+            icon=new ImageIcon("images/student.png");
+            TotalStudentlabeltexticon=new JLabel(icon);
             TotalStudentlabel=new JLabel("10526");
             TotalStudentlabel.setFont(font_100_bold);
             TotalStudentlabel.setForeground(black);
@@ -258,16 +262,18 @@ public class admin extends JFrame implements ActionListener{
             TotalStudentlabeltext.setForeground(black);
             //....................................................................
             //Total no of books available.........................................
-            icon=new ImageIcon("images/student.png");
-            TotalBookAvailablelabel=new JLabel(icon);
-            no=new JLabel("456");
-            no.setFont(font_100_bold);
-            no.setForeground(black);
+            icon=new ImageIcon("images/availablebook.png");
+            TotalBookAvailableicon=new JLabel(icon);
+            TotalBookAvailablelabel=new JLabel("456");
+            TotalBookAvailablelabel.setFont(font_100_bold);
+            TotalBookAvailablelabel.setForeground(black);
             TotalBookAvailablelabeltext=new JLabel("Available Books");
             TotalBookAvailablelabeltext.setFont(font_30_bold);
             TotalBookAvailablelabeltext.setForeground(black);
             //....................................................................
             //Total Issued Books..................................................
+            icon=new ImageIcon("images/Bookissued.png");
+            TotalIssuedBookslabelicon=new JLabel(icon);
             TotalIssuedBookslabel=new JLabel("5k");
             TotalIssuedBookslabel.setFont(font_100_bold);
             TotalIssuedBookslabel.setForeground(black);
@@ -276,6 +282,8 @@ public class admin extends JFrame implements ActionListener{
             TotalIssuedBookslabeltext.setForeground(black);
             //...................................................................
             //Total Departments..................................................
+            icon=new ImageIcon("images/departments.png");
+            TotalDepartmentlabelicon=new JLabel(icon);
             TotalDepartmentlabel=new JLabel("6");
             TotalDepartmentlabel.setForeground(black);
             TotalDepartmentlabel.setFont(font_100_bold);
@@ -283,6 +291,8 @@ public class admin extends JFrame implements ActionListener{
             TotalDepartmentlabeltext.setForeground(black);
             TotalDepartmentlabeltext.setFont(font_30_bold);
             //....................................................................
+            icon=new ImageIcon("images/publication.png");
+            TotalPublicerlabeltexticon=new JLabel(icon);
             TotalPublicerlabel=new JLabel("20");
             TotalPublicerlabel.setForeground(black);
             TotalPublicerlabel.setFont(font_100_bold);
@@ -290,6 +300,8 @@ public class admin extends JFrame implements ActionListener{
             TotalPublicerlabeltext.setForeground(black);
             TotalPublicerlabeltext.setFont(font_30_bold);
             //....................................................................
+            icon=new ImageIcon("images/requirement.png");
+            Requirementlabelicon=new JLabel(icon);
             Requirementlabel=new JLabel("67");
             Requirementlabel.setForeground(black);
             Requirementlabel.setFont(font_100_bold);
@@ -297,43 +309,52 @@ public class admin extends JFrame implements ActionListener{
             Requirementlabeltext.setForeground(black);
             Requirementlabeltext.setFont(font_30_bold);
             //.....................................................................
+            icon=new ImageIcon("images/staff.png");
+            TotalStafflabelicon=new JLabel(icon);
             TotalStafflabel=new JLabel("56");
             TotalStafflabel.setForeground(black);
             TotalStafflabel.setFont(font_100_bold);
-            TotalStafflabeltext=new JLabel("Staff");
+            TotalStafflabeltext=new JLabel("Library Staff");
             TotalStafflabeltext.setForeground(black);
             TotalStafflabeltext.setFont(font_30_bold);
             //......................................................................
             TotalBookAvailable.setBorder(BorderFactory.createLineBorder(black));
+            TotalBookAvailable.add(TotalBookAvailableicon);
             TotalBookAvailable.add(TotalBookAvailablelabel);
-            TotalBookAvailable.add(no);
             TotalBookAvailable.add(TotalBookAvailablelabeltext);
             //.......................................................................
             TotalStudentPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalStudentPanel.add(TotalStudentlabeltexticon);
             TotalStudentPanel.add(TotalStudentlabel);
             TotalStudentPanel.add(TotalStudentlabeltext);
             //........................................................................
             TotalBooksPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalBooksPanel.add(TotalBookslabelicon);
             TotalBooksPanel.add(TotalBookslabel);
             TotalBooksPanel.add(TotalBookslabeltext);
             //.........................................................................
             TotalIssuedBooksPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalIssuedBooksPanel.add(TotalIssuedBookslabelicon);
             TotalIssuedBooksPanel.add(TotalIssuedBookslabel);
             TotalIssuedBooksPanel.add(TotalIssuedBookslabeltext);
             //.........................................................................
             TotalDepartmentPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalDepartmentPanel.add(TotalDepartmentlabelicon);
             TotalDepartmentPanel.add(TotalDepartmentlabel);
             TotalDepartmentPanel.add(TotalDepartmentlabeltext);
             //.........................................................................
             RequirementPanel.setBorder(BorderFactory.createLineBorder(black));
+            RequirementPanel.add(Requirementlabelicon);
             RequirementPanel.add(Requirementlabel);
             RequirementPanel.add(Requirementlabeltext);
             //.........................................................................
             TotalStaffPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalStaffPanel.add(TotalStafflabelicon);
             TotalStaffPanel.add(TotalStafflabel);
             TotalStaffPanel.add(TotalStafflabeltext);
             //.........................................................................
             TotalPublicerPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalPublicerPanel.add(TotalPublicerlabeltexticon);
             TotalPublicerPanel.add(TotalPublicerlabel);
             TotalPublicerPanel.add(TotalPublicerlabeltext);
             //.........................................................................
