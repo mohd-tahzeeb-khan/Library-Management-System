@@ -156,6 +156,14 @@ public class admin extends JFrame implements ActionListener{
         viewdepartment=new JMenuItem("VIEW ALL");
         removedepartment=new JMenuItem("REMOVE ");
         updatedepartment=new JMenuItem("UPDATE");
+icon=new ImageIcon("images/addnormal.png");
+adddepartment.setIcon(icon);
+icon=new ImageIcon("images/viewnormal.png");
+viewdepartment.setIcon(icon);
+icon=new ImageIcon("images/deletenormal.png");
+removedepartment.setIcon(icon);
+        icon=new ImageIcon("images/updatenormal.png");
+        updatedepartment.setIcon(icon);
         departmentmenu.add(viewdepartment);
         departmentmenu.add(adddepartment);
         departmentmenu.add(removedepartment);
@@ -420,9 +428,7 @@ public class admin extends JFrame implements ActionListener{
         if(e.getSource()==adminItem){
             System.out.println("admin");
             dynamicpanel.removeAll();
-
-            dynamicpanel.add(TotalBookAvailable);
-            dynamicpanel.add(TotalPublicerPanel);
+            dynamicpanel.setBackground(black);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
