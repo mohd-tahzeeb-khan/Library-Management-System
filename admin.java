@@ -91,6 +91,14 @@ public class admin extends JFrame implements ActionListener{
         addpublication=new JMenuItem("ADD");
         removepublication=new JMenuItem("REMOVE ");
         updatepublication=new JMenuItem("UPDATE");
+        icon=new ImageIcon("images/viewnormal.png");
+        viewpublication.setIcon(icon);
+        icon=new ImageIcon("images/addnormal.png");
+        addpublication.setIcon(icon);
+        icon=new ImageIcon("images/deletenormal.png");
+        removepublication.setIcon(icon);
+        icon=new ImageIcon("images/updatenormal.png");   
+        updatepublication.setIcon(icon);
         publicationmenu.add(viewpublication);
         publicationmenu.add(addpublication);
         publicationmenu.add(removepublication);
