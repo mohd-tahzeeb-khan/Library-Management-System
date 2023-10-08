@@ -26,7 +26,7 @@ public class admin extends JFrame implements ActionListener{
     CardLayout cardlayoutinstance;
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
-    viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff, helpItem, dashboaderItem, requirItem, adminItem;
+    viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff, helpItem, dashboaderItem, requirItem, adminItem, adddepartment, viewdepartment, updatedepartment, removedepartment;
     JMenu requirementmenu, helpmenu, adminmenu, dashboardmenu;
     ImageIcon icon;
 
@@ -54,7 +54,7 @@ public class admin extends JFrame implements ActionListener{
         logout.setForeground(Color.WHITE);
        //.............................................................
         JMenuBar menubar=new JMenuBar();
-        menubar.setBounds(450,61,1000,40);
+        menubar.setBounds(320,61,1100,40);
         menubar.setBackground(Color.WHITE);
         dashboardmenu=new JMenu("     DASHBOARD    ");
         JMenu settingmenu=new JMenu("   SETTING    ");
@@ -62,6 +62,7 @@ public class admin extends JFrame implements ActionListener{
         JMenu bookmenu=new JMenu("     BOOKS    ");
         JMenu staffmenu=new JMenu("   STAFF    ");
         JMenu publicationmenu=new JMenu("     PUBLICATIONS   ");
+        JMenu departmentmenu=new JMenu("        DEPARTMENT      ");
         requirementmenu=new JMenu("     REQUIREMENT    ");
         JMenu studentmenu=new JMenu("   STUDENTS    ");
         JMenu overduemenu=new JMenu("     OVERDUE   ");
@@ -72,6 +73,14 @@ public class admin extends JFrame implements ActionListener{
         viewbook=new JMenuItem("VIEW ALL");
         removebook=new JMenuItem("REMOVE ");
         updatebook=new JMenuItem("UPDATE");
+        icon=new ImageIcon("images/viewbook.png");
+        viewbook.setIcon(icon);
+        icon=new ImageIcon("images/addbook.png");
+        addbook.setIcon(icon);
+        icon=new ImageIcon("images/updatebook.png");
+        updatebook.setIcon(icon);
+        icon=new ImageIcon("images/deletebook.png");        
+        removebook.setIcon(icon);
         bookmenu.add(viewbook);
         bookmenu.add(addbook);
         bookmenu.add(removebook);
@@ -133,6 +142,16 @@ public class admin extends JFrame implements ActionListener{
         requirementmenu.add(requirItem);
         helpItem=new JMenuItem("HELP PANEL");
         helpmenu.add(helpItem);
+        //---------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------
+        adddepartment=new JMenuItem("ADD");
+        viewdepartment=new JMenuItem("VIEW ALL");
+        removedepartment=new JMenuItem("REMOVE ");
+        updatedepartment=new JMenuItem("UPDATE");
+        departmentmenu.add(viewdepartment);
+        departmentmenu.add(adddepartment);
+        departmentmenu.add(removedepartment);
+        departmentmenu.add(updatedepartment);
         //---------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------
         dynamicpanel=new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 40));
@@ -205,6 +224,7 @@ public class admin extends JFrame implements ActionListener{
         menubar.add(dashboardmenu);
         menubar.add(adminmenu);
         menubar.add(bookmenu);
+        menubar.add(departmentmenu);
         menubar.add(publicationmenu);
         menubar.add(studentmenu);
         menubar.add(staffmenu);
