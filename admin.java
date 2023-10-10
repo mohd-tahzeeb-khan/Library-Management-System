@@ -434,9 +434,17 @@ removedepartment.setIcon(icon);
         }
         if(e.getSource()==requirItem){
             System.out.println("require");
+            Admin.remove(this.dynamicpanel);
+            Admin.setBackground(black);
+            Admin.revalidate();
+            Admin.repaint();
         }
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
+            Admin.remove(this.dynamicpanel);
+            Admin.setBackground(black);
+            Admin.revalidate();
+            Admin.repaint();
             
         }
         if(e.getSource()==addbook){
