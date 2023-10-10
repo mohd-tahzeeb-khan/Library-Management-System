@@ -427,10 +427,10 @@ removedepartment.setIcon(icon);
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
-            dynamicpanel.removeAll();
-            dynamicpanel.setBackground(black);
-            dynamicpanel.revalidate();
-            dynamicpanel.repaint();
+            Admin.remove(this.dynamicpanel);
+            Admin.setBackground(black);
+            Admin.revalidate();
+            Admin.repaint();
         }
         if(e.getSource()==requirItem){
             System.out.println("require");
