@@ -21,6 +21,7 @@ public class admin extends JFrame implements ActionListener{
     TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel,TotalBookslabeltext, TotalStudentlabeltext, TotalIssuedBookslabeltext, TotalDepartmentlabeltext,
     TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon;
     JButton logout, help;
+    JScrollPane scrollableTable;
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
     TotalPublicerPanel, RequirementPanel, TotalStaffPanel, TotalBookAvailable;
     CardLayout cardlayoutinstance;
@@ -427,10 +428,49 @@ removedepartment.setIcon(icon);
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
-            Admin.remove(this.dynamicpanel);
-            Admin.setBackground(black);
-            Admin.revalidate();
-            Admin.repaint();
+            //Admin.remove(dynamicpanel);
+            
+            String data[][]={ {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"}
+
+          };    
+          String column[]={"ID","NAME","SALARY"};         
+          final JTable jt=new JTable(data,column);    
+jt.setCellSelectionEnabled(true); 
+JScrollPane sp=new JScrollPane(jt);  
+            dynamicpanel.add(sp);
+            //Admin.setBackground(black);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
         }
         if(e.getSource()==requirItem){
             System.out.println("require");
