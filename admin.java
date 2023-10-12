@@ -428,8 +428,6 @@ removedepartment.setIcon(icon);
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
-            //Admin.remove(dynamicpanel);
-            
             String data[][]={ {"101","Amit","670000"},    
             {"102","Jai","780000"},    
             {"101","Sachin","700000"},
@@ -481,10 +479,47 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
-            Admin.remove(this.dynamicpanel);
-            Admin.setBackground(black);
-            Admin.revalidate();
-            Admin.repaint();
+            String data[][]={ {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"},
+            {"101","Amit","670000"},    
+            {"102","Jai","780000"},    
+            {"101","Sachin","700000"}
+
+          };    
+          String column[]={"ID","NAME","SALARY"};         
+          final JTable jt=new JTable(data,column);    
+jt.setCellSelectionEnabled(true); 
+JScrollPane sp=new JScrollPane(jt);  
+            dynamicpanel.add(sp);
+            //Admin.setBackground(black);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
             
         }
         if(e.getSource()==addbook){
