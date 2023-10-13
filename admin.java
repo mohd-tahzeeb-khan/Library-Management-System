@@ -471,7 +471,7 @@ removedepartment.setIcon(icon);
           };    
           String column[]={"ID","NAME","SALARY"};         
           final JTable jt=new JTable(data,column);    
-jt.setCellSelectionEnabled(true); 
+//jt.setCellSelectionEnabled(true); 
 JScrollPane sp=new JScrollPane(jt);  
             dynamicpanel.add(sp);
             //Admin.setBackground(black);
@@ -488,22 +488,35 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
             dynamicpanel.removeAll();
-            String data[][]={ {"120","90","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"}    
+            String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
+            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
             
 
           };    
-          String column[]={"Reffered ID","Quantity","NAME","Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
+          String column[]={"Reffered ID","Quantity" ,"Available","NAME","Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
           final JTable jt=new JTable(data,column);    
-//jt.setCellSelectionEnabled(true); 
-jt.setBounds(200, 200, 1300, 200);
+jt.setCellSelectionEnabled(false); 
+jt.setEnabled(false);
+//jt.setBounds(200, 200, 1300, 800);
 jt.setRowHeight(20);
 jt.getTableHeader().setFont(font_15_bold);
 jt.getColumnModel().getColumn(0).setPreferredWidth(10);
 jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+
 jt.setGridColor(blue);
 jt.setFont(font_15_bold);
 JScrollPane sp=new JScrollPane(jt);
-            sp.setPreferredSize(new Dimension(1420, 200));
+            sp.setPreferredSize(new Dimension(1420, 580));
             dynamicpanel.add(sp);
             //Admin.setBackground(black);
             dynamicpanel.revalidate();
