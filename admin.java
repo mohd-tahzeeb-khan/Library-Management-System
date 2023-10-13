@@ -12,6 +12,9 @@ public class admin extends JFrame implements ActionListener{
     JFrame Admin;
     Font font_100_bold = new Font("Serif", Font.BOLD, 60);
     Font font_30_bold = new Font("Serif", Font.BOLD, 30);
+    Font font_20_bold = new Font("Serif", Font.BOLD, 20);
+    Font font_15_bold = new Font("Serif", Font.BOLD, 15);
+    Font font_10_bold = new Font("Serif", Font.BOLD, 10);
     Color blue=new Color(0, 0, 204);
     Color black=new Color(0,0,0);
     Color white =new Color(255,255,255);
@@ -485,43 +488,22 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
             dynamicpanel.removeAll();
-            String data[][]={ {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"}
+            String data[][]={ {"120","90","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"}    
+            
 
           };    
-          String column[]={"ID","NAME","SALARY"};         
+          String column[]={"Reffered ID","Quantity","NAME","Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
           final JTable jt=new JTable(data,column);    
-jt.setCellSelectionEnabled(true); 
-JScrollPane sp=new JScrollPane(jt);  
+//jt.setCellSelectionEnabled(true); 
+jt.setBounds(200, 200, 1300, 200);
+jt.setRowHeight(20);
+jt.getTableHeader().setFont(font_15_bold);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+jt.setGridColor(blue);
+jt.setFont(font_15_bold);
+JScrollPane sp=new JScrollPane(jt);
+            sp.setPreferredSize(new Dimension(1420, 200));
             dynamicpanel.add(sp);
             //Admin.setBackground(black);
             dynamicpanel.revalidate();
