@@ -294,6 +294,10 @@ removedepartment.setIcon(icon);
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
             dynamicpanel.removeAll();
+            TotalBooksPanel.removeAll();
+            TotalIssuedBooksPanel.removeAll();
+            TotalDepartmentPanel.removeAll();
+            TotalPublicerPanel.removeAll();
             //Total no of books Panel...........................................
             icon=new ImageIcon("images/totalbooks.png");
             TotalBookslabelicon=new JLabel(icon);
@@ -428,6 +432,7 @@ removedepartment.setIcon(icon);
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
+            dynamicpanel.removeAll();
             String data[][]={ {"101","Amit","670000"},    
             {"102","Jai","780000"},    
             {"101","Sachin","700000"},
@@ -479,6 +484,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
+            dynamicpanel.removeAll();
             String data[][]={ {"101","Amit","670000"},    
             {"102","Jai","780000"},    
             {"101","Sachin","700000"},
@@ -535,6 +541,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewpublication){
             System.out.println("viewPublication");
+            dynamicpanel.removeAll();
             String data[][]={ {"101","Amit","670000"},    
             {"102","Jai","780000"},    
             {"101","Sachin","700000"},
