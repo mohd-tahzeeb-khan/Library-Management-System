@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.Font;
  
 public class admin extends JFrame implements ActionListener{
+    //--------------------------------------------------------------------------------------------------------------------
     JFrame Admin;
     Font font_100_bold = new Font("Serif", Font.BOLD, 60);
     Font font_30_bold = new Font("Serif", Font.BOLD, 30);
@@ -18,21 +19,30 @@ public class admin extends JFrame implements ActionListener{
     Color blue=new Color(0, 0, 204);
     Color black=new Color(0,0,0);
     Color white =new Color(255,255,255);
-
+//--------------------------------------------------------------------------------------------------------------------
 
     JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
     TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel,TotalBookslabeltext, TotalStudentlabeltext, TotalIssuedBookslabeltext, TotalDepartmentlabeltext,
-    TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon;
-    JButton logout, help;
+    TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, 
+    TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon, 
+    //---------------------------------------------------------------------------------------------------------------
+    RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno;
+    JButton logout, help, RegisterStudent, Cancel, Clear;
+    //---------------------------------------------------------------------------------------------------------------------
     JScrollPane scrollableTable;
+    //--------------------------------------------------------------------------------------------------------------------
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
     TotalPublicerPanel, RequirementPanel, TotalStaffPanel, TotalBookAvailable;
+    //--------------------------------------------------------------------------------------------------------------------
     CardLayout cardlayoutinstance;
+    //--------------------------------------------------------------------------------------------------------------------
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
     viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff, helpItem, dashboaderItem, requirItem, adminItem, adddepartment, viewdepartment, updatedepartment, removedepartment;
     JMenu requirementmenu, helpmenu, adminmenu, dashboardmenu;
+    //--------------------------------------------------------------------------------------------------------------------
     ImageIcon icon;
+    //--------------------------------------------------------------------------------------------------------------------
 
     admin(){
         Admin=new JFrame();
@@ -525,8 +535,10 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addbook){
             System.out.println("addbook");
+            dynamicpanel.removeAll();
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
             
-            Admin.validate();
         }
         if(e.getSource()==removebook){
             System.out.println("removebook");
@@ -570,7 +582,7 @@ JScrollPane sp=new JScrollPane(jt);
             {"101","Sachin","700000"}
 
           };    
-          String column[]={"ID","NAME","SALARY"};         
+          String column[]={"NAME", "CONTACT", "BOOK AVAILABLE"};         
           final JTable jt=new JTable(data,column);    
 jt.setCellSelectionEnabled(true); 
 JScrollPane sp=new JScrollPane(jt);  
