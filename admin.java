@@ -27,6 +27,9 @@ public class admin extends JFrame implements ActionListener{
     TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon, 
     //---------------------------------------------------------------------------------------------------------------
     RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno;
+    //--------------------------------------------------------------------------------------------------------------------
+    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, yearfield, semesterfield, Departmentfield, contactnofield, altercontactnofield, agefield, genderfield, emailidfield, Classrollnofield;
+    //--------------------------------------------------------------------------------------------------------------------
     JButton logout, help, RegisterStudent, Cancel, Clear;
     //---------------------------------------------------------------------------------------------------------------------
     JScrollPane scrollableTable;
@@ -626,6 +629,22 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addstudent){
             System.out.println("addstudent");
+            dynamicpanel.removeAll();
+            RegistrationNo=new JLabel("REGISTRATION NO:");
+            RegistrationNo.setBounds(32,32,200,200);
+            RegistrationNofield=new JTextField();
+            RegistrationNofield.setFont(font_20_bold);
+            RegistrationNofield.setBounds(500,300,200,200);
+            //-------------------------------------------------------------
+            Name=new JLabel("NAME:");
+            Name.setBounds(55,32,200,200);
+
+            dynamicpanel.add(RegistrationNo);
+            dynamicpanel.add(RegistrationNofield);
+            dynamicpanel.add(Name);
+
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
         }
     }
     public static void main(String args[]){
