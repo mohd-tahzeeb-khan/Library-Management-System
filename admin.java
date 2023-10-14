@@ -6,6 +6,8 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+
 import java.awt.Font;
  
 public class admin extends JFrame implements ActionListener{
@@ -16,7 +18,7 @@ public class admin extends JFrame implements ActionListener{
     Font font_20_bold = new Font("Serif", Font.BOLD, 20);
     Font font_15_bold = new Font("Serif", Font.BOLD, 15);
     Font font_10_bold = new Font("Serif", Font.BOLD, 10);
-    Color blue=new Color(0, 0, 204);
+    Color grey=new Color(200, 200, 200);
     Color black=new Color(0,0,0);
     Color white =new Color(255,255,255);
 //--------------------------------------------------------------------------------------------------------------------
@@ -526,7 +528,7 @@ jt.getColumnModel().getColumn(9).setPreferredWidth(20);
 jt.getColumnModel().getColumn(0).setPreferredWidth(10);
 jt.getColumnModel().getColumn(1).setPreferredWidth(20);
 
-jt.setGridColor(blue);
+jt.setGridColor(grey);
 jt.setFont(font_15_bold);
 JScrollPane sp=new JScrollPane(jt);
             sp.setPreferredSize(new Dimension(1420, 580));
@@ -629,18 +631,24 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addstudent){
             System.out.println("addstudent");
+            dynamicpanel.setLayout(null);
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+         BorderFactory.createEtchedBorder(), "      REGISTRATION FORM      ", TitledBorder.CENTER, TitledBorder.TOP));
             dynamicpanel.removeAll();
             RegistrationNo=new JLabel("REGISTRATION NO:");
-            RegistrationNo.setBounds(32,32,200,200);
-            RegistrationNofield=new JTextField();
+            RegistrationNo.setFont(font_20_bold);
+            RegistrationNo.setBounds(32,32,200,40);
+            RegistrationNofield=new JTextField("");
             RegistrationNofield.setFont(font_20_bold);
-            RegistrationNofield.setBounds(500,300,200,200);
+            RegistrationNofield.setBounds(250,38,200,30);
             //-------------------------------------------------------------
             Name=new JLabel("NAME:");
             Name.setBounds(55,32,200,200);
-
+            //
             dynamicpanel.add(RegistrationNo);
             dynamicpanel.add(RegistrationNofield);
+            //RegistrationNofield.setText("");
             dynamicpanel.add(Name);
 
             dynamicpanel.revalidate();
