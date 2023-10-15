@@ -638,16 +638,58 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.removeAll();
             RegistrationNo=new JLabel("REGISTRATION NO:");
             RegistrationNo.setFont(font_20_bold);
-            RegistrationNo.setBounds(32,32,200,40);
-            RegistrationNofield=new JTextField("");
+            RegistrationNo.setBounds(30,32,200,40);
+            RegistrationNofield=new JTextField();
             RegistrationNofield.setFont(font_20_bold);
             RegistrationNofield.setBounds(250,38,200,30);
             //-------------------------------------------------------------
+            usno=new JLabel("ENROLLMENT NO:");
+            usno.setBounds(30,79,200,40);
+            usno.setFont(font_20_bold);
+            usnofield=new JTextField();
+            usnofield.setFont(font_20_bold);
+            usnofield.setBounds(250,85,200,30);
+            //-------------------------------------------------------------
             Name=new JLabel("NAME:");
-            Name.setBounds(55,32,200,200);
-            //
+            Name.setBounds(30,126,200,40);
+            Name.setFont(font_20_bold);
+            Namefield=new JTextField();
+            Namefield.setFont(font_20_bold);
+            Namefield.setBounds(250,132,200,30);
+            //-------------------------------------------------------------
+            Fathername=new JLabel("FATHER'S NAME:");
+            Fathername.setBounds(30,173,200,40);
+            Fathername.setFont(font_20_bold);
+            Fathernamefield=new JTextField();
+            Fathernamefield.setFont(font_20_bold);
+            Fathernamefield.setBounds(250,179,200,30);
+            //-------------------------------------------------------------
+            contactno=new JLabel("CONTACT NO:");
+            contactno.setBounds(30,220,200,40);
+            contactno.setFont(font_20_bold);
+            contactnofield=new JTextField();
+            contactnofield.setFont(font_20_bold);
+            contactnofield.setBounds(250,226,200,30);
+            //-------------------------------------------------------------
+            altercontactno=new JLabel("ALTERNATE NO:");
+            altercontactno.setBounds(30,267,200,40);
+            altercontactno.setFont(font_20_bold);
+            altercontactnofield=new JTextField();
+            altercontactnofield.setFont(font_20_bold);
+            altercontactnofield.setBounds(250,273,200,30);
+            //-------------------------------------------------------------
             dynamicpanel.add(RegistrationNo);
             dynamicpanel.add(RegistrationNofield);
+            dynamicpanel.add(usno);
+            dynamicpanel.add(usnofield);
+            dynamicpanel.add(Name);
+            dynamicpanel.add(Namefield);
+            dynamicpanel.add(Fathername);
+            dynamicpanel.add(Fathernamefield);
+            dynamicpanel.add(contactno);
+            dynamicpanel.add(contactnofield);
+            dynamicpanel.add(altercontactno);
+            dynamicpanel.add(altercontactnofield);
             //RegistrationNofield.setText("");
             dynamicpanel.add(Name);
 
