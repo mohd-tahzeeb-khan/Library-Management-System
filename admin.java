@@ -30,7 +30,9 @@ public class admin extends JFrame implements ActionListener{
     //---------------------------------------------------------------------------------------------------------------
     RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno;
     //--------------------------------------------------------------------------------------------------------------------
-    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, yearfield, semesterfield, Departmentfield, contactnofield, altercontactnofield, agefield, genderfield, emailidfield, Classrollnofield;
+    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, yearfield, semesterfield, Departmentfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield;
+    //--------------------------------------------------------------------------------------------------------------------
+    JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
     JButton logout, help, RegisterStudent, Cancel, Clear;
     //---------------------------------------------------------------------------------------------------------------------
@@ -644,39 +646,49 @@ JScrollPane sp=new JScrollPane(jt);
             RegistrationNofield.setBounds(250,38,200,30);
             //-------------------------------------------------------------
             usno=new JLabel("ENROLLMENT NO:");
-            usno.setBounds(30,79,200,40);
+            usno.setBounds(30,89,200,40);
             usno.setFont(font_20_bold);
             usnofield=new JTextField();
             usnofield.setFont(font_20_bold);
-            usnofield.setBounds(250,85,200,30);
+            usnofield.setBounds(250,95,200,30);
             //-------------------------------------------------------------
             Name=new JLabel("NAME:");
-            Name.setBounds(30,126,200,40);
+            Name.setBounds(30,146,200,40);
             Name.setFont(font_20_bold);
             Namefield=new JTextField();
             Namefield.setFont(font_20_bold);
-            Namefield.setBounds(250,132,200,30);
+            Namefield.setBounds(250,152,200,30);
             //-------------------------------------------------------------
             Fathername=new JLabel("FATHER'S NAME:");
-            Fathername.setBounds(30,173,200,40);
+            Fathername.setBounds(30,213,200,40);
             Fathername.setFont(font_20_bold);
             Fathernamefield=new JTextField();
             Fathernamefield.setFont(font_20_bold);
-            Fathernamefield.setBounds(250,179,200,30);
+            Fathernamefield.setBounds(250,219,200,30);
             //-------------------------------------------------------------
             contactno=new JLabel("CONTACT NO:");
-            contactno.setBounds(30,220,200,40);
+            contactno.setBounds(30,280,200,40);
             contactno.setFont(font_20_bold);
             contactnofield=new JTextField();
             contactnofield.setFont(font_20_bold);
-            contactnofield.setBounds(250,226,200,30);
+            contactnofield.setBounds(250,286,200,30);
             //-------------------------------------------------------------
             altercontactno=new JLabel("ALTERNATE NO:");
-            altercontactno.setBounds(30,267,200,40);
+            altercontactno.setBounds(30,347,200,40);
             altercontactno.setFont(font_20_bold);
             altercontactnofield=new JTextField();
             altercontactnofield.setFont(font_20_bold);
-            altercontactnofield.setBounds(250,273,200,30);
+            altercontactnofield.setBounds(250,353,200,30);
+            //-------------------------------------------------------------
+            gender=new JLabel("GENDER:");
+            gender.setFont(font_20_bold);
+            gender.setBounds(600,32, 100,30);
+            malegender=new JRadioButton("MALE");
+            femalegender=new JRadioButton("FEMALE");
+            transgender=new JRadioButton("TRANS");
+            malegender.setBounds(660, 32, 90,20);
+            femalegender.setBounds(720, 32, 90,20);
+            transgender.setBounds(880, 32,90,20);
             //-------------------------------------------------------------
             dynamicpanel.add(RegistrationNo);
             dynamicpanel.add(RegistrationNofield);
@@ -690,7 +702,10 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(contactnofield);
             dynamicpanel.add(altercontactno);
             dynamicpanel.add(altercontactnofield);
-            //RegistrationNofield.setText("");
+            dynamicpanel.add(gender);
+            dynamicpanel.add(malegender);
+dynamicpanel.add(femalegender);
+            dynamicpanel.add(transgender);//RegistrationNofield.setText("");
             dynamicpanel.add(Name);
 
             dynamicpanel.revalidate();
