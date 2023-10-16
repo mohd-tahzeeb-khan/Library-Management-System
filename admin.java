@@ -36,6 +36,8 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JButton logout, help, RegisterStudent, Cancel, Clear;
     //---------------------------------------------------------------------------------------------------------------------
+    ButtonGroup grp=new ButtonGroup();
+    //---------------------------------------------------------------------------------------------------------------------
     JScrollPane scrollableTable;
     //--------------------------------------------------------------------------------------------------------------------
     JPanel heading_Panel, plain_Panel, dynamicpanel,sidepanel, TotalBooksPanel, TotalStudentPanel, TotalIssuedBooksPanel, TotalDepartmentPanel,
@@ -684,11 +686,24 @@ JScrollPane sp=new JScrollPane(jt);
             gender.setFont(font_20_bold);
             gender.setBounds(600,32, 100,30);
             malegender=new JRadioButton("MALE");
+            malegender.setBackground(grey);
+            malegender.setFont(font_15_bold);
             femalegender=new JRadioButton("FEMALE");
+            femalegender.setBackground(grey);
+            femalegender.setFont(font_15_bold);
             transgender=new JRadioButton("TRANS");
-            malegender.setBounds(660, 32, 90,20);
-            femalegender.setBounds(720, 32, 90,20);
-            transgender.setBounds(880, 32,90,20);
+            transgender.setBackground(grey);
+            transgender.setFont(font_15_bold);
+            malegender.setBounds(750, 38, 90,20);
+            femalegender.setBounds(850, 38, 90,20);
+            transgender.setBounds(950, 38,90,20);
+            //-------------------------------------------------------------
+            DOB=new JLabel("DATE OF BIRTH");
+            DOBfield=new JTextField();
+            DOBfield.setFont(font_20_bold);
+            DOB.setFont(font_20_bold);
+            DOB.setBounds(600,89,100,35);
+            DOBfield.setBounds(750,95,100,35);
             //-------------------------------------------------------------
             dynamicpanel.add(RegistrationNo);
             dynamicpanel.add(RegistrationNofield);
@@ -703,10 +718,15 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(altercontactno);
             dynamicpanel.add(altercontactnofield);
             dynamicpanel.add(gender);
+            grp.add(malegender);
+            grp.add(femalegender);
+            grp.add(transgender);
             dynamicpanel.add(malegender);
-dynamicpanel.add(femalegender);
-            dynamicpanel.add(transgender);//RegistrationNofield.setText("");
+            dynamicpanel.add(femalegender);
+            dynamicpanel.add(transgender);
             dynamicpanel.add(Name);
+            dynamicpanel.add(DOB);
+            dynamicpanel.add(DOBfield);
 
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
