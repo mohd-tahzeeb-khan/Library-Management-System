@@ -28,13 +28,15 @@ public class admin extends JFrame implements ActionListener{
     TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, 
     TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon, 
     //---------------------------------------------------------------------------------------------------------------
-    RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno;
+    RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno, Program;
     //--------------------------------------------------------------------------------------------------------------------
-    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, yearfield, semesterfield, Departmentfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield;
+    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield;
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
-    JComboBox departmentComboBox;
+    JComboBox departmentComboBox, ProgramComboBox, SemesterComboBox, YearComboBox;
+    //--------------------------------------------------------------------------------------------------------------------
+    JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
     JButton logout, help, RegisterStudent, Cancel, Clear;
     //---------------------------------------------------------------------------------------------------------------------
@@ -640,7 +642,7 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.setLayout(null);
             dynamicpanel.setBackground(grey);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-         BorderFactory.createEtchedBorder(), "      REGISTRATION FORM      ", TitledBorder.CENTER, TitledBorder.TOP));
+         BorderFactory.createEtchedBorder(), "..........REGISTRATION FORM..........", TitledBorder.CENTER, TitledBorder.TOP));
             dynamicpanel.removeAll();
             RegistrationNo=new JLabel("REGISTRATION NO:");
             RegistrationNo.setFont(font_20_bold);
@@ -714,19 +716,42 @@ JScrollPane sp=new JScrollPane(jt);
             Classrollnofield.setFont(font_20_bold);
             Classrollnofield.setBounds(800, 30, 200, 30);
             //-------------------------------------------------------------
+            Program=new JLabel("PROGRAM:");
+            Program.setFont(font_20_bold);
+            Program.setBounds(600, 97, 200, 30);
+            ProgramComboBox=new JComboBox<>();
+            ProgramComboBox.addItem("BECHALOR'S IN TECHNOLOGY");
+            ProgramComboBox.addItem("MASTER'S IN TECHNOLOGY");
+            ProgramComboBox.addItem("MANAGEMENT");
+            ProgramComboBox.addItem("PH.D");
+            ProgramComboBox.setBounds(800, 103, 300, 30);
+            //-------------------------------------------------------------
             year=new JLabel("YEAR: ");
             year.setFont(font_20_bold);
             year.setBounds(600,146, 200, 30);
-            yearfield=new JTextField();
-            yearfield.setFont(font_20_bold);
-            yearfield.setBounds(800,152, 200, 30);
+            YearComboBox=new JComboBox();
+            YearComboBox.addItem("FIRST");
+            YearComboBox.addItem("SECOND");
+            YearComboBox.addItem("THIRD");
+            YearComboBox.addItem("FOURTH");
+        
+            YearComboBox.setFont(font_15_bold);
+            YearComboBox.setBounds(800,152, 100, 30);
             //-------------------------------------------------------------
-            semesterfield=new JTextField();
+            SemesterComboBox=new JComboBox();
+            SemesterComboBox.addItem("FIRST");
+            SemesterComboBox.addItem("SECOND");
+            SemesterComboBox.addItem("THIRD");
+            SemesterComboBox.addItem("FOURTH");
+            SemesterComboBox.addItem("FIFTH");
+            SemesterComboBox.addItem("SIXTH");
+            SemesterComboBox.addItem("SEVENTH");
+            SemesterComboBox.addItem("EIGHTH");
             semester=new JLabel("SEMESTER: ");
             semester.setFont(font_20_bold);
             semester.setBounds(600, 213, 200, 30);
-            semesterfield.setFont(font_20_bold);
-            semesterfield.setBounds(800, 219, 200, 30);
+            SemesterComboBox.setFont(font_15_bold);
+            SemesterComboBox.setBounds(800, 219, 100, 30);
             //-------------------------------------------------------------
             Department=new JLabel("DEPARTMENT: ");
             Department.setFont(font_20_bold);
@@ -741,9 +766,38 @@ JScrollPane sp=new JScrollPane(jt);
             departmentComboBox.addItem("ARTIFICAIL INTELLIGENCE AND MACHINE LEARNING ENGINEERING");
             departmentComboBox.addItem("CIVIL ENGINEERING");
             departmentComboBox.addItem("MBA");
-
             departmentComboBox.setBounds(800, 286, 300, 30);
             //-------------------------------------------------------------
+            emailid=new JLabel("EMAIL ID: ");
+            emailid.setFont(font_20_bold);
+            emailid.setBounds(600, 347, 200, 30);
+            emailidfield=new JTextField();
+            emailidfield.setFont(font_20_bold);
+            emailidfield.setBounds(800, 353, 200, 30);
+            //------------------------------------------------------------
+            notesCheckBox=new JCheckBox();
+            notesCheckBox.setText("<html>The Student has already submitted the hardcopy of the form and is eligible to create new Library card and is accessed to use the books present in the library,  under the rules and regulations of Library.</html>");
+            notesCheckBox.setVerticalTextPosition(SwingConstants.TOP);
+            notesCheckBox.setFont(font_15_bold);
+            notesCheckBox.setBounds(600, 414, 500, 100);
+            //------------------------------------------------------------
+            RegisterStudent=new JButton();
+            RegisterStudent.setFont(font_15_bold);
+            RegisterStudent.setBounds(1250,100 , 100, 40);
+            RegisterStudent.setBackground(white);
+            RegisterStudent.setForeground(black);
+            Clear=new JButton();
+            Clear.setFont(font_15_bold);
+            Clear.setBounds(1250, 300, 100, 40);
+            Clear.setBackground(white);
+            Clear.setForeground(black);
+            Cancel=new JButton();
+            Cancel.setFont(font_15_bold);
+            Cancel.setBounds(1250,500 , 100, 40);
+            Cancel.setForeground(black);
+            Cancel.setBackground(white);
+            //------------------------------------------------------------
+
 
             dynamicpanel.add(RegistrationNo);
             dynamicpanel.add(RegistrationNofield);
@@ -769,12 +823,21 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(DOBfield);
             dynamicpanel.add(Classrollno);
             dynamicpanel.add(Classrollnofield);
+dynamicpanel.add(Program);
+            dynamicpanel.add(ProgramComboBox);
             dynamicpanel.add(year);
-            dynamicpanel.add(yearfield);
+            dynamicpanel.add(YearComboBox);
             dynamicpanel.add(semester);
-            dynamicpanel.add(semesterfield);  
+            dynamicpanel.add(SemesterComboBox);  
             dynamicpanel.add(Department); 
-            dynamicpanel.add(departmentComboBox);         
+            dynamicpanel.add(departmentComboBox); 
+            dynamicpanel.add(emailid);
+            dynamicpanel.add(emailidfield);
+            dynamicpanel.add(notesCheckBox);
+
+            dynamicpanel.add(RegisterStudent);
+            dynamicpanel.add(Clear);
+            dynamicpanel.add(Cancel);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
