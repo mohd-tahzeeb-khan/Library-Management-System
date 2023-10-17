@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-
+import java.util.Date.*;
 import java.awt.Font;
  
 public class admin extends JFrame implements ActionListener{
@@ -670,23 +670,16 @@ JScrollPane sp=new JScrollPane(jt);
             Fathernamefield.setFont(font_20_bold);
             Fathernamefield.setBounds(250,219,200,30);
             //-------------------------------------------------------------
-            contactno=new JLabel("CONTACT NO:");
-            contactno.setBounds(30,280,200,40);
-            contactno.setFont(font_20_bold);
-            contactnofield=new JTextField();
-            contactnofield.setFont(font_20_bold);
-            contactnofield.setBounds(250,286,200,30);
-            //-------------------------------------------------------------
-            altercontactno=new JLabel("ALTERNATE NO:");
-            altercontactno.setBounds(30,347,200,40);
-            altercontactno.setFont(font_20_bold);
-            altercontactnofield=new JTextField();
-            altercontactnofield.setFont(font_20_bold);
-            altercontactnofield.setBounds(250,353,200,30);
+            DOB=new JLabel("DATE OF BIRTH: ");
+            DOBfield=new JTextField();
+            DOBfield.setFont(font_20_bold);
+            DOB.setFont(font_20_bold);
+            DOB.setBounds(30,280,200,40);
+            DOBfield.setBounds(250,286,100,30);            
             //-------------------------------------------------------------
             gender=new JLabel("GENDER:");
             gender.setFont(font_20_bold);
-            gender.setBounds(600,32, 100,30);
+            gender.setBounds(30,347, 100,30);
             malegender=new JRadioButton("MALE");
             malegender.setBackground(grey);
             malegender.setFont(font_15_bold);
@@ -696,16 +689,30 @@ JScrollPane sp=new JScrollPane(jt);
             transgender=new JRadioButton("TRANS");
             transgender.setBackground(grey);
             transgender.setFont(font_15_bold);
-            malegender.setBounds(750, 38, 90,20);
-            femalegender.setBounds(850, 38, 90,20);
-            transgender.setBounds(950, 38,90,20);
+            malegender.setBounds(250, 353, 70,20);
+            femalegender.setBounds(330, 353, 90,20);
+            transgender.setBounds(420, 353,90,20);
             //-------------------------------------------------------------
-            DOB=new JLabel("DATE OF BIRTH: ");
-            DOBfield=new JTextField();
-            DOBfield.setFont(font_20_bold);
-            DOB.setFont(font_20_bold);
-            DOB.setBounds(600,89,200,35);
-            DOBfield.setBounds(800,95,100,30);
+            contactno=new JLabel("CONTACT NO:");
+            contactno.setBounds(30,414,200,40);
+            contactno.setFont(font_20_bold);
+            contactnofield=new JTextField();
+            contactnofield.setFont(font_20_bold);
+            contactnofield.setBounds(250,420,200,30);
+            //-------------------------------------------------------------
+            altercontactno=new JLabel("ALTERNATE NO:");
+            altercontactno.setBounds(30,481,200,40);
+            altercontactno.setFont(font_20_bold);
+            altercontactnofield=new JTextField();
+            altercontactnofield.setFont(font_20_bold);
+            altercontactnofield.setBounds(250,487,200,30);
+            //-------------------------------------------------------------
+            Classrollno=new JLabel("ROLL-NO: ");
+            Classrollno.setFont(font_20_bold);
+            Classrollno.setBounds(600, 30, 200, 30);
+            Classrollnofield=new JTextField();
+            Classrollnofield.setFont(font_20_bold);
+            Classrollnofield.setBounds(800, 30, 200, 30);
             //-------------------------------------------------------------
             year=new JLabel("YEAR: ");
             year.setFont(font_20_bold);
@@ -760,6 +767,8 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(Name);
             dynamicpanel.add(DOB);
             dynamicpanel.add(DOBfield);
+            dynamicpanel.add(Classrollno);
+            dynamicpanel.add(Classrollnofield);
             dynamicpanel.add(year);
             dynamicpanel.add(yearfield);
             dynamicpanel.add(semester);
