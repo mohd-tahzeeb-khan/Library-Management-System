@@ -34,6 +34,8 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
+    JComboBox departmentComboBox;
+    //--------------------------------------------------------------------------------------------------------------------
     JButton logout, help, RegisterStudent, Cancel, Clear;
     //---------------------------------------------------------------------------------------------------------------------
     ButtonGroup grp=new ButtonGroup();
@@ -698,13 +700,44 @@ JScrollPane sp=new JScrollPane(jt);
             femalegender.setBounds(850, 38, 90,20);
             transgender.setBounds(950, 38,90,20);
             //-------------------------------------------------------------
-            DOB=new JLabel("DATE OF BIRTH");
+            DOB=new JLabel("DATE OF BIRTH: ");
             DOBfield=new JTextField();
             DOBfield.setFont(font_20_bold);
             DOB.setFont(font_20_bold);
-            DOB.setBounds(600,89,100,35);
-            DOBfield.setBounds(750,95,100,35);
+            DOB.setBounds(600,89,200,35);
+            DOBfield.setBounds(800,95,100,30);
             //-------------------------------------------------------------
+            year=new JLabel("YEAR: ");
+            year.setFont(font_20_bold);
+            year.setBounds(600,146, 200, 30);
+            yearfield=new JTextField();
+            yearfield.setFont(font_20_bold);
+            yearfield.setBounds(800,152, 200, 30);
+            //-------------------------------------------------------------
+            semesterfield=new JTextField();
+            semester=new JLabel("SEMESTER: ");
+            semester.setFont(font_20_bold);
+            semester.setBounds(600, 213, 200, 30);
+            semesterfield.setFont(font_20_bold);
+            semesterfield.setBounds(800, 219, 200, 30);
+            //-------------------------------------------------------------
+            Department=new JLabel("DEPARTMENT: ");
+            Department.setFont(font_20_bold);
+            Department.setBounds(600, 280, 200, 30);
+            departmentComboBox=new JComboBox<>();
+            departmentComboBox.setFont(font_15_bold);
+            departmentComboBox.addItem("COMPUTER SCIENCE & TECHNOLOGY ENGINEERING");
+            departmentComboBox.addItem("ELECTRICAL ENGINEERING");
+            departmentComboBox.addItem("MECANICAL ENGINEERING");
+            departmentComboBox.addItem("ELETRONICS AND TELECOMMUNICATIONS ENGINEERING");
+            departmentComboBox.addItem("ARTIFICAIL INTELLIGENCE AND DATA SCIENCE ENGINEERING");
+            departmentComboBox.addItem("ARTIFICAIL INTELLIGENCE AND MACHINE LEARNING ENGINEERING");
+            departmentComboBox.addItem("CIVIL ENGINEERING");
+            departmentComboBox.addItem("MBA");
+
+            departmentComboBox.setBounds(800, 286, 300, 30);
+            //-------------------------------------------------------------
+
             dynamicpanel.add(RegistrationNo);
             dynamicpanel.add(RegistrationNofield);
             dynamicpanel.add(usno);
@@ -727,7 +760,12 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(Name);
             dynamicpanel.add(DOB);
             dynamicpanel.add(DOBfield);
-
+            dynamicpanel.add(year);
+            dynamicpanel.add(yearfield);
+            dynamicpanel.add(semester);
+            dynamicpanel.add(semesterfield);  
+            dynamicpanel.add(Department); 
+            dynamicpanel.add(departmentComboBox);         
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
