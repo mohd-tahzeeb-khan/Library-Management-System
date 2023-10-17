@@ -511,12 +511,13 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
             dynamicpanel.removeAll();
+            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
             {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
             
 
           };    
-          String column[]={"Reffered ID","Quantity" ,"Available","NAME","Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
+          String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
           final JTable jt=new JTable(data,column);    
 jt.setCellSelectionEnabled(false); 
 jt.setEnabled(false);
@@ -598,7 +599,8 @@ JScrollPane sp=new JScrollPane(jt);
           String column[]={"NAME", "CONTACT", "BOOK AVAILABLE"};         
           final JTable jt=new JTable(data,column);    
 jt.setCellSelectionEnabled(true); 
-JScrollPane sp=new JScrollPane(jt);  
+JScrollPane sp=new JScrollPane(jt);
+            dynamicpanel.add(jt);
             dynamicpanel.add(sp);
             //Admin.setBackground(black);
             dynamicpanel.revalidate();
