@@ -49,6 +49,8 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     CardLayout cardlayoutinstance;
     //--------------------------------------------------------------------------------------------------------------------
+    JToolTip tip;
+    //--------------------------------------------------------------------------------------------------------------------
     JMenu menubar;
     JMenuItem addbook, viewbook, removebook, updatebook, viewpublication, addpublication, removepublication, updatepublication,
     viewstudent, addstudent, removestudent, updatestudent, viewstaff, addstaff, removestaff, updatestaff, helpItem, dashboaderItem, requirItem, adminItem, adddepartment, viewdepartment, updatedepartment, removedepartment;
@@ -634,6 +636,45 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewstudent){
             System.out.println("viewstudent");
+            dynamicpanel.removeAll();
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+         BorderFactory.createEtchedBorder(), "              All Students              ", TitledBorder.LEFT, TitledBorder.TOP));
+         dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
+         String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
+            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
+            
+
+          };    
+          String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
+          final JTable jt=new JTable(data,column);    
+jt.setCellSelectionEnabled(false); 
+jt.setEnabled(false);
+//jt.setBounds(200, 200, 1300, 800);
+jt.setRowHeight(20);
+jt.getTableHeader().setFont(font_15_bold);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+
+jt.setGridColor(grey);
+jt.setFont(font_15_bold);
+JScrollPane sp=new JScrollPane(jt);
+            sp.setPreferredSize(new Dimension(1420, 580));
+            dynamicpanel.add(sp);
+            //Admin.setBackground(black);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
+
         }
         if(e.getSource()==removestudent){
             System.out.println("removestudent");
@@ -661,6 +702,7 @@ JScrollPane sp=new JScrollPane(jt);
             usnofield=new JTextField();
             usnofield.setFont(font_20_bold);
             usnofield.setBounds(250,95,200,30);
+            usnofield.setToolTipText("Enter students University Registration NO.");
             //-------------------------------------------------------------
             Name=new JLabel("NAME:");
             Name.setBounds(30,146,200,40);
