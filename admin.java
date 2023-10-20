@@ -310,6 +310,10 @@ public class admin extends JFrame implements ActionListener{
         addpublication.addActionListener(this);
         updatepublication.addActionListener(this);
         removepublication.addActionListener(this);
+        viewdepartment.addActionListener(this);
+        removedepartment.addActionListener(this);
+        updatedepartment.addActionListener(this);
+        adddepartment.addActionListener(this);
         
 
     }
