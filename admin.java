@@ -515,6 +515,8 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
             dynamicpanel.removeAll();
+             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+         BorderFactory.createEtchedBorder(), "              ALL BOOKS              ", TitledBorder.LEFT, TitledBorder.TOP));
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
             {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
@@ -564,49 +566,55 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==updatebook){
             System.out.println("updatebook");
         }
+        if(e.getSource()==viewdepartment){
+            System.out.println("viewdepartment");
+        }
+        if(e.getSource()==adddepartment){
+            System.out.println("adddepartment");
+        }
+        if(e.getSource()==removedepartment){
+            System.out.println("removedepartment");
+        }
+        if(e.getSource()==updatedepartment){
+            System.out.println("updatedepartment");
+        }
         if(e.getSource()==viewpublication){
             System.out.println("viewPublication");
             dynamicpanel.removeAll();
-            String data[][]={ {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"},
-            {"101","Amit","670000"},    
-            {"102","Jai","780000"},    
-            {"101","Sachin","700000"}
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+         BorderFactory.createEtchedBorder(), "              ALL PUBLICATIONS              ", TitledBorder.LEFT, TitledBorder.TOP));
+         dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
+         String data[][]={ {"CS21D008","140025601577", "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"},
+            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
+            
 
           };    
-          String column[]={"NAME", "CONTACT", "BOOK AVAILABLE"};         
+          String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
           final JTable jt=new JTable(data,column);    
-jt.setCellSelectionEnabled(true); 
+jt.setCellSelectionEnabled(false); 
+jt.setEnabled(false);
+//jt.setBounds(200, 200, 1300, 800);
+jt.setRowHeight(20);
+jt.getTableHeader().setFont(font_15_bold);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+
+jt.setGridColor(grey);
+jt.setFont(font_15_bold);
 JScrollPane sp=new JScrollPane(jt);
-            dynamicpanel.add(jt);
+            sp.setPreferredSize(new Dimension(1420, 580));
             dynamicpanel.add(sp);
-            //Admin.setBackground(black);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
@@ -624,6 +632,43 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewstaff){
             System.out.println("viewstaff");
+            dynamicpanel.removeAll();
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+         BorderFactory.createEtchedBorder(), "              ALL STAFF              ", TitledBorder.LEFT, TitledBorder.TOP));
+         dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
+         String data[][]={ {"CS21D008","140025601577", "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"},
+            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
+            
+
+          };    
+          String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
+          final JTable jt=new JTable(data,column);    
+jt.setCellSelectionEnabled(false); 
+jt.setEnabled(false);
+//jt.setBounds(200, 200, 1300, 800);
+jt.setRowHeight(20);
+jt.getTableHeader().setFont(font_15_bold);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+
+jt.setGridColor(grey);
+jt.setFont(font_15_bold);
+JScrollPane sp=new JScrollPane(jt);
+            sp.setPreferredSize(new Dimension(1420, 580));
+            dynamicpanel.add(sp);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
         }
         if(e.getSource()==removestaff){
             System.out.println("removestaff");
@@ -639,7 +684,7 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.removeAll();
             dynamicpanel.setBackground(grey);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-         BorderFactory.createEtchedBorder(), "              All Students              ", TitledBorder.LEFT, TitledBorder.TOP));
+         BorderFactory.createEtchedBorder(), "              All STUDENTS              ", TitledBorder.LEFT, TitledBorder.TOP));
          dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
          String data[][]={ {"CS21D008","140025601577", "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"},
             {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
