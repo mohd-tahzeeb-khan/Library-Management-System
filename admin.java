@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import java.util.Date.*;
 import java.awt.Font;
  
 public class admin extends JFrame implements ActionListener{
@@ -814,7 +813,7 @@ JScrollPane sp=new JScrollPane(jt);
             Program=new JLabel("PROGRAM:");
             Program.setFont(font_20_bold);
             Program.setBounds(600, 97, 200, 30);
-            ProgramComboBox=new JComboBox<>();
+            ProgramComboBox=new JComboBox<String>();
             ProgramComboBox.addItem("BECHALOR'S IN TECHNOLOGY");
             ProgramComboBox.addItem("MASTER'S IN TECHNOLOGY");
             ProgramComboBox.addItem("MANAGEMENT");
@@ -851,7 +850,7 @@ JScrollPane sp=new JScrollPane(jt);
             Department=new JLabel("DEPARTMENT: ");
             Department.setFont(font_20_bold);
             Department.setBounds(600, 280, 200, 30);
-            departmentComboBox=new JComboBox<>();
+            departmentComboBox=new JComboBox<String>();
             departmentComboBox.setFont(font_15_bold);
             departmentComboBox.addItem("COMPUTER SCIENCE & TECHNOLOGY ENGINEERING");
             departmentComboBox.addItem("ELECTRICAL ENGINEERING");
