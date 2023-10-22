@@ -850,7 +850,6 @@ JScrollPane sp=new JScrollPane(jt);
             Department=new JLabel("DEPARTMENT: ");
             Department.setFont(font_20_bold);
             Department.setBounds(600, 280, 200, 30);
-            //String dept[]={"COMPUTER SCIENCE & TECHNOLOGY ENGINEERING","ARTIFICAIL INTELLIGENCE AND DATA SCIENCE ENGINEERING","MBA","CIVIL ENGINEERING" ,"ARTIFICAIL INTELLIGENCE AND MACHINE LEARNING ENGINEERING","ELETRONICS AND TELECOMMUNICATIONS ENGINEERING", "ELECTRICAL ENGINEERING","MECANICAL ENGINEERING" };
             departmentComboBox=new JComboBox<>();
             departmentComboBox.setFont(font_15_bold);
             departmentComboBox.addItem("COMPUTER SCIENCE & TECHNOLOGY ENGINEERING");
