@@ -33,7 +33,7 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
-    JComboBox departmentComboBox, ProgramComboBox, SemesterComboBox, YearComboBox;
+    JComboBox<String> departmentComboBox, ProgramComboBox, SemesterComboBox, YearComboBox;
     //--------------------------------------------------------------------------------------------------------------------
     JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
@@ -813,7 +813,7 @@ JScrollPane sp=new JScrollPane(jt);
             Program=new JLabel("PROGRAM:");
             Program.setFont(font_20_bold);
             Program.setBounds(600, 97, 200, 30);
-            ProgramComboBox=new JComboBox<String>();
+            ProgramComboBox=new JComboBox<>();
             ProgramComboBox.addItem("BECHALOR'S IN TECHNOLOGY");
             ProgramComboBox.addItem("MASTER'S IN TECHNOLOGY");
             ProgramComboBox.addItem("MANAGEMENT");
@@ -823,7 +823,7 @@ JScrollPane sp=new JScrollPane(jt);
             year=new JLabel("YEAR: ");
             year.setFont(font_20_bold);
             year.setBounds(600,146, 200, 30);
-            YearComboBox=new JComboBox();
+            YearComboBox=new JComboBox<>();
             YearComboBox.addItem("FIRST");
             YearComboBox.addItem("SECOND");
             YearComboBox.addItem("THIRD");
@@ -832,7 +832,7 @@ JScrollPane sp=new JScrollPane(jt);
             YearComboBox.setFont(font_15_bold);
             YearComboBox.setBounds(800,152, 100, 30);
             //-------------------------------------------------------------
-            SemesterComboBox=new JComboBox();
+            SemesterComboBox=new JComboBox<>();
             SemesterComboBox.addItem("FIRST");
             SemesterComboBox.addItem("SECOND");
             SemesterComboBox.addItem("THIRD");
@@ -850,7 +850,8 @@ JScrollPane sp=new JScrollPane(jt);
             Department=new JLabel("DEPARTMENT: ");
             Department.setFont(font_20_bold);
             Department.setBounds(600, 280, 200, 30);
-            departmentComboBox=new JComboBox<String>();
+            //String dept[]={"COMPUTER SCIENCE & TECHNOLOGY ENGINEERING","ARTIFICAIL INTELLIGENCE AND DATA SCIENCE ENGINEERING","MBA","CIVIL ENGINEERING" ,"ARTIFICAIL INTELLIGENCE AND MACHINE LEARNING ENGINEERING","ELETRONICS AND TELECOMMUNICATIONS ENGINEERING", "ELECTRICAL ENGINEERING","MECANICAL ENGINEERING" };
+            departmentComboBox=new JComboBox<>();
             departmentComboBox.setFont(font_15_bold);
             departmentComboBox.addItem("COMPUTER SCIENCE & TECHNOLOGY ENGINEERING");
             departmentComboBox.addItem("ELECTRICAL ENGINEERING");
