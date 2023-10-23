@@ -625,11 +625,15 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addpublication){
             System.out.println("addpublication");
+            dynamicpanel.setLayout(null);
             dynamicpanel.setBackground(grey);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createEtchedBorder(), "           REGISTRATION FORM            ", TitledBorder.CENTER, TitledBorder.TOP));
+            BorderFactory.createEtchedBorder(), "           REGISTRATION FORM            ", TitledBorder.LEFT, TitledBorder.TOP));
             dynamicpanel.removeAll();
-
+            publicationname=new JLabel("Name: ");
+            publicationname.setFont(font_20_bold);
+            publicationname.setBounds(50,30,100,30);
+            dynamicpanel.add(publicationname);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
 
