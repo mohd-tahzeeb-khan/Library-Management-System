@@ -27,7 +27,9 @@ public class admin extends JFrame implements ActionListener{
     TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, 
     TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon, 
     //---------------------------------------------------------------------------------------------------------------
-    RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno, Program;
+    RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno, Program,
+    //--------------------------------------------------------------------------------------------------------------------
+    publicationname, publicationtel, publicationfax, publicationemail, publicationinqueryemail, publicationadd, publicationnoofbooks, publicationscin, publicationinqueryno;
     //--------------------------------------------------------------------------------------------------------------------
     JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield;
     //--------------------------------------------------------------------------------------------------------------------
@@ -627,7 +629,7 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), "           REGISTRATION FORM            ", TitledBorder.CENTER, TitledBorder.TOP));
             dynamicpanel.removeAll();
-            
+
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
 
