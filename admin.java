@@ -626,14 +626,31 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==addpublication){
             System.out.println("addpublication");
             dynamicpanel.setLayout(null);
-            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBackground(white);
+            dynamicpanel.setSize(800, 630);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), "           REGISTRATION FORM            ", TitledBorder.LEFT, TitledBorder.TOP));
             dynamicpanel.removeAll();
             publicationname=new JLabel("Name: ");
             publicationname.setFont(font_20_bold);
-            publicationname.setBounds(50,30,100,30);
+            publicationname.setBounds(50,60,100,30);
+            //-------------------------------------------------------------
+            publicationscin=new JLabel("CIN: ");
+            publicationscin.setFont(font_20_bold);
+            publicationscin.setBounds(50, 120, 100, 30);
+            //--------------------------------------------------------------
+            publicationtel=new JLabel("TELEPHONE NO:");
+            publicationtel.setFont(font_20_bold);
+            publicationtel.setBounds(50, 180, 200, 30);
+            //--------------------------------------------------------------
+            publicationfax=new JLabel("FAX NO:");
+            publicationfax.setFont(font_20_bold);
+            publicationfax.setBounds(50, 240, 100, 30);
+            //--------------------------------------------------------------
             dynamicpanel.add(publicationname);
+            dynamicpanel.add(publicationscin);
+            dynamicpanel.add(publicationtel);
+            dynamicpanel.add(publicationfax);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
 
