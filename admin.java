@@ -623,6 +623,14 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addpublication){
             System.out.println("addpublication");
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createEtchedBorder(), "           REGISTRATION FORM            ", TitledBorder.CENTER, TitledBorder.TOP));
+            dynamicpanel.removeAll();
+            
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
+
         }
         if(e.getSource()==updatepublication){
             System.out.println("updatepublication");
