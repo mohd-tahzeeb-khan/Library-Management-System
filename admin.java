@@ -97,6 +97,7 @@ public class admin extends JFrame implements ActionListener{
         JMenu studentmenu=new JMenu("   STUDENTS    ");
         JMenu overduemenu=new JMenu("     OVERDUE   ");
         helpmenu=new JMenu("     HELP   ");
+        helpmenu.setEnabled(false);
         //----------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------
         addbook=new JMenuItem("ADD");
@@ -111,6 +112,7 @@ public class admin extends JFrame implements ActionListener{
         updatebook.setIcon(icon);
         icon=new ImageIcon("images/deletebook.png");        
         removebook.setIcon(icon);
+        removebook.setEnabled(false);
         bookmenu.add(viewbook);
         bookmenu.add(addbook);
         bookmenu.add(removebook);
