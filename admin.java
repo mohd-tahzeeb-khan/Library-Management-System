@@ -318,7 +318,6 @@ public class admin extends JFrame implements ActionListener{
         
 
     }
-
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==logout){
@@ -326,144 +325,11 @@ public class admin extends JFrame implements ActionListener{
         }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
-            dynamicpanel.removeAll();
-            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
-            dynamicpanel.setBorder(null);
-            TotalBooksPanel.removeAll();
-            TotalIssuedBooksPanel.removeAll();
-            TotalDepartmentPanel.removeAll();
-            TotalPublicerPanel.removeAll();
-            //Total no of books Panel...........................................
-            icon=new ImageIcon("images/totalbooks.png");
-            TotalBookslabelicon=new JLabel(icon);
-            TotalBookslabel=new JLabel("1125");
-            TotalBookslabel.setFont(font_100_bold);
-            TotalBookslabel.setForeground(black);
-            TotalBookslabeltext=new JLabel("Total Books");
-            TotalBookslabeltext.setFont(font_30_bold);
-            TotalBookslabeltext.setForeground(black);
-            //...................................................................
-            //Total no of students panel.........................................\
-            icon=new ImageIcon("images/student.png");
-            TotalStudentlabeltexticon=new JLabel(icon);
-            TotalStudentlabel=new JLabel("10526");
-            TotalStudentlabel.setFont(font_100_bold);
-            TotalStudentlabel.setForeground(black);
-            TotalStudentlabeltext=new JLabel("Total Students");
-            TotalStudentlabeltext.setFont(font_30_bold);
-            TotalStudentlabeltext.setForeground(black);
-            //....................................................................
-            //Total no of books available.........................................
-            icon=new ImageIcon("images/availablebook.png");
-            TotalBookAvailableicon=new JLabel(icon);
-            TotalBookAvailablelabel=new JLabel("456");
-            TotalBookAvailablelabel.setFont(font_100_bold);
-            TotalBookAvailablelabel.setForeground(black);
-            TotalBookAvailablelabeltext=new JLabel("Available Books");
-            TotalBookAvailablelabeltext.setFont(font_30_bold);
-            TotalBookAvailablelabeltext.setForeground(black);
-            //....................................................................
-            //Total Issued Books..................................................
-            icon=new ImageIcon("images/Bookissued.png");
-            TotalIssuedBookslabelicon=new JLabel(icon);
-            TotalIssuedBookslabel=new JLabel("5k");
-            TotalIssuedBookslabel.setFont(font_100_bold);
-            TotalIssuedBookslabel.setForeground(black);
-            TotalIssuedBookslabeltext=new JLabel("Issued Books");
-            TotalIssuedBookslabeltext.setFont(font_30_bold);
-            TotalIssuedBookslabeltext.setForeground(black);
-            //...................................................................
-            //Total Departments..................................................
-            icon=new ImageIcon("images/departments.png");
-            TotalDepartmentlabelicon=new JLabel(icon);
-            TotalDepartmentlabel=new JLabel("6");
-            TotalDepartmentlabel.setForeground(black);
-            TotalDepartmentlabel.setFont(font_100_bold);
-            TotalDepartmentlabeltext=new JLabel("Departments");
-            TotalDepartmentlabeltext.setForeground(black);
-            TotalDepartmentlabeltext.setFont(font_30_bold);
-            //....................................................................
-            icon=new ImageIcon("images/publication.png");
-            TotalPublicerlabeltexticon=new JLabel(icon);
-            TotalPublicerlabel=new JLabel("20");
-            TotalPublicerlabel.setForeground(black);
-            TotalPublicerlabel.setFont(font_100_bold);
-            TotalPublicerlabeltext=new JLabel("Publications");
-            TotalPublicerlabeltext.setForeground(black);
-            TotalPublicerlabeltext.setFont(font_30_bold);
-            //....................................................................
-            icon=new ImageIcon("images/requirement.png");
-            Requirementlabelicon=new JLabel(icon);
-            Requirementlabel=new JLabel("67");
-            Requirementlabel.setForeground(black);
-            Requirementlabel.setFont(font_100_bold);
-            Requirementlabeltext=new JLabel("Requirements");
-            Requirementlabeltext.setForeground(black);
-            Requirementlabeltext.setFont(font_30_bold);
-            //.....................................................................
-            icon=new ImageIcon("images/staff.png");
-            TotalStafflabelicon=new JLabel(icon);
-            TotalStafflabel=new JLabel("56");
-            TotalStafflabel.setForeground(black);
-            TotalStafflabel.setFont(font_100_bold);
-            TotalStafflabeltext=new JLabel("Library Staff");
-            TotalStafflabeltext.setForeground(black);
-            TotalStafflabeltext.setFont(font_30_bold);
-            //......................................................................
-            TotalBookAvailable.setBorder(BorderFactory.createLineBorder(black));
-            TotalBookAvailable.add(TotalBookAvailableicon);
-            TotalBookAvailable.add(TotalBookAvailablelabel);
-            TotalBookAvailable.add(TotalBookAvailablelabeltext);
-            //.......................................................................
-            TotalStudentPanel.setBorder(BorderFactory.createLineBorder(black));
-            TotalStudentPanel.add(TotalStudentlabeltexticon);
-            TotalStudentPanel.add(TotalStudentlabel);
-            TotalStudentPanel.add(TotalStudentlabeltext);
-            //........................................................................
-            TotalBooksPanel.setBorder(BorderFactory.createLineBorder(black));
-            TotalBooksPanel.add(TotalBookslabelicon);
-            TotalBooksPanel.add(TotalBookslabel);
-            TotalBooksPanel.add(TotalBookslabeltext);
-            //.........................................................................
-            TotalIssuedBooksPanel.setBorder(BorderFactory.createLineBorder(black));
-            TotalIssuedBooksPanel.add(TotalIssuedBookslabelicon);
-            TotalIssuedBooksPanel.add(TotalIssuedBookslabel);
-            TotalIssuedBooksPanel.add(TotalIssuedBookslabeltext);
-            //.........................................................................
-            TotalDepartmentPanel.setBorder(BorderFactory.createLineBorder(black));
-            TotalDepartmentPanel.add(TotalDepartmentlabelicon);
-            TotalDepartmentPanel.add(TotalDepartmentlabel);
-            TotalDepartmentPanel.add(TotalDepartmentlabeltext);
-            //.........................................................................
-            RequirementPanel.setBorder(BorderFactory.createLineBorder(black));
-            RequirementPanel.add(Requirementlabelicon);
-            RequirementPanel.add(Requirementlabel);
-            RequirementPanel.add(Requirementlabeltext);
-            //.........................................................................
-            TotalStaffPanel.setBorder(BorderFactory.createLineBorder(black));
-            TotalStaffPanel.add(TotalStafflabelicon);
-            TotalStaffPanel.add(TotalStafflabel);
-            TotalStaffPanel.add(TotalStafflabeltext);
-            //.........................................................................
-            TotalPublicerPanel.setBorder(BorderFactory.createLineBorder(black));
-            TotalPublicerPanel.add(TotalPublicerlabeltexticon);
-            TotalPublicerPanel.add(TotalPublicerlabel);
-            TotalPublicerPanel.add(TotalPublicerlabeltext);
-            //.........................................................................
-            dynamicpanel.add(TotalBooksPanel);
-            dynamicpanel.add(TotalDepartmentPanel);
-            dynamicpanel.add(TotalStaffPanel);
-            dynamicpanel.add(TotalStudentPanel);
-            dynamicpanel.add(TotalBookAvailable);
-            dynamicpanel.add(TotalIssuedBooksPanel);
-            dynamicpanel.add(TotalPublicerPanel);
-            dynamicpanel.add(RequirementPanel);
-            //..........................................................................
-            dynamicpanel.revalidate();
-            dynamicpanel.repaint();
+            this.dashboard_ui();
         }
         if(e.getSource()==helpItem){
             System.out.println("help");
+            this.dashboard_ui();
         }
         if(e.getSource()==adminItem){
             System.out.println("admin");
@@ -647,10 +513,34 @@ JScrollPane sp=new JScrollPane(jt);
             publicationfax.setFont(font_20_bold);
             publicationfax.setBounds(50, 240, 100, 30);
             //--------------------------------------------------------------
+            publicationemail=new JLabel("EMAIL ADDRESS");
+            publicationemail.setFont(font_20_bold);
+            publicationemail.setBounds(50,300, 100, 30);
+            //--------------------------------------------------------------
+            publicationinqueryemail=new JLabel("INQUERY EMAIL");
+            publicationinqueryemail.setFont(font_20_bold);
+            publicationinqueryemail.setBounds(50,360,200,30);
+//--------------------------------------------------------------
+            publicationinqueryno=new JLabel("INQUERY TELEPHONE:");
+            publicationinqueryno.setFont(font_20_bold);
+            publicationinqueryno.setBounds(50,420, 300, 30);
+//--------------------------------------------------------------
+            publicationnoofbooks=new JLabel("BOOKS AVAILABLE:");
+            publicationnoofbooks.setFont(font_20_bold);
+            publicationnoofbooks.setBounds(50, 480, 300, 30);
+//--------------------------------------------------------------
+//--------------------------------------------------------------
+            //--------------------------------------------------------------
             dynamicpanel.add(publicationname);
             dynamicpanel.add(publicationscin);
             dynamicpanel.add(publicationtel);
             dynamicpanel.add(publicationfax);
+            dynamicpanel.add(publicationemail);
+            dynamicpanel.add(publicationinqueryno);
+            dynamicpanel.add(publicationinqueryemail);
+            dynamicpanel.add(publicationnoofbooks);
+
+            // dynamicpanel.add();
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
 
@@ -966,6 +856,143 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
+    }
+    public void dashboard_ui(){
+            dynamicpanel.removeAll();
+            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
+            dynamicpanel.setBorder(null);
+            TotalBooksPanel.removeAll();
+            TotalIssuedBooksPanel.removeAll();
+            TotalDepartmentPanel.removeAll();
+            TotalPublicerPanel.removeAll();
+            //Total no of books Panel...........................................
+            icon=new ImageIcon("images/totalbooks.png");
+            TotalBookslabelicon=new JLabel(icon);
+            TotalBookslabel=new JLabel("1125");
+            TotalBookslabel.setFont(font_100_bold);
+            TotalBookslabel.setForeground(black);
+            TotalBookslabeltext=new JLabel("Total Books");
+            TotalBookslabeltext.setFont(font_30_bold);
+            TotalBookslabeltext.setForeground(black);
+            //...................................................................
+            //Total no of students panel.........................................\
+            icon=new ImageIcon("images/student.png");
+            TotalStudentlabeltexticon=new JLabel(icon);
+            TotalStudentlabel=new JLabel("10526");
+            TotalStudentlabel.setFont(font_100_bold);
+            TotalStudentlabel.setForeground(black);
+            TotalStudentlabeltext=new JLabel("Total Students");
+            TotalStudentlabeltext.setFont(font_30_bold);
+            TotalStudentlabeltext.setForeground(black);
+            //....................................................................
+            //Total no of books available.........................................
+            icon=new ImageIcon("images/availablebook.png");
+            TotalBookAvailableicon=new JLabel(icon);
+            TotalBookAvailablelabel=new JLabel("456");
+            TotalBookAvailablelabel.setFont(font_100_bold);
+            TotalBookAvailablelabel.setForeground(black);
+            TotalBookAvailablelabeltext=new JLabel("Available Books");
+            TotalBookAvailablelabeltext.setFont(font_30_bold);
+            TotalBookAvailablelabeltext.setForeground(black);
+            //....................................................................
+            //Total Issued Books..................................................
+            icon=new ImageIcon("images/Bookissued.png");
+            TotalIssuedBookslabelicon=new JLabel(icon);
+            TotalIssuedBookslabel=new JLabel("5k");
+            TotalIssuedBookslabel.setFont(font_100_bold);
+            TotalIssuedBookslabel.setForeground(black);
+            TotalIssuedBookslabeltext=new JLabel("Issued Books");
+            TotalIssuedBookslabeltext.setFont(font_30_bold);
+            TotalIssuedBookslabeltext.setForeground(black);
+            //...................................................................
+            //Total Departments..................................................
+            icon=new ImageIcon("images/departments.png");
+            TotalDepartmentlabelicon=new JLabel(icon);
+            TotalDepartmentlabel=new JLabel("6");
+            TotalDepartmentlabel.setForeground(black);
+            TotalDepartmentlabel.setFont(font_100_bold);
+            TotalDepartmentlabeltext=new JLabel("Departments");
+            TotalDepartmentlabeltext.setForeground(black);
+            TotalDepartmentlabeltext.setFont(font_30_bold);
+            //....................................................................
+            icon=new ImageIcon("images/publication.png");
+            TotalPublicerlabeltexticon=new JLabel(icon);
+            TotalPublicerlabel=new JLabel("20");
+            TotalPublicerlabel.setForeground(black);
+            TotalPublicerlabel.setFont(font_100_bold);
+            TotalPublicerlabeltext=new JLabel("Publications");
+            TotalPublicerlabeltext.setForeground(black);
+            TotalPublicerlabeltext.setFont(font_30_bold);
+            //....................................................................
+            icon=new ImageIcon("images/requirement.png");
+            Requirementlabelicon=new JLabel(icon);
+            Requirementlabel=new JLabel("67");
+            Requirementlabel.setForeground(black);
+            Requirementlabel.setFont(font_100_bold);
+            Requirementlabeltext=new JLabel("Requirements");
+            Requirementlabeltext.setForeground(black);
+            Requirementlabeltext.setFont(font_30_bold);
+            //.....................................................................
+            icon=new ImageIcon("images/staff.png");
+            TotalStafflabelicon=new JLabel(icon);
+            TotalStafflabel=new JLabel("56");
+            TotalStafflabel.setForeground(black);
+            TotalStafflabel.setFont(font_100_bold);
+            TotalStafflabeltext=new JLabel("Library Staff");
+            TotalStafflabeltext.setForeground(black);
+            TotalStafflabeltext.setFont(font_30_bold);
+            //......................................................................
+            TotalBookAvailable.setBorder(BorderFactory.createLineBorder(black));
+            TotalBookAvailable.add(TotalBookAvailableicon);
+            TotalBookAvailable.add(TotalBookAvailablelabel);
+            TotalBookAvailable.add(TotalBookAvailablelabeltext);
+            //.......................................................................
+            TotalStudentPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalStudentPanel.add(TotalStudentlabeltexticon);
+            TotalStudentPanel.add(TotalStudentlabel);
+            TotalStudentPanel.add(TotalStudentlabeltext);
+            //........................................................................
+            TotalBooksPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalBooksPanel.add(TotalBookslabelicon);
+            TotalBooksPanel.add(TotalBookslabel);
+            TotalBooksPanel.add(TotalBookslabeltext);
+            //.........................................................................
+            TotalIssuedBooksPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalIssuedBooksPanel.add(TotalIssuedBookslabelicon);
+            TotalIssuedBooksPanel.add(TotalIssuedBookslabel);
+            TotalIssuedBooksPanel.add(TotalIssuedBookslabeltext);
+            //.........................................................................
+            TotalDepartmentPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalDepartmentPanel.add(TotalDepartmentlabelicon);
+            TotalDepartmentPanel.add(TotalDepartmentlabel);
+            TotalDepartmentPanel.add(TotalDepartmentlabeltext);
+            //.........................................................................
+            RequirementPanel.setBorder(BorderFactory.createLineBorder(black));
+            RequirementPanel.add(Requirementlabelicon);
+            RequirementPanel.add(Requirementlabel);
+            RequirementPanel.add(Requirementlabeltext);
+            //.........................................................................
+            TotalStaffPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalStaffPanel.add(TotalStafflabelicon);
+            TotalStaffPanel.add(TotalStafflabel);
+            TotalStaffPanel.add(TotalStafflabeltext);
+            //.........................................................................
+            TotalPublicerPanel.setBorder(BorderFactory.createLineBorder(black));
+            TotalPublicerPanel.add(TotalPublicerlabeltexticon);
+            TotalPublicerPanel.add(TotalPublicerlabel);
+            TotalPublicerPanel.add(TotalPublicerlabeltext);
+            //.........................................................................
+            dynamicpanel.add(TotalBooksPanel);
+            dynamicpanel.add(TotalDepartmentPanel);
+            dynamicpanel.add(TotalStaffPanel);
+            dynamicpanel.add(TotalStudentPanel);
+            dynamicpanel.add(TotalBookAvailable);
+            dynamicpanel.add(TotalIssuedBooksPanel);
+            dynamicpanel.add(TotalPublicerPanel);
+            dynamicpanel.add(RequirementPanel);
+            //..........................................................................
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();
     }
     public static void main(String args[]){
         admin adminobj=new admin();
