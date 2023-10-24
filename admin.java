@@ -40,7 +40,7 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
-    JButton logout, help, RegisterStudent, Cancel, Clear;
+    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton;
     //---------------------------------------------------------------------------------------------------------------------
     ButtonGroup grp=new ButtonGroup();
     //---------------------------------------------------------------------------------------------------------------------
@@ -496,17 +496,25 @@ JScrollPane sp=new JScrollPane(jt);
             System.out.println("addpublication");
             dynamicpanel.setLayout(null);
             dynamicpanel.setBackground(white);
-            dynamicpanel.setSize(800, 630);
+            dynamicpanel.setSize(830, 630);
+            dynamicpanel.setLocation(350, 120);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), "           REGISTRATION FORM            ", TitledBorder.LEFT, TitledBorder.TOP));
             dynamicpanel.removeAll();
+            //------------------------------------------------------------
             publicationname=new JLabel("Name: ");
             publicationname.setFont(font_20_bold);
             publicationname.setBounds(50,60,100,30);
+            publicationnamefiled=new JTextField();
+            publicationnamefiled.setFont(font_20_bold);
+            publicationnamefiled.setBounds(300, 60, 250, 30);
             //-------------------------------------------------------------
             publicationscin=new JLabel("CIN: ");
             publicationscin.setFont(font_20_bold);
             publicationscin.setBounds(50, 120, 100, 30);
+            publicationcinfield=new JTextField();
+            publicationcinfield.setFont(font_20_bold);
+            publicationcinfield.setBounds(300, 120, 250, 30);
             //--------------------------------------------------------------
             publicationtel=new JLabel("TELEPHONE NO:");
             publicationtel.setFont(font_20_bold);
@@ -525,14 +533,23 @@ JScrollPane sp=new JScrollPane(jt);
             publicationemail=new JLabel("EMAIL ADDRESS:");
             publicationemail.setFont(font_20_bold);
             publicationemail.setBounds(50,300, 200, 30);
+            publicationemailfield=new JTextField();
+            publicationemailfield.setFont(font_20_bold);
+            publicationemailfield.setBounds(300, 300, 250,30);
             //--------------------------------------------------------------
             publicationinqueryemail=new JLabel("INQUERY EMAIL: ");
             publicationinqueryemail.setFont(font_20_bold);
             publicationinqueryemail.setBounds(50,360,200,30);
+            publicationinqueryemailfield=new JTextField();
+            publicationinqueryemailfield.setFont(font_20_bold);
+            publicationinqueryemailfield.setBounds(300, 360, 250, 30);
             //--------------------------------------------------------------
             publicationfax=new JLabel("FAX NO:");
             publicationfax.setFont(font_20_bold);
             publicationfax.setBounds(50, 420, 100, 30);
+            publicationfaxfield=new JTextField();
+            publicationfaxfield.setFont(font_20_bold);
+            publicationfaxfield.setBounds(300, 420, 250, 30);
             //--------------------------------------------------------------
             publicationnoofbooks=new JLabel("BOOKS AVAILABLE:");
             publicationnoofbooks.setFont(font_20_bold);
@@ -541,21 +558,42 @@ JScrollPane sp=new JScrollPane(jt);
             publicationnoofbookdfield.setFont(font_20_bold);
             publicationnoofbookdfield.setBounds(300, 480, 250, 30);
             //--------------------------------------------------------------
+            addpublicationJButton=new JButton("ADD");
+            addpublicationJButton.setFont(font_20_bold);
+            addpublicationJButton.setBounds(630, 150, 150, 30);
+            addpublicationJButton.setBackground(grey);
+            //............................................
+            Clear=new JButton("CLEAR");
+            Clear.setFont(font_20_bold);
+            Clear.setBounds(630, 300, 150, 30);
+            Clear.setBackground(grey);
+            //............................................
+            Cancel=new JButton("CANCEL");
+            Cancel.setFont(font_20_bold);
+            Cancel.setBounds(630, 450, 150, 30);
+            Cancel.setBackground(grey);
             //--------------------------------------------------------------
             //--------------------------------------------------------------
             dynamicpanel.add(publicationname);
+            dynamicpanel.add(publicationnamefiled);
             dynamicpanel.add(publicationscin);
+            dynamicpanel.add(publicationcinfield);
             dynamicpanel.add(publicationtel);
             dynamicpanel.add(publicationnofield);
             dynamicpanel.add(publicationfax);
+            dynamicpanel.add(publicationfaxfield);
             dynamicpanel.add(publicationemail);
+            dynamicpanel.add(publicationemailfield);
             dynamicpanel.add(publicationinqueryno);
             dynamicpanel.add(publicationinquerynoField);
             dynamicpanel.add(publicationinqueryemail);
+            dynamicpanel.add(publicationinqueryemailfield);
             dynamicpanel.add(publicationnoofbooks);
             dynamicpanel.add(publicationnoofbookdfield);
+            dynamicpanel.add(addpublicationJButton);
+            dynamicpanel.add(Clear);
+            dynamicpanel.add(Cancel);
             
-
             // dynamicpanel.add();
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
