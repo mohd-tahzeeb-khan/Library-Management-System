@@ -31,7 +31,8 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     publicationname, publicationtel, publicationfax, publicationemail, publicationinqueryemail, publicationadd, publicationnoofbooks, publicationscin, publicationinqueryno;
     //--------------------------------------------------------------------------------------------------------------------
-    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield;
+    JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield,
+               publicationnamefiled, publicationcinfield, publicationemailfield, publicationinqueryemailfield, publicationinquerynoField, publicationfaxfield,publicationnofield, publicationnoofbookdfield;
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
@@ -510,37 +511,50 @@ JScrollPane sp=new JScrollPane(jt);
             publicationtel=new JLabel("TELEPHONE NO:");
             publicationtel.setFont(font_20_bold);
             publicationtel.setBounds(50, 180, 200, 30);
+            publicationnofield=new JTextField();
+            publicationnofield.setFont(font_20_bold);
+            publicationnofield.setBounds(300, 180, 250, 30);
+            //--------------------------------------------------------------
+            publicationinqueryno=new JLabel("INQUERY TELEPHONE:");
+            publicationinqueryno.setFont(font_20_bold);
+            publicationinqueryno.setBounds(50,240, 300, 30);
+            publicationinquerynoField=new JTextField();
+            publicationinquerynoField.setFont(font_20_bold);
+            publicationinquerynoField.setBounds(300, 240, 250, 30);
+            //--------------------------------------------------------------
+            publicationemail=new JLabel("EMAIL ADDRESS:");
+            publicationemail.setFont(font_20_bold);
+            publicationemail.setBounds(50,300, 200, 30);
+            //--------------------------------------------------------------
+            publicationinqueryemail=new JLabel("INQUERY EMAIL: ");
+            publicationinqueryemail.setFont(font_20_bold);
+            publicationinqueryemail.setBounds(50,360,200,30);
             //--------------------------------------------------------------
             publicationfax=new JLabel("FAX NO:");
             publicationfax.setFont(font_20_bold);
-            publicationfax.setBounds(50, 240, 100, 30);
+            publicationfax.setBounds(50, 420, 100, 30);
             //--------------------------------------------------------------
-            publicationemail=new JLabel("EMAIL ADDRESS");
-            publicationemail.setFont(font_20_bold);
-            publicationemail.setBounds(50,300, 100, 30);
-            //--------------------------------------------------------------
-            publicationinqueryemail=new JLabel("INQUERY EMAIL");
-            publicationinqueryemail.setFont(font_20_bold);
-            publicationinqueryemail.setBounds(50,360,200,30);
-//--------------------------------------------------------------
-            publicationinqueryno=new JLabel("INQUERY TELEPHONE:");
-            publicationinqueryno.setFont(font_20_bold);
-            publicationinqueryno.setBounds(50,420, 300, 30);
-//--------------------------------------------------------------
             publicationnoofbooks=new JLabel("BOOKS AVAILABLE:");
             publicationnoofbooks.setFont(font_20_bold);
             publicationnoofbooks.setBounds(50, 480, 300, 30);
-//--------------------------------------------------------------
-//--------------------------------------------------------------
+            publicationnoofbookdfield=new JTextField();
+            publicationnoofbookdfield.setFont(font_20_bold);
+            publicationnoofbookdfield.setBounds(300, 480, 250, 30);
+            //--------------------------------------------------------------
+            //--------------------------------------------------------------
             //--------------------------------------------------------------
             dynamicpanel.add(publicationname);
             dynamicpanel.add(publicationscin);
             dynamicpanel.add(publicationtel);
+            dynamicpanel.add(publicationnofield);
             dynamicpanel.add(publicationfax);
             dynamicpanel.add(publicationemail);
             dynamicpanel.add(publicationinqueryno);
+            dynamicpanel.add(publicationinquerynoField);
             dynamicpanel.add(publicationinqueryemail);
             dynamicpanel.add(publicationnoofbooks);
+            dynamicpanel.add(publicationnoofbookdfield);
+            
 
             // dynamicpanel.add();
             dynamicpanel.revalidate();
@@ -616,30 +630,30 @@ JScrollPane sp=new JScrollPane(jt);
             {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
             
 
-          };    
-          String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
-          final JTable jt=new JTable(data,column);    
-jt.setCellSelectionEnabled(false); 
-jt.setEnabled(false);
-//jt.setBounds(200, 200, 1300, 800);
-jt.setRowHeight(20);
-jt.getTableHeader().setFont(font_15_bold);
-jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-jt.getColumnModel().getColumn(2).setPreferredWidth(20);
-jt.getColumnModel().getColumn(3).setPreferredWidth(120);
-jt.getColumnModel().getColumn(4).setPreferredWidth(120);
-jt.getColumnModel().getColumn(5).setPreferredWidth(120);
-jt.getColumnModel().getColumn(6).setPreferredWidth(20);
-jt.getColumnModel().getColumn(7).setPreferredWidth(120);
-jt.getColumnModel().getColumn(8).setPreferredWidth(10);
-jt.getColumnModel().getColumn(9).setPreferredWidth(20);
-jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+        };    
+        String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
+                      final JTable jt=new JTable(data,column);    
+            jt.setCellSelectionEnabled(false); 
+            jt.setEnabled(false);
+            //jt.setBounds(200, 200, 1300, 800);
+            jt.setRowHeight(20);
+            jt.getTableHeader().setFont(font_15_bold);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
 
-jt.setGridColor(grey);
-jt.setFont(font_15_bold);
-JScrollPane sp=new JScrollPane(jt);
+            jt.setGridColor(grey);
+            jt.setFont(font_15_bold);
+            JScrollPane sp=new JScrollPane(jt);
             sp.setPreferredSize(new Dimension(1420, 580));
             dynamicpanel.add(sp);
             //Admin.setBackground(black);
@@ -995,8 +1009,8 @@ JScrollPane sp=new JScrollPane(jt);
             //..........................................................................
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
-    }
+    }//dashboard_ui
     public static void main(String args[]){
         admin adminobj=new admin();
-    }
-}
+    }//main
+}//class
