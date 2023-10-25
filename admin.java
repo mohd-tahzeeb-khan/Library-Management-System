@@ -558,6 +558,16 @@ JScrollPane sp=new JScrollPane(jt);
             publicationnoofbookdfield.setFont(font_20_bold);
             publicationnoofbookdfield.setBounds(300, 480, 250, 30);
             //--------------------------------------------------------------
+            Program=new JLabel("PROGRAM");
+            Program.setFont(font_20_bold);
+            Program.setBounds(50,540, 300, 30);
+            ProgramComboBox=new JComboBox<>();
+            ProgramComboBox.addItem("BECHALOR'S IN TECHNOLOGY");
+            ProgramComboBox.addItem("MASTER'S IN TECHNOLOGY");
+            ProgramComboBox.addItem("MASTER'S IN MANAGEMENT");
+            ProgramComboBox.addItem("PH.D");
+            ProgramComboBox.setBounds(300, 540, 250, 30);
+            //--------------------------------------------------------------
             addpublicationJButton=new JButton("ADD");
             addpublicationJButton.setFont(font_20_bold);
             addpublicationJButton.setBounds(630, 150, 150, 30);
@@ -590,6 +600,8 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(publicationinqueryemailfield);
             dynamicpanel.add(publicationnoofbooks);
             dynamicpanel.add(publicationnoofbookdfield);
+            dynamicpanel.add(Program);
+            dynamicpanel.add(ProgramComboBox);
             dynamicpanel.add(addpublicationJButton);
             dynamicpanel.add(Clear);
             dynamicpanel.add(Cancel);
