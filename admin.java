@@ -721,6 +721,8 @@ JScrollPane sp=new JScrollPane(jt);
             System.out.println("addstudent");
             dynamicpanel.setLayout(null);
             dynamicpanel.setBackground(grey);
+            dynamicpanel.setSize(1450,630 );
+            dynamicpanel.setLocation(20,115 );
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
          BorderFactory.createEtchedBorder(), "..........REGISTRATION FORM..........", TitledBorder.CENTER, TitledBorder.TOP));
             dynamicpanel.removeAll();
