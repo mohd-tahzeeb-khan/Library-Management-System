@@ -717,6 +717,7 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==updatestudent){
             System.out.println("updatestudent");
             dynamicpanel.setBackground(white);
+            dynamicpanel.setSize(200, 500);
         }
         if(e.getSource()==addstudent){
             System.out.println("addstudent");
