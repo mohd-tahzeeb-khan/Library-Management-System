@@ -722,6 +722,7 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==addstudent){
             System.out.println("addstudent");
             this.add_student_ui();
+            this
         }
     }
     public void dashboard_ui(){
