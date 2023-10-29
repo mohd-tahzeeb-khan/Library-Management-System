@@ -43,7 +43,7 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
-    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton;
+    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton, addbookJButton;
     //---------------------------------------------------------------------------------------------------------------------
     ButtonGroup grp=new ButtonGroup();
     //---------------------------------------------------------------------------------------------------------------------
@@ -728,38 +728,154 @@ JScrollPane sp=new JScrollPane(jt);
     }
     public void add_book_ui(){
         dynamicpanel.removeAll();
-        dynamicpanel.setSize(1450,630 );
+        dynamicpanel.setLayout(null);
+        dynamicpanel.setSize(1250,630 );
+        dynamicpanel.setLocation(120,115);
         dynamicpanel.setBackground(grey);
         dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-        BorderFactory.createEtchedBorder(), "..........NEW BOOK..........", TitledBorder.CENTER, TitledBorder.TOP));
-        bookISBNno=new JLabel();
+        BorderFactory.createEtchedBorder(), "    NEW BOOK    ", TitledBorder.CENTER, TitledBorder.TOP));
+        //---------------------------------------------------------
+        bookISBNno=new JLabel("ISBN NO:");
+        bookISBNno.setFont(font_20_bold);
+        bookISBNno.setBounds(100, 60, 200, 30);
         bookISBNnofield=new JTextField();
-        booktitle=new JLabel();
+        bookISBNnofield.setFont(font_20_bold);
+        bookISBNnofield.setBounds(350, 60, 200, 30);
+        //-----------------------------------------------------------
+        booktitle=new JLabel("TITLE");
+        booktitle.setFont(font_20_bold);
+        booktitle.setBounds(100, 120, 200, 30);
         booktitlefield=new JTextField();
-        bookauthor=new JLabel();
+        booktitlefield.setFont(font_20_bold);
+        booktitlefield.setBounds(350, 120, 200, 30);
+        //-----------------------------------------------------------
+        bookauthor=new JLabel("AUTHOR:");
+        bookauthor.setFont(font_20_bold);
+        bookauthor.setBounds(100, 180, 200, 30);
         bookauthorfield=new JTextField();
-        bookpublisher=new JLabel();
+        bookauthorfield.setFont(font_20_bold);
+        bookauthorfield.setBounds(350, 180, 200, 30);
+        //------------------------------------------------------------
+        bookpublisher=new JLabel("PUBLISHER: ");
+        bookpublisher.setFont(font_20_bold);
+        bookpublisher.setBounds(100, 240, 200, 30);
         bookpublisherfield=new JTextField();
-        bookpublicationyear=new JLabel();
+        bookpublisherfield.setFont(font_20_bold);
+        bookpublisherfield.setBounds(350, 240, 200, 30);
+        //-----------------------------------------------------------
+        bookpublicationyear=new JLabel("PUBLISHER YEAR: ");
+        bookpublicationyear.setFont(font_20_bold);
+        bookpublicationyear.setBounds(100, 300, 200, 30);
         bookpublicationyearfield=new JTextField();
-        bookgenre=new JLabel();
+        bookpublicationyearfield.setFont(font_20_bold);
+        bookpublicationyearfield.setBounds(350, 300, 200, 30);
+        //------------------------------------------------------------
+        bookgenre=new JLabel("GENRE: ");
+        bookgenre.setFont(font_20_bold);
+        bookgenre.setBounds(100, 360, 200, 30);
         bookgenrefield=new JTextField();
-        bookprice=new JLabel();
+        bookgenrefield.setFont(font_20_bold);
+        bookgenrefield.setBounds(350, 360, 200, 30);
+        //-----------------------------------------------------------
+        bookprice=new JLabel("PRICE: ");
+        bookprice.setFont(font_20_bold);
+        bookprice.setBounds(100, 420, 200, 30);
         bookpricefield=new JTextField();
-        bookquantity=new JLabel();
+        bookpricefield.setFont(font_20_bold);
+        bookpricefield.setBounds(350, 420, 200, 30);
+        //-----------------------------------------------------------
+        bookquantity=new JLabel("QUANTITY: ");
+        bookquantity.setFont(font_20_bold);
+        bookquantity.setBounds(100, 480, 200, 30);
         bookquantityfield=new JTextField();
-        booklanguage=new JLabel();
+        bookquantityfield.setFont(font_20_bold);
+        bookquantityfield.setBounds(350, 480, 200, 30);
+        //-----------------------------------------------------------
+        booklanguage=new JLabel("LANGUAGE USED: ");
+        booklanguage.setFont(font_20_bold);
+        booklanguage.setBounds(700, 60, 200, 30);
         booklanguagefield=new JTextField();
-        bookdateadded=new JLabel();
+        booklanguagefield.setFont(font_20_bold);
+        booklanguagefield.setBounds(920, 60, 200, 30);
+        //-----------------------------------------------------------
+        bookdateadded=new JLabel("BOOK ADDED ON: ");
+        bookdateadded.setFont(font_20_bold);
+        bookdateadded.setBounds(700, 120, 200, 30);
         bookdateaddedfield=new JTextField();
-        bookEdition=new JLabel();
+        bookdateaddedfield.setFont(font_20_bold);
+        bookdateaddedfield.setBounds(920, 120, 200, 30);
+        //-----------------------------------------------------------
+        bookEdition=new JLabel("EDITION");
+        bookEdition.setFont(font_20_bold);
+        bookEdition.setBounds(700, 180, 200, 30);
         bookEditionfield=new JTextField();
-        bookpages=new JLabel();
+        bookEditionfield.setFont(font_20_bold);
+        bookEditionfield.setBounds(920, 180, 200, 30);
+        //-----------------------------------------------------------
+        bookpages=new JLabel("PAGES");
+        bookpages.setFont(font_20_bold);
+        bookpages.setBounds(700, 240, 200, 30);
         bookpagesfield=new JTextField();
-        bookformat=new JLabel();
+        bookpagesfield.setFont(font_20_bold);
+        bookpagesfield.setBounds(920, 240, 200, 30);
+        //-----------------------------------------------------------
+        bookformat=new JLabel("FORMAT");
+        bookformat.setFont(font_20_bold);
+        bookformat.setBounds(700, 300, 200, 30);
         bookformatfield=new JTextField();
-        bookdepartment=new JLabel();
-        bookdepartmentfield=new JTextField();
+        bookformatfield.setFont(font_20_bold);
+        bookformatfield.setBounds(920, 300, 200, 30);
+        //-----------------------------------------------------------
+        bookdepartment=new JLabel("DEPARTMENT: ");
+        bookdepartment.setFont(font_20_bold);
+        bookdepartment.setBounds(700, 360, 200, 30);
+        bookdepartmentfield=new JTextField(); 
+        bookdepartmentfield.setFont(font_20_bold);
+        bookdepartmentfield.setBounds(920, 360, 200, 30);
+        //-----------------------------------------------------------
+        addbookJButton=new JButton("SAVE");
+        addbookJButton.setFont(font_20_bold);
+        addbookJButton.setBounds(150, 560, 150, 30);
+        Clear=new JButton("CLEAR");
+        Clear.setFont(font_20_bold);
+        Clear.setBounds(450, 560, 150, 30);
+        Cancel=new JButton("CANCEL");
+        Cancel.setFont(font_20_bold);
+        Cancel.setBounds(750, 560, 150, 30);
+        //-----------------------------------------------------------
+        dynamicpanel.add(bookISBNno);
+        dynamicpanel.add(bookISBNnofield);
+        dynamicpanel.add(booktitle);
+        dynamicpanel.add(booktitlefield);
+        dynamicpanel.add(bookauthor);
+        dynamicpanel.add(bookauthorfield);
+        dynamicpanel.add(bookpublisher);
+        dynamicpanel.add(bookpublisherfield);
+        dynamicpanel.add(bookpublicationyear);
+        dynamicpanel.add(bookpublicationyearfield);
+        dynamicpanel.add(bookgenre);
+        dynamicpanel.add(bookgenrefield);
+        dynamicpanel.add(bookquantity);
+        dynamicpanel.add(bookquantityfield);
+        dynamicpanel.add(bookprice);
+        dynamicpanel.add(bookpricefield);
+        dynamicpanel.add(booklanguagefield);
+        dynamicpanel.add(booklanguage);
+        dynamicpanel.add(bookdateadded);
+        dynamicpanel.add(bookdateaddedfield);
+        dynamicpanel.add(bookEdition);
+        dynamicpanel.add(bookEditionfield);
+        dynamicpanel.add(bookdepartment);
+        dynamicpanel.add(bookdepartmentfield);
+        dynamicpanel.add(bookpages);
+        dynamicpanel.add(bookpagesfield);
+        dynamicpanel.add(bookformat);
+        dynamicpanel.add(bookformatfield);
+        //------------------------------------------------------
+        dynamicpanel.add(addbookJButton);
+        dynamicpanel.add(Clear);
+        dynamicpanel.add(Cancel);
+        //------------------------------------------------------
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
     }
