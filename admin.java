@@ -29,10 +29,13 @@ public class admin extends JFrame implements ActionListener{
     //---------------------------------------------------------------------------------------------------------------
     RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno, Program,
     //--------------------------------------------------------------------------------------------------------------------
-    publicationname, publicationtel, publicationfax, publicationemail, publicationinqueryemail, publicationadd, publicationnoofbooks, publicationscin, publicationinqueryno;
+    publicationname, publicationtel, publicationfax, publicationemail, publicationinqueryemail, publicationadd, publicationnoofbooks, publicationscin, publicationinqueryno,
+    //--------------------------------------------------------------------------------------------------------------------
+    bookISBNno, booktitle, bookauthor, bookpublisher, bookpublicationyear, bookgenre, bookprice, bookquantity, booklanguage,bookdateadded, bookEdition, bookpages, bookformat, bookdepartment;
     //--------------------------------------------------------------------------------------------------------------------
     JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield,
-               publicationnamefiled, publicationcinfield, publicationemailfield, publicationinqueryemailfield, publicationinquerynoField, publicationfaxfield,publicationnofield, publicationnoofbookdfield;
+               publicationnamefiled, publicationcinfield, publicationemailfield, publicationinqueryemailfield, publicationinquerynoField, publicationfaxfield,publicationnofield, publicationnoofbookdfield,
+               bookISBNnofield, booktitlefield, bookauthorfield, bookpublisherfield, bookpublicationyearfield, bookgenrefield, bookpricefield, bookquantityfield, booklanguagefield,bookdateaddedfield, bookEditionfield, bookpagesfield, bookformatfield, bookdepartmentfield;
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
@@ -726,8 +729,37 @@ JScrollPane sp=new JScrollPane(jt);
     public void add_book_ui(){
         dynamicpanel.removeAll();
         dynamicpanel.setSize(1450,630 );
+        dynamicpanel.setBackground(grey);
         dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-         BorderFactory.createEtchedBorder(), "..........NEW BOOK..........", TitledBorder.CENTER, TitledBorder.TOP));
+        BorderFactory.createEtchedBorder(), "..........NEW BOOK..........", TitledBorder.CENTER, TitledBorder.TOP));
+        bookISBNno=new JLabel();
+        bookISBNnofield=new JTextField();
+        booktitle=new JLabel();
+        booktitlefield=new JTextField();
+        bookauthor=new JLabel();
+        bookauthorfield=new JTextField();
+        bookpublisher=new JLabel();
+        bookpublisherfield=new JTextField();
+        bookpublicationyear=new JLabel();
+        bookpublicationyearfield=new JTextField();
+        bookgenre=new JLabel();
+        bookgenrefield=new JTextField();
+        bookprice=new JLabel();
+        bookpricefield=new JTextField();
+        bookquantity=new JLabel();
+        bookquantityfield=new JTextField();
+        booklanguage=new JLabel();
+        booklanguagefield=new JTextField();
+        bookdateadded=new JLabel();
+        bookdateaddedfield=new JTextField();
+        bookEdition=new JLabel();
+        bookEditionfield=new JTextField();
+        bookpages=new JLabel();
+        bookpagesfield=new JTextField();
+        bookformat=new JLabel();
+        bookformatfield=new JTextField();
+        bookdepartment=new JLabel();
+        bookdepartmentfield=new JTextField();
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
     }
