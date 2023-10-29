@@ -429,9 +429,8 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addbook){
             System.out.println("addbook");
-            dynamicpanel.removeAll();
-            dynamicpanel.revalidate();
-            dynamicpanel.repaint();
+            add_book_ui();
+            
             
         }
         if(e.getSource()==removebook){
@@ -723,6 +722,14 @@ JScrollPane sp=new JScrollPane(jt);
             System.out.println("addstudent");
             this.add_student_ui();
         }
+    }
+    public void add_book_ui(){
+        dynamicpanel.removeAll();
+        dynamicpanel.setSize(1450,630 );
+        dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+         BorderFactory.createEtchedBorder(), "..........NEW BOOK..........", TitledBorder.CENTER, TitledBorder.TOP));
+        dynamicpanel.revalidate();
+        dynamicpanel.repaint();
     }
     public void dashboard_ui(){
             dynamicpanel.removeAll();
