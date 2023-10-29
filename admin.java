@@ -878,7 +878,11 @@ JScrollPane sp=new JScrollPane(jt);
         //------------------------------------------------------
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
-    }
+    }//add_book_ui()
+    //...................................................................................................................................
+    public void add_department_ui(){
+
+    }//add_department_ui
     public void dashboard_ui(){
             dynamicpanel.removeAll();
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
@@ -1012,10 +1016,11 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(TotalIssuedBooksPanel);
             dynamicpanel.add(TotalPublicerPanel);
             dynamicpanel.add(RequirementPanel);
-            //..........................................................................
+            //-------------------------------------------------------
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
     }//dashboard_ui
+    //-------------------------------------------------------................................................................................
     public void add_student_ui(){
         dynamicpanel.setLayout(null);
             dynamicpanel.setBackground(grey);
