@@ -49,7 +49,7 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
-    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton, addbookJButton, adddepartmentJButton;
+    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton, addbookJButton, adddepartmentJButton, addstaffJButton;
     //---------------------------------------------------------------------------------------------------------------------
     ButtonGroup grp=new ButtonGroup();
     //---------------------------------------------------------------------------------------------------------------------
@@ -1350,22 +1350,33 @@ JScrollPane sp=new JScrollPane(jt);
         dob=new JLabel("DATE OF BIRTH:");
         dob.setFont(font_20_bold);
         dob.setBounds(60, 180, 300, 30);
+        
         //---------------------------------------------
         genderstaff=new JLabel("GENDER:");
         genderstaff.setFont(font_20_bold);
         genderstaff.setBounds(60, 240, 200, 30);
+        
         //---------------------------------------------
         address=new JLabel("ADDRESS:");
         address.setFont(font_20_bold);
         address.setBounds(60, 300, 200, 30);
+        addressJTextField=new JTextField();
+        addressJTextField.setFont(font_15_bold);
+        addressJTextField.setBounds(350, 300, 250, 30);
         //---------------------------------------------
         phone=new JLabel("PHONE NO: ");
         phone.setFont(font_20_bold);
         phone.setBounds(60, 360, 200, 30);
+        phonenoJTextField=new JTextField();
+        phonenoJTextField.setFont(font_15_bold);
+        phonenoJTextField.setBounds(350, 360, 250, 30);
         //---------------------------------------------
         email=new JLabel("COLLEGE EMAIL ID: ");
         email.setFont(font_20_bold);
         email.setBounds(60, 420, 300, 30);
+        emailidfield=new JTextField();
+        emailidfield.setFont(font_15_bold);
+        emailidfield.setBounds(350, 420, 250, 30);
         //---------------------------------------------
         jobtitle=new JLabel("JOB TITLE: ");
         jobtitle.setFont(font_20_bold);
@@ -1374,6 +1385,9 @@ JScrollPane sp=new JScrollPane(jt);
         alterphone=new JLabel("ALTERNATE PHONE NO:");
         alterphone.setFont(font_20_bold);
         alterphone.setBounds(700, 60, 300, 30);
+        alternatenoJTextField=new JTextField();
+        alternatenoJTextField.setFont(font_15_bold);
+        alternatenoJTextField.setBounds(1100, 60, 250, 30);
         //---------------------------------------------
         joiningdate=new JLabel("JOINING DATE: ");
         joiningdate.setFont(font_20_bold);
@@ -1383,6 +1397,16 @@ JScrollPane sp=new JScrollPane(jt);
         Education.setFont(font_20_bold);
         Education.setBounds(700, 180, 300, 30);
         //---------------------------------------------
+        addstaffJButton=new JButton("SAVE");
+        addstaffJButton.setFont(font_20_bold);
+        addstaffJButton.setBounds(150, 560, 200, 40);
+        Clear=new JButton("CLEAR");
+        Clear.setFont(font_20_bold);
+        Clear.setBounds(540, 560, 200, 40);
+        Cancel=new JButton("CANCEL");
+        Cancel.setFont(font_20_bold);
+        Cancel.setBounds(930, 560, 200, 40);
+        //---------------------------------------------
         dynamicpanel.add(firstname);
         dynamicpanel.add(firstnamJTextField);
         dynamicpanel.add(lastname);
@@ -1390,12 +1414,19 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(dob);
         dynamicpanel.add(genderstaff);
         dynamicpanel.add(address);
+        dynamicpanel.add(addressJTextField);
         dynamicpanel.add(phone);
+        dynamicpanel.add(phonenoJTextField);
         dynamicpanel.add(jobtitle);
         dynamicpanel.add(joiningdate);
         dynamicpanel.add(alterphone);
+        dynamicpanel.add(alternatenoJTextField);
         dynamicpanel.add(Education);
         dynamicpanel.add(email);
+        dynamicpanel.add(emailidfield);
+dynamicpanel.add(addstaffJButton);
+dynamicpanel.add(Clear);
+        dynamicpanel.add(Cancel);
         //---------------------------------------------
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
