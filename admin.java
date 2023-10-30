@@ -31,11 +31,14 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     publicationname, publicationtel, publicationfax, publicationemail, publicationinqueryemail, publicationadd, publicationnoofbooks, publicationscin, publicationinqueryno,
     //--------------------------------------------------------------------------------------------------------------------
-    bookISBNno, booktitle, bookauthor, bookpublisher, bookpublicationyear, bookgenre, bookprice, bookquantity, booklanguage,bookdateadded, bookEdition, bookpages, bookformat, bookdepartment;
+    bookISBNno, booktitle, bookauthor, bookpublisher, bookpublicationyear, bookgenre, bookprice, bookquantity, booklanguage,bookdateadded, bookEdition, bookpages, bookformat, bookdepartment,
+    //--------------------------------------------------------------------------------------------------------------------
+    deptcode, deptname, depthead, deptcreatedate,deptslogan, deptheademail, deptemail;
     //--------------------------------------------------------------------------------------------------------------------
     JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield,
                publicationnamefiled, publicationcinfield, publicationemailfield, publicationinqueryemailfield, publicationinquerynoField, publicationfaxfield,publicationnofield, publicationnoofbookdfield,
-               bookISBNnofield, booktitlefield, bookauthorfield, bookpublisherfield, bookpublicationyearfield, bookgenrefield, bookpricefield, bookquantityfield, booklanguagefield,bookdateaddedfield, bookEditionfield, bookpagesfield, bookformatfield, bookdepartmentfield;
+               bookISBNnofield, booktitlefield, bookauthorfield, bookpublisherfield, bookpublicationyearfield, bookgenrefield, bookpricefield, bookquantityfield, booklanguagefield,bookdateaddedfield, bookEditionfield, bookpagesfield, bookformatfield, bookdepartmentfield,
+               deptcodeJTextField, deptnameJTextField, deptheadJTextField, deptcreatedateJTextField,deptsloganJTextField, deptheademailJTextField, deptemailJTextField;
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
@@ -447,6 +450,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==adddepartment){
             System.out.println("adddepartment");
+            add_department_ui();
         }
         if(e.getSource()==removedepartment){
             System.out.println("removedepartment");
@@ -881,7 +885,79 @@ JScrollPane sp=new JScrollPane(jt);
     }//add_book_ui()
     //...................................................................................................................................
     public void add_department_ui(){
-
+        dynamicpanel.removeAll();
+        dynamicpanel.setLayout(null);
+        dynamicpanel.setBorder(null);
+        dynamicpanel.setBackground(white);
+        dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+        BorderFactory.createEtchedBorder(), "    NEW DEPARTMENT    ", TitledBorder.CENTER, TitledBorder.TOP));
+        //---------------------------------------------------
+        deptcode=new JLabel("DEPARTMENT CODE: ");
+        deptcode.setFont(font_20_bold);
+        deptcode.setBounds(60,60,300, 30);
+        deptcodeJTextField=new JTextField();   
+        deptcodeJTextField.setFont(font_15_bold);
+        deptcodeJTextField.setBounds(450, 60, 120, 30);
+        //----------------------------------------------------
+        deptname=new JLabel("DEPARTMENT NAME: ");
+        deptname.setFont(font_20_bold);
+        deptname.setBounds(60,120,300, 30);
+        deptnameJTextField=new JTextField();   
+        deptnameJTextField.setFont(font_15_bold);
+        deptnameJTextField.setBounds(450, 120, 120, 30);
+        //----------------------------------------------------
+        depthead=new JLabel("DEPARTMENT HEAD:");
+        depthead.setFont(font_20_bold);
+        depthead.setBounds(60,180,300, 30);
+        deptheadJTextField=new JTextField();   
+        deptheadJTextField.setFont(font_15_bold);
+        deptheadJTextField.setBounds(450, 180, 120, 30);
+        //----------------------------------------------------
+        deptcreatedate=new JLabel("DEPARTMENT DATE(CREATION):");
+        deptcreatedate.setFont(font_20_bold);
+        deptcreatedate.setBounds(60,240,350, 30);
+        deptcreatedateJTextField=new JTextField();   
+        deptcreatedateJTextField.setFont(font_15_bold);
+        deptcreatedateJTextField.setBounds(450, 240, 120, 30);
+        //----------------------------------------------------
+        deptslogan=new JLabel("SLOGAN:");
+        deptslogan.setFont(font_20_bold);
+        deptslogan.setBounds(60,300,300, 30);
+        deptsloganJTextField=new JTextField();   
+        deptsloganJTextField.setFont(font_15_bold);
+        deptsloganJTextField.setBounds(450, 300, 120, 30);
+        //----------------------------------------------------
+        deptheademail=new JLabel("EMAIL(HOD):");
+        deptheademail.setFont(font_20_bold);
+        deptheademail.setBounds(60,360,300, 30);
+        deptheademailJTextField=new JTextField();   
+        deptheademailJTextField.setFont(font_15_bold);
+        deptheademailJTextField.setBounds(450, 360, 120, 30);
+        //----------------------------------------------------
+        deptemail=new JLabel("DEPARTMENT EMAIL:");
+        deptemail.setFont(font_20_bold);
+        deptemail.setBounds(60,420,300, 30);
+        deptemailJTextField=new JTextField();   
+        deptemailJTextField.setFont(font_15_bold);
+        deptemailJTextField.setBounds(450, 420, 120, 30);
+        //----------------------------------------------------
+        dynamicpanel.add(deptcode);
+        dynamicpanel.add(deptcodeJTextField);
+        dynamicpanel.add(depthead);
+        dynamicpanel.add(deptheadJTextField);
+        dynamicpanel.add(deptname);
+        dynamicpanel.add(deptnameJTextField);
+        dynamicpanel.add(deptslogan);
+        dynamicpanel.add(deptsloganJTextField);
+        dynamicpanel.add(deptemail);
+        dynamicpanel.add(deptemailJTextField);
+        dynamicpanel.add(deptheademail);
+        dynamicpanel.add(deptheademailJTextField);
+        dynamicpanel.add(deptcreatedate);
+        dynamicpanel.add(deptcreatedateJTextField);
+        //----------------------------------------------------
+        dynamicpanel.revalidate();
+        dynamicpanel.repaint();
     }//add_department_ui
     public void dashboard_ui(){
             dynamicpanel.removeAll();
