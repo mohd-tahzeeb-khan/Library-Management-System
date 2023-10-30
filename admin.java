@@ -33,12 +33,15 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     bookISBNno, booktitle, bookauthor, bookpublisher, bookpublicationyear, bookgenre, bookprice, bookquantity, booklanguage,bookdateadded, bookEdition, bookpages, bookformat, bookdepartment,
     //--------------------------------------------------------------------------------------------------------------------
-    deptcode, deptname, depthead, deptcreatedate,deptslogan, deptheademail, deptemail;
+    deptcode, deptname, depthead, deptcreatedate,deptslogan, deptheademail, deptemail,
+    //--------------------------------------------------------------------------------------------------------------------
+    firstname, lastname, dob, genderstaff,address, phone, email, jobtitle,alterphone, joiningdate, Education; 
     //--------------------------------------------------------------------------------------------------------------------
     JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield,
                publicationnamefiled, publicationcinfield, publicationemailfield, publicationinqueryemailfield, publicationinquerynoField, publicationfaxfield,publicationnofield, publicationnoofbookdfield,
                bookISBNnofield, booktitlefield, bookauthorfield, bookpublisherfield, bookpublicationyearfield, bookgenrefield, bookpricefield, bookquantityfield, booklanguagefield,bookdateaddedfield, bookEditionfield, bookpagesfield, bookformatfield, bookdepartmentfield,
-               deptcodeJTextField, deptnameJTextField, deptheadJTextField, deptcreatedateJTextField,deptsloganJTextField, deptheademailJTextField, deptemailJTextField;
+               deptcodeJTextField, deptnameJTextField, deptheadJTextField, deptcreatedateJTextField,deptsloganJTextField, deptheademailJTextField, deptemailJTextField,
+               firstnamJTextField, lastnamJTextField, addressJTextField, phonenoJTextField, collegJTextField, alternatenoJTextField, jobtitleJTextField, joiningdaJTextField, educationJTextField, qualificationJTextField;
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
@@ -674,6 +677,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addstaff){
             System.out.println("addstaff");
+            add_staff_ui();
         }
         if(e.getSource()==viewstudent){
             System.out.println("viewstudent");
@@ -719,16 +723,16 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==removestudent){
             System.out.println("removestudent");
-        }
+        }//remove student
         if(e.getSource()==updatestudent){
             System.out.println("updatestudent");
             dynamicpanel.setBackground(white);
             dynamicpanel.setSize(200, 500);
-        }
+        }//updatestudent
         if(e.getSource()==addstudent){
             System.out.println("addstudent");
             this.add_student_ui();
-        }
+        }//add student
     }
     public void add_book_ui(){
         dynamicpanel.removeAll();
@@ -977,7 +981,6 @@ JScrollPane sp=new JScrollPane(jt);
     }//add_department_ui
     public void dashboard_ui(){
             dynamicpanel.removeAll();
-
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             dynamicpanel.setBorder(null);
             dynamicpanel.setSize(1450, 630);
@@ -1323,6 +1326,80 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
     }//add_student_ui
+    void add_staff_ui(){
+        dynamicpanel.removeAll();
+        dynamicpanel.setLayout(null);
+        dynamicpanel.setBackground(grey);
+        dynamicpanel.setSize(1450, 630);
+        dynamicpanel.setLocation(20, 115);
+        //---------------------------------------------
+        firstname=new JLabel("FIRST NAME:");
+        firstname.setFont(font_20_bold);
+        firstname.setBounds(60, 60, 200, 30);
+        firstnamJTextField=new JTextField();
+        firstnamJTextField.setFont(font_15_bold);
+        firstnamJTextField.setBounds(350, 60, 250, 30);
+        //---------------------------------------------
+        lastname=new JLabel("LAST NAME:");
+        lastname.setFont(font_20_bold);
+        lastname.setBounds(60, 120, 200, 30);
+        lastnamJTextField=new JTextField();
+        lastnamJTextField.setFont(font_15_bold);
+        lastnamJTextField.setBounds(350, 120, 250, 30);
+        //---------------------------------------------
+        dob=new JLabel("DATE OF BIRTH:");
+        dob.setFont(font_20_bold);
+        dob.setBounds(60, 180, 300, 30);
+        //---------------------------------------------
+        genderstaff=new JLabel("GENDER:");
+        genderstaff.setFont(font_20_bold);
+        genderstaff.setBounds(60, 240, 200, 30);
+        //---------------------------------------------
+        address=new JLabel("ADDRESS:");
+        address.setFont(font_20_bold);
+        address.setBounds(60, 300, 200, 30);
+        //---------------------------------------------
+        phone=new JLabel("PHONE NO: ");
+        phone.setFont(font_20_bold);
+        phone.setBounds(60, 360, 200, 30);
+        //---------------------------------------------
+        email=new JLabel("COLLEGE EMAIL ID: ");
+        email.setFont(font_20_bold);
+        email.setBounds(60, 420, 300, 30);
+        //---------------------------------------------
+        jobtitle=new JLabel("JOB TITLE: ");
+        jobtitle.setFont(font_20_bold);
+        jobtitle.setBounds(700, 240, 300, 30);
+        //---------------------------------------------
+        alterphone=new JLabel("ALTERNATE PHONE NO:");
+        alterphone.setFont(font_20_bold);
+        alterphone.setBounds(700, 60, 300, 30);
+        //---------------------------------------------
+        joiningdate=new JLabel("JOINING DATE: ");
+        joiningdate.setFont(font_20_bold);
+        joiningdate.setBounds(700, 120, 300, 30);
+        //---------------------------------------------
+        Education=new JLabel("EDUCATION QULIFICATION: ");
+        Education.setFont(font_20_bold);
+        Education.setBounds(700, 180, 300, 30);
+        //---------------------------------------------
+        dynamicpanel.add(firstname);
+        dynamicpanel.add(firstnamJTextField);
+        dynamicpanel.add(lastname);
+        dynamicpanel.add(lastnamJTextField);
+        dynamicpanel.add(dob);
+        dynamicpanel.add(genderstaff);
+        dynamicpanel.add(address);
+        dynamicpanel.add(phone);
+        dynamicpanel.add(jobtitle);
+        dynamicpanel.add(joiningdate);
+        dynamicpanel.add(alterphone);
+        dynamicpanel.add(Education);
+        dynamicpanel.add(email);
+        //---------------------------------------------
+        dynamicpanel.revalidate();
+        dynamicpanel.repaint();
+    }
     public static void main(String args[]){
         admin adminobj=new admin();
     }//main
