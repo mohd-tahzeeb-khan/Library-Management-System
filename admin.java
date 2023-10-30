@@ -46,7 +46,7 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
-    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton, addbookJButton;
+    JButton logout, help, RegisterStudent, Cancel, Clear, addpublicationJButton, addbookJButton, adddepartmentJButton;
     //---------------------------------------------------------------------------------------------------------------------
     ButtonGroup grp=new ButtonGroup();
     //---------------------------------------------------------------------------------------------------------------------
@@ -889,57 +889,69 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.setLayout(null);
         dynamicpanel.setBorder(null);
         dynamicpanel.setBackground(white);
+        dynamicpanel.setSize(900,630);
+        dynamicpanel.setLocation(300,120);
         dynamicpanel.setBorder(BorderFactory.createTitledBorder(
         BorderFactory.createEtchedBorder(), "    NEW DEPARTMENT    ", TitledBorder.CENTER, TitledBorder.TOP));
         //---------------------------------------------------
         deptcode=new JLabel("DEPARTMENT CODE: ");
         deptcode.setFont(font_20_bold);
-        deptcode.setBounds(60,60,300, 30);
+        deptcode.setBounds(160,60,300, 30);
         deptcodeJTextField=new JTextField();   
         deptcodeJTextField.setFont(font_15_bold);
-        deptcodeJTextField.setBounds(450, 60, 120, 30);
+        deptcodeJTextField.setBounds(550, 60, 120, 30);
         //----------------------------------------------------
         deptname=new JLabel("DEPARTMENT NAME: ");
         deptname.setFont(font_20_bold);
-        deptname.setBounds(60,120,300, 30);
+        deptname.setBounds(160,120,300, 30);
         deptnameJTextField=new JTextField();   
         deptnameJTextField.setFont(font_15_bold);
-        deptnameJTextField.setBounds(450, 120, 200, 30);
+        deptnameJTextField.setBounds(550, 120, 200, 30);
         //----------------------------------------------------
         depthead=new JLabel("DEPARTMENT HEAD:");
         depthead.setFont(font_20_bold);
-        depthead.setBounds(60,180,300, 30);
+        depthead.setBounds(160,180,300, 30);
         deptheadJTextField=new JTextField();   
         deptheadJTextField.setFont(font_15_bold);
-        deptheadJTextField.setBounds(450, 180, 200, 30);
+        deptheadJTextField.setBounds(550, 180, 200, 30);
         //----------------------------------------------------
         deptcreatedate=new JLabel("DEPARTMENT DATE(CREATION):");
         deptcreatedate.setFont(font_20_bold);
-        deptcreatedate.setBounds(60,240,350, 30);
+        deptcreatedate.setBounds(160,240,350, 30);
         deptcreatedateJTextField=new JTextField();   
         deptcreatedateJTextField.setFont(font_15_bold);
-        deptcreatedateJTextField.setBounds(450, 240, 150, 30);
+        deptcreatedateJTextField.setBounds(550, 240, 150, 30);
         //----------------------------------------------------
         deptslogan=new JLabel("SLOGAN:");
         deptslogan.setFont(font_20_bold);
-        deptslogan.setBounds(60,300,300, 30);
+        deptslogan.setBounds(160,300,300, 30);
         deptsloganJTextField=new JTextField();   
         deptsloganJTextField.setFont(font_15_bold);
-        deptsloganJTextField.setBounds(450, 300, 220, 30);
+        deptsloganJTextField.setBounds(550, 300, 220, 30);
         //----------------------------------------------------
         deptheademail=new JLabel("EMAIL(HOD):");
         deptheademail.setFont(font_20_bold);
-        deptheademail.setBounds(60,360,300, 30);
+        deptheademail.setBounds(160,360,300, 30);
         deptheademailJTextField=new JTextField();   
         deptheademailJTextField.setFont(font_15_bold);
-        deptheademailJTextField.setBounds(450, 360, 220, 30);
+        deptheademailJTextField.setBounds(550, 360, 220, 30);
         //----------------------------------------------------
         deptemail=new JLabel("DEPARTMENT EMAIL:");
         deptemail.setFont(font_20_bold);
-        deptemail.setBounds(60,420,300, 30);
+        deptemail.setBounds(160,420,300, 30);
         deptemailJTextField=new JTextField();   
         deptemailJTextField.setFont(font_15_bold);
-        deptemailJTextField.setBounds(450, 420, 220, 30);
+        deptemailJTextField.setBounds(550, 420, 220, 30);
+        //----------------------------------------------------
+        adddepartmentJButton=new JButton("SAVE");
+        adddepartmentJButton.setBounds(60,550, 200, 40);
+        adddepartmentJButton.setFont(font_20_bold);
+        Clear=new JButton("CLEAR");
+        Clear.setBounds(350,550, 200, 40);
+        Clear.setFont(font_20_bold);
+        Cancel=new JButton("CANCEL");
+        Cancel.setBounds(640,550, 200, 40);
+        Cancel.setFont(font_20_bold);
         //----------------------------------------------------
         dynamicpanel.add(deptcode);
         dynamicpanel.add(deptcodeJTextField);
@@ -955,7 +967,11 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(deptheademailJTextField);
         dynamicpanel.add(deptcreatedate);
         dynamicpanel.add(deptcreatedateJTextField);
+        dynamicpanel.add(adddepartmentJButton);
+        dynamicpanel.add(Clear);
+        dynamicpanel.add(Cancel);
         //----------------------------------------------------
+        
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
     }//add_department_ui
