@@ -977,8 +977,12 @@ JScrollPane sp=new JScrollPane(jt);
     }//add_department_ui
     public void dashboard_ui(){
             dynamicpanel.removeAll();
+
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             dynamicpanel.setBorder(null);
+            dynamicpanel.setSize(1450, 630);
+            dynamicpanel.setLocation(20, 120);
+
             TotalBooksPanel.removeAll();
             TotalIssuedBooksPanel.removeAll();
             TotalDepartmentPanel.removeAll();
