@@ -904,42 +904,42 @@ JScrollPane sp=new JScrollPane(jt);
         deptname.setBounds(60,120,300, 30);
         deptnameJTextField=new JTextField();   
         deptnameJTextField.setFont(font_15_bold);
-        deptnameJTextField.setBounds(450, 120, 120, 30);
+        deptnameJTextField.setBounds(450, 120, 200, 30);
         //----------------------------------------------------
         depthead=new JLabel("DEPARTMENT HEAD:");
         depthead.setFont(font_20_bold);
         depthead.setBounds(60,180,300, 30);
         deptheadJTextField=new JTextField();   
         deptheadJTextField.setFont(font_15_bold);
-        deptheadJTextField.setBounds(450, 180, 120, 30);
+        deptheadJTextField.setBounds(450, 180, 200, 30);
         //----------------------------------------------------
         deptcreatedate=new JLabel("DEPARTMENT DATE(CREATION):");
         deptcreatedate.setFont(font_20_bold);
         deptcreatedate.setBounds(60,240,350, 30);
         deptcreatedateJTextField=new JTextField();   
         deptcreatedateJTextField.setFont(font_15_bold);
-        deptcreatedateJTextField.setBounds(450, 240, 120, 30);
+        deptcreatedateJTextField.setBounds(450, 240, 150, 30);
         //----------------------------------------------------
         deptslogan=new JLabel("SLOGAN:");
         deptslogan.setFont(font_20_bold);
         deptslogan.setBounds(60,300,300, 30);
         deptsloganJTextField=new JTextField();   
         deptsloganJTextField.setFont(font_15_bold);
-        deptsloganJTextField.setBounds(450, 300, 120, 30);
+        deptsloganJTextField.setBounds(450, 300, 220, 30);
         //----------------------------------------------------
         deptheademail=new JLabel("EMAIL(HOD):");
         deptheademail.setFont(font_20_bold);
         deptheademail.setBounds(60,360,300, 30);
         deptheademailJTextField=new JTextField();   
         deptheademailJTextField.setFont(font_15_bold);
-        deptheademailJTextField.setBounds(450, 360, 120, 30);
+        deptheademailJTextField.setBounds(450, 360, 220, 30);
         //----------------------------------------------------
         deptemail=new JLabel("DEPARTMENT EMAIL:");
         deptemail.setFont(font_20_bold);
         deptemail.setBounds(60,420,300, 30);
         deptemailJTextField=new JTextField();   
         deptemailJTextField.setFont(font_15_bold);
-        deptemailJTextField.setBounds(450, 420, 120, 30);
+        deptemailJTextField.setBounds(450, 420, 220, 30);
         //----------------------------------------------------
         dynamicpanel.add(deptcode);
         dynamicpanel.add(deptcodeJTextField);
