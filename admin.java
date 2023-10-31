@@ -1354,8 +1354,16 @@ JScrollPane sp=new JScrollPane(jt);
         //---------------------------------------------
         genderstaff=new JLabel("GENDER:");
         genderstaff.setFont(font_20_bold);
-        genderstaff.setBounds(60, 240, 200, 30);
-        
+        genderstaff.setBounds(60, 240, 150, 30);
+        malegender=new JRadioButton("MALE");
+        malegender.setBounds(350, 240, 100, 30);
+        malegender.setBackground(grey);
+        femalegender=new JRadioButton("FEMALE");
+        femalegender.setBackground(grey);
+        femalegender.setBounds(450, 240, 100, 30);
+        transgender=new JRadioButton("TRANS");
+        transgender.setBackground(grey);
+        transgender.setBounds(550, 240, 150, 30);
         //---------------------------------------------
         address=new JLabel("ADDRESS:");
         address.setFont(font_20_bold);
@@ -1427,6 +1435,12 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(lastnamJTextField);
         dynamicpanel.add(dob);
         dynamicpanel.add(genderstaff);
+        grp.add(malegender);
+        grp.add(femalegender);
+        grp.add(transgender);
+        dynamicpanel.add(malegender);
+        dynamicpanel.add(femalegender);
+        dynamicpanel.add(transgender);
         dynamicpanel.add(address);
         dynamicpanel.add(addressJTextField);
         dynamicpanel.add(phone);
