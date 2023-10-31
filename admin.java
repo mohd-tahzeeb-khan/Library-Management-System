@@ -45,7 +45,7 @@ public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
     //--------------------------------------------------------------------------------------------------------------------
-    JComboBox<String> departmentComboBox, ProgramComboBox, SemesterComboBox, YearComboBox;
+    JComboBox<String> departmentComboBox, ProgramComboBox, SemesterComboBox, YearComboBox, JobComboBox, EducationComboBox;
     //--------------------------------------------------------------------------------------------------------------------
     JCheckBox notesCheckBox;
     //--------------------------------------------------------------------------------------------------------------------
@@ -1381,6 +1381,11 @@ JScrollPane sp=new JScrollPane(jt);
         jobtitle=new JLabel("JOB TITLE: ");
         jobtitle.setFont(font_20_bold);
         jobtitle.setBounds(700, 240, 300, 30);
+        JobComboBox=new JComboBox<>();
+        JobComboBox.addItem("LIBRARIAN");
+        JobComboBox.addItem("ASSISTANT");
+        JobComboBox.addItem("ADMIN");
+        JobComboBox.setBounds(1100, 240, 250, 30);
         //---------------------------------------------
         alterphone=new JLabel("ALTERNATE PHONE NO:");
         alterphone.setFont(font_20_bold);
@@ -1392,10 +1397,19 @@ JScrollPane sp=new JScrollPane(jt);
         joiningdate=new JLabel("JOINING DATE: ");
         joiningdate.setFont(font_20_bold);
         joiningdate.setBounds(700, 120, 300, 30);
+         joiningdaJTextField=new JTextField();
+        joiningdaJTextField.setFont(font_15_bold);
+        joiningdaJTextField.setBounds(1100, 120, 250, 30);
         //---------------------------------------------
         Education=new JLabel("EDUCATION QULIFICATION: ");
         Education.setFont(font_20_bold);
         Education.setBounds(700, 180, 300, 30);
+        EducationComboBox=new JComboBox<>();
+        EducationComboBox.addItem("DIPLOMA");
+        EducationComboBox.addItem("GRADUATED");
+        EducationComboBox.addItem("POST-GRADUATED");
+        EducationComboBox.addItem("DOCTORATE");
+        EducationComboBox.setBounds(1100, 180, 250, 30);
         //---------------------------------------------
         addstaffJButton=new JButton("SAVE");
         addstaffJButton.setFont(font_20_bold);
@@ -1418,10 +1432,13 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(phone);
         dynamicpanel.add(phonenoJTextField);
         dynamicpanel.add(jobtitle);
+        dynamicpanel.add(JobComboBox);
         dynamicpanel.add(joiningdate);
+        dynamicpanel.add(joiningdaJTextField);
         dynamicpanel.add(alterphone);
         dynamicpanel.add(alternatenoJTextField);
         dynamicpanel.add(Education);
+        dynamicpanel.add(EducationComboBox);
         dynamicpanel.add(email);
         dynamicpanel.add(emailidfield);
 dynamicpanel.add(addstaffJButton);
