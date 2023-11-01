@@ -438,9 +438,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addbook){
             System.out.println("addbook");
-            add_book_ui();
-            
-            
+            this.add_book_ui();
         }
         if(e.getSource()==removebook){
             System.out.println("removebook");
@@ -453,7 +451,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==adddepartment){
             System.out.println("adddepartment");
-            add_department_ui();
+            this.add_department_ui();
         }
         if(e.getSource()==removedepartment){
             System.out.println("removedepartment");
@@ -677,7 +675,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==addstaff){
             System.out.println("addstaff");
-            add_staff_ui();
+            this.add_staff_ui();
         }
         if(e.getSource()==viewstudent){
             System.out.println("viewstudent");
@@ -1405,7 +1403,7 @@ JScrollPane sp=new JScrollPane(jt);
         joiningdate=new JLabel("JOINING DATE: ");
         joiningdate.setFont(font_20_bold);
         joiningdate.setBounds(700, 120, 300, 30);
-         joiningdaJTextField=new JTextField();
+        joiningdaJTextField=new JTextField();
         joiningdaJTextField.setFont(font_15_bold);
         joiningdaJTextField.setBounds(1100, 120, 250, 30);
         //---------------------------------------------
