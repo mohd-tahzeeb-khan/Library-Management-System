@@ -1455,13 +1455,13 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(EducationComboBox);
         dynamicpanel.add(email);
         dynamicpanel.add(emailidfield);
-dynamicpanel.add(addstaffJButton);
-dynamicpanel.add(Clear);
+        dynamicpanel.add(addstaffJButton);
+        dynamicpanel.add(Clear);
         dynamicpanel.add(Cancel);
         //---------------------------------------------
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
-    }
+    }//add_staff_UI();
     public static void main(String args[]){
         admin adminobj=new admin();
     }//main
