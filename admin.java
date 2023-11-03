@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.Font;
- 
 public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JFrame Admin;
@@ -334,6 +333,10 @@ public class admin extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==logout){
             Admin.dispose();
+        }
+        if(e.getSource()==addbookJButton){
+            database dbobj=new database();
+            // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
@@ -879,6 +882,7 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(bookformatfield);
         //------------------------------------------------------
         dynamicpanel.add(addbookJButton);
+        addbookJButton.addActionListener(this);
         dynamicpanel.add(Clear);
         dynamicpanel.add(Cancel);
         //------------------------------------------------------
