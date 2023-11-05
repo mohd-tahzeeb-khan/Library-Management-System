@@ -342,7 +342,10 @@ public class admin extends JFrame implements ActionListener{
             database dbobj=new database();
             // String recipt=dbobj.insert_bookINTOdb();
         }
-        
+        if(e.getSource()==addpublicationJButton){
+            database dbobj=new database();
+            // String recipt=dbobj.insert_bookINTOdb();
+        }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
             this.dashboard_ui();
