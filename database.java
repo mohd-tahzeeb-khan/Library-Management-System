@@ -25,7 +25,7 @@ public class database{
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");      
             stmt=c.createStatement();
-            String sql="INSERT INTO login VALUES('', '', '');";
+            String sql="INSERT INTO login VALUES('', '', '', ????????);";
             stmt.executeUpdate(sql);
             c.close();
           }
