@@ -1,6 +1,6 @@
 import java.sql.*;
 public class database{
-    public void insert_bookINTOdb(){
+    public void insert_bookINTOdb( String bookname, String isssn){
         Connection c=null;
         Statement stmt=null;
         ResultSet rs;
@@ -8,7 +8,10 @@ public class database{
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");      
             stmt=c.createStatement();
-            String sql="INSERT INTO Book VALUES('', '', '');";
+            PreparedStatement sqlquery =null;
+            String sql="INSERT INTO Books VALUES(?,?);";
+            sqlquery.setStrng(1,bookname);
+            sqlquery.setStrng(2,isssn);
             stmt.executeUpdate(sql);
             c.close();
           }
