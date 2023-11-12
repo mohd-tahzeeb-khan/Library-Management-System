@@ -331,21 +331,38 @@ public class admin extends JFrame implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e){
+        database dbobj=new database();
         if(e.getSource()==logout){
             Admin.dispose();
         }
+        if(e.getSource()==RegisterStudent){
+            String gender, program, dept, sem,studyear;
+            gender="";
+            if(malegender.isSelected()){
+                gender="Male";
+            }
+            if(femalegender.isSelected()){
+                gender="Female";
+            }
+            if(transgender.isSelected()){
+                gender="Transgender";
+            }
+            program=String.valueOf(ProgramComboBox.getSelectedItem());
+            dept=String.valueOf(departmentComboBox.getSelectedItem());
+            sem=String.valueOf(SemesterComboBox.getSelectedItem());
+            studyear=String.valueOf(YearComboBox.getSelectedItem());
+            dbobj.studentINTOdb(RegistrationNofield.getText(), usnofield.getText(),Namefield.getText() ,Fathernamefield.getText() ,DOBfield.getText() ,gender, contactnofield.getText(),altercontactnofield.getText() ,Classrollnofield.getText() ,program, studyear,
+            sem ,dept ,emailidfield.getText() );
+        }
         if(e.getSource()==addbookJButton){
-
-            database dbobj=new database();
             dbobj.bookINTOdb(bookISBNnofield.getText(),booktitlefield.getText(),bookauthorfield.getText(),bookpublisherfield.getText() ,bookgenrefield.getText(), bookpricefield.getText(),bookpublicationyearfield.getText(), bookquantityfield.getText(), booklanguagefield.getText(), bookdateaddedfield.getText(), bookformatfield.getText(), bookEditionfield.getText(), bookpagesfield.getText(), bookdepartmentfield.getText());
-            // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==adddepartmentJButton){
-            database dbobj=new database();
+
             // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==addpublicationJButton){
-            database dbobj=new database();
+
             // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==dashboaderItem){
@@ -1138,7 +1155,7 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.setSize(1450,630 );
             dynamicpanel.setLocation(20,115 );
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-         BorderFactory.createEtchedBorder(), "..........REGISTRATION FORM..........", TitledBorder.CENTER, TitledBorder.TOP));
+            BorderFactory.createEtchedBorder(), "..........REGISTRATION FORM..........", TitledBorder.CENTER, TitledBorder.TOP));
             dynamicpanel.removeAll();
             RegistrationNo=new JLabel("REGISTRATION NO:");
             RegistrationNo.setFont(font_20_bold);
@@ -1333,6 +1350,10 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(notesCheckBox);
 
             dynamicpanel.add(RegisterStudent);
+            RegisterStudent.addActionListener(this);
+            malegender.addActionListener(this);
+            femalegender.addActionListener(this);
+            transgender.addActionListener(this);
             dynamicpanel.add(Clear);
             dynamicpanel.add(Cancel);
             dynamicpanel.revalidate();
