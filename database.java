@@ -93,6 +93,86 @@ public class database{
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------------------------------------
+public void departmentINTOdb(String code, String name, String head,String date,String slogan, String email, String deptemail){
+        Connection c=null;
+        Statement stmt=null;
+        PreparedStatement pst1;
+        ResultSet rs;
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");      
+            try{
+                pst1=c.prepareStatement("INSERT INTO department VALUES(?,?,?,?,?,?,?);");
+                pst1.setString(1, code);
+                pst1.setString(2, name);
+                pst1.setString(3, head);
+                pst1.setString(4, date);
+                pst1.setString(5, slogan);
+                pst1.setString(6, email);
+                pst1.setString(7, deptemail);
+                int i=pst1.executeUpdate();
+                if(i<1){
+                    JOptionPane.showMessageDialog(null, "Error, something went wrong!", "Error", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(null, "New Department Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
+                }
+                c.commit();
+                c.close();
+                
+          }
+          catch(Exception E){
+            System.out.print(E); 
+          }
+            }
+            
+        catch(Exception e){ 
+            System.err.println(e);
+            System.exit(0);
+        }
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    public void publicationINTOdb(String name, String cin, String telephone,String inquerytele,String email, String inqueryemail, String fax, String noofbook, String program){
+        Connection c=null;
+        Statement stmt=null;
+        PreparedStatement pst1;
+        ResultSet rs;
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");      
+            try{
+                pst1=c.prepareStatement("INSERT INTO publication VALUES(?,?,?,?,?,?,?,?,?);");
+                pst1.setString(1, name);
+                pst1.setString(2, cin);
+                pst1.setString(3, telephone);
+                pst1.setString(4, email);
+                pst1.setString(5, fax);
+                pst1.setString(6, noofbook);
+                pst1.setString(7, fax);
+                pst1.setString(8, inqueryemail);
+                pst1.setString(9, inquerytele);
+                int i=pst1.executeUpdate();
+                if(i==0){
+                    JOptionPane.showMessageDialog(null, "Error, something went wrong!", "Error", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(null, "New Student Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
+                }
+                c.commit();
+                c.close();
+                
+          }
+          catch(Exception E){
+            System.out.print(E); 
+          }
+            }
+            
+        catch(Exception e){ 
+            System.err.println(e);
+            System.exit(0);
+        }
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------
 
     // database(){
     //     Connection c=null;

@@ -358,11 +358,12 @@ public class admin extends JFrame implements ActionListener{
             dbobj.bookINTOdb(bookISBNnofield.getText(),booktitlefield.getText(),bookauthorfield.getText(),bookpublisherfield.getText() ,bookgenrefield.getText(), bookpricefield.getText(),bookpublicationyearfield.getText(), bookquantityfield.getText(), booklanguagefield.getText(), bookdateaddedfield.getText(), bookformatfield.getText(), bookEditionfield.getText(), bookpagesfield.getText(), bookdepartmentfield.getText());
         }
         if(e.getSource()==adddepartmentJButton){
-
+            dbobj.departmentINTOdb(deptcodeJTextField.getText(),deptnameJTextField.getText(),deptheadJTextField.getText(),deptcreatedateJTextField.getText(),deptsloganJTextField.getText(),deptheademailJTextField.getText(), deptemailJTextField.getText());
             // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==addpublicationJButton){
-
+            String program=String.valueOf(ProgramComboBox.getSelectedItem());
+            dbobj.publicationINTOdb(publicationnamefiled.getText(),publicationcinfield.getText(), publicationnofield.getText(), publicationinquerynoField.getText(),publicationemailfield.getText(), publicationinqueryemailfield.getText(), publicationfaxfield.getText(), publicationnoofbookdfield.getText(),program);
             // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==dashboaderItem){
@@ -642,7 +643,8 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(addpublicationJButton);
             dynamicpanel.add(Clear);
             dynamicpanel.add(Cancel);
-            
+            //----------------------------------------------
+            addpublicationJButton.addActionListener(this);
             // dynamicpanel.add();
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
@@ -1003,6 +1005,8 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(adddepartmentJButton);
         dynamicpanel.add(Clear);
         dynamicpanel.add(Cancel);
+        //----------------------------------------------------
+        adddepartmentJButton.addActionListener(this);
         //----------------------------------------------------
         
         dynamicpanel.revalidate();
