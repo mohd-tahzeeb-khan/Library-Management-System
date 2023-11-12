@@ -173,7 +173,49 @@ public void departmentINTOdb(String code, String name, String head,String date,S
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------------------------------------
-
+    public void staffINTOdb(String fname, String lname, String dob,String gender,String address, String phoneno, String college, String alterno, String joiningdate, String education, String jobtitle){
+        Connection c=null;
+        Statement stmt=null;
+        PreparedStatement pst1;
+        ResultSet rs;
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");      
+            try{
+                pst1=c.prepareStatement("INSERT INTO staff VALUES(?,?,?,?,?,?,?,?,?,?,?);");
+                pst1.setString(1, fname);
+                pst1.setString(2, lname);
+                pst1.setString(3, dob);
+                pst1.setString(4, gender);
+                pst1.setString(5, address);
+                pst1.setString(6, phoneno);
+                pst1.setString(7, college);
+                pst1.setString(8, alterno);
+                pst1.setString(9, joiningdate);
+                pst1.setString(10, education);
+                pst1.setString(11, jobtitle);
+                int i=pst1.executeUpdate();
+                if(i==0){
+                    JOptionPane.showMessageDialog(null, "Error, something went wrong!", "Error", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(null, "New Student Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
+                }
+                c.commit();
+                c.close();
+                
+          }
+          catch(Exception E){
+            System.out.print(E); 
+          }
+            }
+            
+        catch(Exception e){ 
+            System.err.println(e);
+            System.exit(0);
+        }
+    }
+//-----------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------
     // database(){
     //     Connection c=null;
     //     Statement stmt=null;

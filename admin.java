@@ -366,6 +366,22 @@ public class admin extends JFrame implements ActionListener{
             dbobj.publicationINTOdb(publicationnamefiled.getText(),publicationcinfield.getText(), publicationnofield.getText(), publicationinquerynoField.getText(),publicationemailfield.getText(), publicationinqueryemailfield.getText(), publicationfaxfield.getText(), publicationnoofbookdfield.getText(),program);
             // String recipt=dbobj.insert_bookINTOdb();
         }
+        if(e.getSource()==addstaffJButton){
+            String gender, job, education;
+             gender="";
+            if(malegender.isSelected()){
+                gender="Male";
+            }
+            if(femalegender.isSelected()){
+                gender="Female";
+            }
+            if(transgender.isSelected()){
+                gender="Transgender";
+            }
+            job=String.valueOf(JobComboBox.getSelectedItem());
+            education=String.valueOf(EducationComboBox.getSelectedItem());
+            dbobj.staffINTOdb(firstnamJTextField.getText(), lastnamJTextField.getText(), DOBfield.getText(), gender, addressJTextField.getText(), phonenoJTextField.getText(), emailidfield.getText(), job, alternatenoJTextField.getText(), joiningdaJTextField.getText(), education);
+        }
         if(e.getSource()==dashboaderItem){
             System.out.println("dashboard");
             this.dashboard_ui();
@@ -1495,6 +1511,11 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.add(addstaffJButton);
         dynamicpanel.add(Clear);
         dynamicpanel.add(Cancel);
+        //---------------------------------------------
+        addstaffJButton.addActionListener(this);
+        femalegender.addActionListener(this);
+        malegender.addActionListener(this);
+        transgender.addActionListener(this);
         //---------------------------------------------
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
