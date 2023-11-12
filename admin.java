@@ -335,7 +335,9 @@ public class admin extends JFrame implements ActionListener{
             Admin.dispose();
         }
         if(e.getSource()==addbookJButton){
+
             database dbobj=new database();
+            dbobj.bookINTOdb(bookISBNnofield.getText(),booktitlefield.getText(),bookauthorfield.getText(),bookpublisherfield.getText() ,bookgenrefield.getText(), bookpricefield.getText(),bookpublicationyearfield.getText(), bookquantityfield.getText(), booklanguagefield.getText(), bookdateaddedfield.getText(), bookformatfield.getText(), bookEditionfield.getText(), bookpagesfield.getText(), bookdepartmentfield.getText());
             // String recipt=dbobj.insert_bookINTOdb();
         }
         if(e.getSource()==adddepartmentJButton){
