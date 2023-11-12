@@ -1,6 +1,6 @@
 import java.sql.*;
 public class database{
-    public void bookINTOdb( String bookname, String isbn, String author,String publisher,String genre, String price, String publishedyear, String quantity, String langauage, String dateofentry, String format,String edition, String pages, String department ){
+    public void bookINTOdb( String isbn, String bookname, String author,String publisher,String genre, String price, String publishedyear, String quantity, String langauage, String dateofentry, String format,String edition, String pages, String department ){
         Connection c=null;
         Statement stmt=null;
         PreparedStatement pst1;
@@ -41,7 +41,7 @@ public class database{
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------------------------------------
-    public void studentINTOdb( String bookname, String isbn, String author,String publisher,String genre, String price, String publishedyear, String quantity, String langauage, String dateofentry, String format,String edition, String pages, String department ){
+    public void studentINTOdb(String isbn, String bookname, String author,String publisher,String genre, String price, String publishedyear, String quantity, String langauage, String dateofentry, String format,String edition, String pages, String department ){
         Connection c=null;
         Statement stmt=null;
         PreparedStatement pst1;
