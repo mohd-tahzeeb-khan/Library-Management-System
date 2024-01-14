@@ -233,9 +233,50 @@ public void departmentINTOdb(String code, String name, String head,String date,S
     //         System.exit(0);
     //     }
     // }
+    public int[] retrive(){
+        Connection c=null;
+        Statement stmt=null;
+        PreparedStatement pst0, pst1, pst2, pst3, pst4, pst5, pst6;
+        ResultSet rs0,rs1,rs2,rs3,rs4, rs5;
+        int[] data=new int[5];
+        try{
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db"); 
+        pst0=c.prepareStatement("SELECT SUM(quantity) FROM books");
+        pst1=c.prepareStatement("SELECT COUNT(*) FROM department");
+        pst2=c.prepareStatement("SELECT COUNT(*) FROM publication");
+        pst3=c.prepareStatement("SELECT COUNT(*) FROM students");
+        pst4=c.prepareStatement("SELECT COUNT(*) FROM staff");
+         
+            rs0=pst0.executeQuery();
+            rs1=pst1.executeQuery(); 
+            rs2=pst2.executeQuery(); 
+            rs3=pst3.executeQuery(); 
+            rs4=pst4.executeQuery(); 
+            //rs5=pst5.executeQuery(); 
+            data[0]=rs0.getInt(1);
+            data[1]=rs1.getInt(1);
+            data[2]=rs2.getInt(1);
+            data[3]=rs3.getInt(1);
+            data[4]=rs4.getInt(1);
+        for(int i=0; i<5; i++){
+            System.out.print(data[i]);
+        }
+        
+        return data;
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+         //return 0;
+         return data;
+        
+
+    }
     public static void main(String args[]){
         database insert=new database();
-        insert.bookINTOdb("dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,");
+        //insert.bookINTOdb("dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,");
         //insert.insert_bookINTOdb("Lets Learn Python", "15785");
+        insert.retrive();
     }
 }
