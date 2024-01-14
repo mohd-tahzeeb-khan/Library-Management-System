@@ -1029,6 +1029,8 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.repaint();
     }//add_department_ui
     public void dashboard_ui(){
+        database dbobj=new database();
+        String bookno=Integer.toString(dbobj.retrive());
             dynamicpanel.removeAll();
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             dynamicpanel.setBorder(null);
@@ -1042,7 +1044,7 @@ JScrollPane sp=new JScrollPane(jt);
             //Total no of books Panel...........................................
             icon=new ImageIcon("images/totalbooks.png");
             TotalBookslabelicon=new JLabel(icon);
-            TotalBookslabel=new JLabel("1125");
+            TotalBookslabel=new JLabel(bookno);
             TotalBookslabel.setFont(font_100_bold);
             TotalBookslabel.setForeground(black);
             TotalBookslabeltext=new JLabel("Total Books");
