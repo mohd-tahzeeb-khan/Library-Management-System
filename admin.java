@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.Font;
+import java.sql.*;
 public class admin extends JFrame implements ActionListener{
     //--------------------------------------------------------------------------------------------------------------------
     JFrame Admin;
@@ -449,6 +450,7 @@ JScrollPane sp=new JScrollPane(jt);
          BorderFactory.createEtchedBorder(), "              ALL BOOKS              ", TitledBorder.LEFT, TitledBorder.TOP));
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
+            {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
             {"E450","12", "8","Let us Gand","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
             
 
@@ -732,41 +734,57 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
          BorderFactory.createEtchedBorder(), "              All STUDENTS              ", TitledBorder.LEFT, TitledBorder.TOP));
          dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
-         String data[][]={ {"CS21D008","140025601577", "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"},
-            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
-            
+         ResultSet rs;
+         database dbdobj=new database();
+         rs=dbdobj.BooksRetrieve();
+         try{
+           while(rs.next()){
+            for(int i=0; i<=14; i++){
+                System.out.println(rs.getString(i));
+            }
+         } 
+         }catch(Exception f){
+            System.out.println(f);
+         }
+         
+         
+         
+        // };    
+        // try{
+        //     while(rs.next()){
+        //     String data[][]={{rs.getString(1),"140025601577", "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"}};
+        //     String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
+        //               final JTable jt=new JTable(data, column);    
+        //     jt.setCellSelectionEnabled(false); 
+        //     jt.setEnabled(false);
+        //     //jt.setBounds(200, 200, 1300, 800);
+        //     jt.setRowHeight(20);
+        //     jt.getTableHeader().setFont(font_15_bold);
+        //     jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+        //     jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+        //     jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+        //     jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+        //     jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+        //     jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+        //     jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+        //     jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+        //     jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+        //     jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+        //     jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+        //     jt.getColumnModel().getColumn(1).setPreferredWidth(20);
 
-        };    
-        String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
-                      final JTable jt=new JTable(data,column);    
-            jt.setCellSelectionEnabled(false); 
-            jt.setEnabled(false);
-            //jt.setBounds(200, 200, 1300, 800);
-            jt.setRowHeight(20);
-            jt.getTableHeader().setFont(font_15_bold);
-            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(9).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-
-            jt.setGridColor(grey);
-            jt.setFont(font_15_bold);
-            JScrollPane sp=new JScrollPane(jt);
-            sp.setPreferredSize(new Dimension(1420, 580));
-            dynamicpanel.add(sp);
-            //Admin.setBackground(black);
-            dynamicpanel.revalidate();
-            dynamicpanel.repaint();
-
-        }
+        //     jt.setGridColor(grey);
+        //     jt.setFont(font_15_bold);
+        //     JScrollPane sp=new JScrollPane(jt);
+        //     sp.setPreferredSize(new Dimension(1420, 580));
+        //     dynamicpanel.add(sp);
+        //     //Admin.setBackground(black);
+        //     dynamicpanel.revalidate();
+        //     dynamicpanel.repaint();
+        // }}catch(Exception f){
+        //     System.out.println(f);
+        // }
+    }
         if(e.getSource()==removestudent){
             System.out.println("removestudent");
         }//remove student
