@@ -1,5 +1,5 @@
 import java.sql.*;
-
+import java.util.*;
 import javax.swing.JOptionPane;
 public class database{
     public void bookINTOdb( String isbn, String bookname, String author,String publisher,String genre, String price, String publishedyear, String quantity, String langauage, String dateofentry, String format,String edition, String pages, String department ){
@@ -233,6 +233,7 @@ public void departmentINTOdb(String code, String name, String head,String date,S
     //         System.exit(0);
     //     }
     // }
+//--------------------------------Retrive Data Section----------------------------------
     public int[] retrive(){
         Connection c=null;
         Statement stmt=null;
@@ -268,15 +269,42 @@ public void departmentINTOdb(String code, String name, String head,String date,S
         catch(Exception e){
             System.out.println(e);
         }
-         //return 0;
          return data;
-        
-
+    }
+    public ResultSet BooksRetrieve(){
+        Connection c=null;
+        Statement stmt=null;
+        PreparedStatement ps;
+        ResultSet rs;
+        rs=null;
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");
+            ps=c.prepareStatement("SELECT * FROM books");
+            rs=ps.executeQuery();
+            int i=1;
+            String s;
+            
+            while(rs.next()){
+                
+                for(i=1; i<=14;i++){
+                    s=rs.getString(i);
+                    //System.out.println(s);
+            }
+            }
+            return rs;
+            
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return rs;
     }
     public static void main(String args[]){
         database insert=new database();
         //insert.bookINTOdb("dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,");
         //insert.insert_bookINTOdb("Lets Learn Python", "15785");
         //insert.retrive();
+        // insert.BooksRetrieve();
     }
 }
