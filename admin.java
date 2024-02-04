@@ -449,7 +449,7 @@ JScrollPane sp=new JScrollPane(jt);
          BorderFactory.createEtchedBorder(), "              ALL BOOKS              ", TitledBorder.LEFT, TitledBorder.TOP));
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
-            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
+            {"E450","12", "8","Let us Gand","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
             
 
           };    
@@ -783,7 +783,7 @@ JScrollPane sp=new JScrollPane(jt);
     public void add_book_ui(){
         dynamicpanel.removeAll();
         dynamicpanel.setLayout(null);
-        dynamicpanel.setSize(1250,630 );
+        dynamicpanel.setSize(1250,630);
         dynamicpanel.setLocation(120,115);
         dynamicpanel.setBackground(grey);
         dynamicpanel.setBorder(BorderFactory.createTitledBorder(
@@ -1030,7 +1030,16 @@ JScrollPane sp=new JScrollPane(jt);
     }//add_department_ui
     public void dashboard_ui(){
         database dbobj=new database();
-        String bookno=Integer.toString(dbobj.retrive());
+        int[] data=new int[5];
+        data=dbobj.retrive();
+        String Book=Integer.toString(data[0]);
+        String Department=Integer.toString(data[1]);
+        String Publication=Integer.toString(data[2]);
+        String Students =Integer.toString(data[3]);
+        String Staff =Integer.toString(data[4]);
+        //String =Integer.toString();
+
+
             dynamicpanel.removeAll();
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
             dynamicpanel.setBorder(null);
@@ -1044,7 +1053,7 @@ JScrollPane sp=new JScrollPane(jt);
             //Total no of books Panel...........................................
             icon=new ImageIcon("images/totalbooks.png");
             TotalBookslabelicon=new JLabel(icon);
-            TotalBookslabel=new JLabel(bookno);
+            TotalBookslabel=new JLabel(Book);
             TotalBookslabel.setFont(font_100_bold);
             TotalBookslabel.setForeground(black);
             TotalBookslabeltext=new JLabel("Total Books");
@@ -1054,22 +1063,14 @@ JScrollPane sp=new JScrollPane(jt);
             //Total no of students panel.........................................\
             icon=new ImageIcon("images/student.png");
             TotalStudentlabeltexticon=new JLabel(icon);
-            TotalStudentlabel=new JLabel("10526");
+            TotalStudentlabel=new JLabel(Students);
             TotalStudentlabel.setFont(font_100_bold);
             TotalStudentlabel.setForeground(black);
             TotalStudentlabeltext=new JLabel("Total Students");
             TotalStudentlabeltext.setFont(font_30_bold);
             TotalStudentlabeltext.setForeground(black);
             //....................................................................
-            //Total no of books available.........................................
-            icon=new ImageIcon("images/availablebook.png");
-            TotalBookAvailableicon=new JLabel(icon);
-            TotalBookAvailablelabel=new JLabel("456");
-            TotalBookAvailablelabel.setFont(font_100_bold);
-            TotalBookAvailablelabel.setForeground(black);
-            TotalBookAvailablelabeltext=new JLabel("Available Books");
-            TotalBookAvailablelabeltext.setFont(font_30_bold);
-            TotalBookAvailablelabeltext.setForeground(black);
+           
             //....................................................................
             //Total Issued Books..................................................
             icon=new ImageIcon("images/Bookissued.png");
@@ -1084,16 +1085,27 @@ JScrollPane sp=new JScrollPane(jt);
             //Total Departments..................................................
             icon=new ImageIcon("images/departments.png");
             TotalDepartmentlabelicon=new JLabel(icon);
-            TotalDepartmentlabel=new JLabel("6");
+            TotalDepartmentlabel=new JLabel(Department);
             TotalDepartmentlabel.setForeground(black);
             TotalDepartmentlabel.setFont(font_100_bold);
             TotalDepartmentlabeltext=new JLabel("Departments");
             TotalDepartmentlabeltext.setForeground(black);
             TotalDepartmentlabeltext.setFont(font_30_bold);
             //....................................................................
+            //Total no of books available.........................................
+            icon=new ImageIcon("images/availablebook.png");
+            TotalBookAvailableicon=new JLabel(icon);
+            TotalBookAvailablelabel=new JLabel("456");
+            TotalBookAvailablelabel.setFont(font_100_bold);
+            TotalBookAvailablelabel.setForeground(black);
+            TotalBookAvailablelabeltext=new JLabel("Available Books");
+            TotalBookAvailablelabeltext.setFont(font_30_bold);
+            TotalBookAvailablelabeltext.setForeground(black);
+            //----------------------------------------------------------------------
+            //Total Publications---------------------------------------------------
             icon=new ImageIcon("images/publication.png");
             TotalPublicerlabeltexticon=new JLabel(icon);
-            TotalPublicerlabel=new JLabel("20");
+            TotalPublicerlabel=new JLabel(Publication);
             TotalPublicerlabel.setForeground(black);
             TotalPublicerlabel.setFont(font_100_bold);
             TotalPublicerlabeltext=new JLabel("Publications");
@@ -1111,7 +1123,7 @@ JScrollPane sp=new JScrollPane(jt);
             //.....................................................................
             icon=new ImageIcon("images/staff.png");
             TotalStafflabelicon=new JLabel(icon);
-            TotalStafflabel=new JLabel("56");
+            TotalStafflabel=new JLabel(Staff);
             TotalStafflabel.setForeground(black);
             TotalStafflabel.setFont(font_100_bold);
             TotalStafflabeltext=new JLabel("Library Staff");
