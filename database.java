@@ -259,9 +259,9 @@ public void departmentINTOdb(String code, String name, String head,String date,S
             data[2]=rs2.getInt(1);
             data[3]=rs3.getInt(1);
             data[4]=rs4.getInt(1);
-        for(int i=0; i<5; i++){
-            System.out.print(data[i]);
-        }
+        // for(int i=0; i<5; i++){
+        //     System.out.print(data[i]);
+        // }
         
         return data;
         }
@@ -277,6 +277,6 @@ public void departmentINTOdb(String code, String name, String head,String date,S
         database insert=new database();
         //insert.bookINTOdb("dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,");
         //insert.insert_bookINTOdb("Lets Learn Python", "15785");
-        insert.retrive();
+        //insert.retrive();
     }
 }
