@@ -274,31 +274,19 @@ public void departmentINTOdb(String code, String name, String head,String date,S
     public ResultSet BooksRetrieve(){
         Connection c=null;
         Statement stmt=null;
-        PreparedStatement ps;
+        PreparedStatement ps1;
         ResultSet rs;
         rs=null;
         try{
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");
-            ps=c.prepareStatement("SELECT * FROM books");
-            rs=ps.executeQuery();
-            int i=1;
-            String s;
-            
-            while(rs.next()){
-                
-                for(i=1; i<=14;i++){
-                    s=rs.getString(i);
-                    //System.out.println(s);
-            }
-            }
-            return rs;
-            
-            
+            ps1=c.prepareStatement("SELECT * FROM books");
+            rs=ps1.executeQuery();
+            return rs; 
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println(e);return rs;
         }
-        return rs;
+        
     }
     public static void main(String args[]){
         database insert=new database();
