@@ -461,6 +461,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewdepartment){
             System.out.println("viewdepartment");
+            this.veiwDepartment_ui();
         }
         if(e.getSource()==adddepartment){
             System.out.println("adddepartment");
@@ -1422,6 +1423,54 @@ JScrollPane sp=new JScrollPane(jt);
                         System.out.println(f);
                     }
     }
+    //------------------------------------------------------------------------------------------------
+    void veiwDepartment_ui(){
+        dynamicpanel.removeAll();
+        dynamicpanel.setLayout(null);
+        dynamicpanel.setBackground(grey);
+        dynamicpanel.setSize(1450, 630);
+        dynamicpanel.setLocation(20, 115);
+        ResultSet rs;
+        database dbobj=new database();
+        rs=dbobj.DepartmentRetrieve();
+        dynamicpanel.removeAll();
+        dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+        BorderFactory.createEtchedBorder(), "           ALL Departments          ", TitledBorder.LEFT, TitledBorder.TOP));
+        dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
+        String column[]={"Code","Department" ,"Head of Department","Date Added"," Slogan", "Head-Email", "Dept-Email"};         
+        DefaultTableModel dtm=new DefaultTableModel(column,0);
+        // final JTable jt=new JTable(dtm);  
+        final JTable jt=new JTable(dtm);    
+        jt.setCellSelectionEnabled(false); 
+        jt.setEnabled(false);
+        jt.setRowHeight(20);
+        jt.getTableHeader().setFont(font_15_bold);
+        jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+        jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+        jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+        
+        jt.setGridColor(grey);
+        jt.setFont(font_15_bold);
+        JScrollPane sp=new JScrollPane(jt);
+                    sp.setPreferredSize(new Dimension(1420, 580));
+                    dynamicpanel.add(sp);
+                    //Admin.setBackground(black);
+                    dynamicpanel.revalidate();
+                    dynamicpanel.repaint();
+                    try{
+                        while(rs.next()){
+                            String[] item={rs.getString(1), rs.getString(8)," ", rs.getString(2),rs.getString(3), 
+                                "",rs.getString(14)};
+                            dtm.addRow(item);
+                    }}catch(Exception f){
+                        System.out.println(f);
+                    }
+            }
+
     //-----------------------------------------------------------------------------------------------=
     void add_staff_ui(){
         dynamicpanel.removeAll();
