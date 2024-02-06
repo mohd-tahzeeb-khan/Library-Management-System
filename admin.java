@@ -446,41 +446,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
-            dynamicpanel.removeAll();
-            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createEtchedBorder(), "              ALL BOOKS              ", TitledBorder.LEFT, TitledBorder.TOP));
-            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
-            String data[][]={ {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
-            {"120","90", "35","Pointer in C","Mahesh Tiwari","Programming", "CSE", "NAVNEET", "1st", "450", "85848584"},
-            {"E450","12", "8","Let us Gand","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    };    
-            String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
-            final JTable jt=new JTable(data,column);    
-            jt.setCellSelectionEnabled(false); 
-            jt.setEnabled(false);
-            jt.setRowHeight(20);
-            jt.getTableHeader().setFont(font_15_bold);
-            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(9).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-
-            jt.setGridColor(grey);
-            jt.setFont(font_15_bold);
-            JScrollPane sp=new JScrollPane(jt);
-                        sp.setPreferredSize(new Dimension(1420, 580));
-                        dynamicpanel.add(sp);
-                        //Admin.setBackground(black);
-                        dynamicpanel.revalidate();
-                        dynamicpanel.repaint();
-
+            this.viewbook_ui();
                     }
         if(e.getSource()==addbook){
             System.out.println("addbook");
@@ -733,9 +699,9 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
             ResultSet rs;
             database dbdobj=new database();
-            rs=dbdobj.BooksRetrieve();  
+            rs=dbdobj.StudentRetrieve();  
             //String data[][]={{rs.getString(1),rs.getString(2), "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"}};
-            String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
+            String column[]={"REGISTRATION","ENROLLMENT" ,"NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
             DefaultTableModel dtm=new DefaultTableModel(column,0);
             final JTable jt=new JTable(dtm);    
             jt.setCellSelectionEnabled(false); 
@@ -748,13 +714,13 @@ JScrollPane sp=new JScrollPane(jt);
             jt.getColumnModel().getColumn(2).setPreferredWidth(20);
             jt.getColumnModel().getColumn(3).setPreferredWidth(120);
             jt.getColumnModel().getColumn(4).setPreferredWidth(120);
-            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(5).setPreferredWidth(20);
             jt.getColumnModel().getColumn(6).setPreferredWidth(20);
-            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(7).setPreferredWidth(60);
             jt.getColumnModel().getColumn(8).setPreferredWidth(10);
             jt.getColumnModel().getColumn(9).setPreferredWidth(20);
             jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+            //jt.getColumnModel().getColumn(1).setPreferredWidth(20);
             jt.setGridColor(grey);
             jt.setFont(font_15_bold);
             JScrollPane sp=new JScrollPane(jt);
@@ -765,9 +731,8 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.repaint();  
             try{
                 while(rs.next()){
-                    String[] item={rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5), 
-                        rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9), rs.getString(10),rs.getString(11), 
-                        rs.getString(12)};
+                    String[] item={rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(13),rs.getString(10), 
+                        rs.getString(11),rs.getString(7), rs.getString(8),rs.getString(14)};
                     dtm.addRow(item);
             }}catch(Exception f){
                 System.out.println(f);
@@ -1398,7 +1363,59 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.add(Cancel);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
-    }//add_student_ui
+    }//add_student_ui---------------------------------------------------------------------------------
+    void viewbook_ui(){
+        dynamicpanel.removeAll();
+        dynamicpanel.setLayout(null);
+        dynamicpanel.setBackground(grey);
+        dynamicpanel.setSize(1450, 630);
+        dynamicpanel.setLocation(20, 115);
+        ResultSet rs;
+        database dbobj=new database();
+            rs=dbobj.BooksRetrieve();
+            dynamicpanel.removeAll();
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createEtchedBorder(), "              ALL BOOKS              ", TitledBorder.LEFT, TitledBorder.TOP));
+            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 40));
+            String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
+            DefaultTableModel dtm=new DefaultTableModel(column,0);
+            // final JTable jt=new JTable(dtm);  
+            final JTable jt=new JTable(dtm);    
+            jt.setCellSelectionEnabled(false); 
+            jt.setEnabled(false);
+            jt.setRowHeight(20);
+            jt.getTableHeader().setFont(font_15_bold);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+
+            jt.setGridColor(grey);
+            jt.setFont(font_15_bold);
+            JScrollPane sp=new JScrollPane(jt);
+                        sp.setPreferredSize(new Dimension(1420, 580));
+                        dynamicpanel.add(sp);
+                        //Admin.setBackground(black);
+                        dynamicpanel.revalidate();
+                        dynamicpanel.repaint();
+                        try{
+                            while(rs.next()){
+                                String[] item={rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(13),rs.getString(10), 
+                                    rs.getString(11),rs.getString(7), rs.getString(8),rs.getString(14)};
+                                dtm.addRow(item);
+                        }}catch(Exception f){
+                            System.out.println(f);
+                        }
+    }
+    //-----------------------------------------------------------------------------------------------=
     void add_staff_ui(){
         dynamicpanel.removeAll();
         dynamicpanel.setLayout(null);
