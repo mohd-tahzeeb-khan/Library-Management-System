@@ -475,43 +475,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==viewpublication){
             System.out.println("viewPublication");
-            dynamicpanel.removeAll();
-            dynamicpanel.setBackground(grey);
-            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
-         BorderFactory.createEtchedBorder(), "              ALL PUBLICATIONS              ", TitledBorder.LEFT, TitledBorder.TOP));
-         dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
-         String data[][]={ {"CS21D008","140025601577", "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"},
-            {"E450","12", "8","Let us Python","Pankaj Trivedi","Programming", "CSE", "MVC", "8th", "$25", "6481516"}    
-            
-
-          };    
-          String column[]={"REGISTRATION","ENROLLMENT" ,"C-ROLLNO","NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
-          final JTable jt=new JTable(data,column);    
-jt.setCellSelectionEnabled(false); 
-jt.setEnabled(false);
-//jt.setBounds(200, 200, 1300, 800);
-jt.setRowHeight(20);
-jt.getTableHeader().setFont(font_15_bold);
-jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-jt.getColumnModel().getColumn(2).setPreferredWidth(20);
-jt.getColumnModel().getColumn(3).setPreferredWidth(120);
-jt.getColumnModel().getColumn(4).setPreferredWidth(120);
-jt.getColumnModel().getColumn(5).setPreferredWidth(120);
-jt.getColumnModel().getColumn(6).setPreferredWidth(20);
-jt.getColumnModel().getColumn(7).setPreferredWidth(120);
-jt.getColumnModel().getColumn(8).setPreferredWidth(10);
-jt.getColumnModel().getColumn(9).setPreferredWidth(20);
-jt.getColumnModel().getColumn(0).setPreferredWidth(10);
-jt.getColumnModel().getColumn(1).setPreferredWidth(20);
-
-jt.setGridColor(grey);
-jt.setFont(font_15_bold);
-JScrollPane sp=new JScrollPane(jt);
-            sp.setPreferredSize(new Dimension(1420, 580));
-            dynamicpanel.add(sp);
-            dynamicpanel.revalidate();
-            dynamicpanel.repaint();
+            this.viewPublication_ui();
         }
         if(e.getSource()==addpublication){
             System.out.println("addpublication");
@@ -1380,6 +1344,49 @@ JScrollPane sp=new JScrollPane(jt);
                         System.out.println(f);
                     }
                 }
+    //------------------------------------------------------------------------------------------------
+    void viewPublication_ui(){
+            ResultSet rs;
+            rs=dbobj.PublicationRetrieve();
+            dynamicpanel.removeAll();
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createEtchedBorder(), "              ALL STAFF              ", TitledBorder.LEFT, TitledBorder.TOP));
+            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
+            String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition"};         
+            DefaultTableModel dtm=new DefaultTableModel(column,0);  
+            final JTable jt=new JTable(dtm);      
+            jt.setCellSelectionEnabled(false); 
+            jt.setEnabled(false);
+            //jt.setBounds(200, 200, 1300, 800);
+            jt.setRowHeight(20);
+            jt.getTableHeader().setFont(font_15_bold);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+            jt.setGridColor(grey);
+            jt.setFont(font_15_bold);
+            JScrollPane sp=new JScrollPane(jt);
+                        sp.setPreferredSize(new Dimension(1420, 580));
+                    dynamicpanel.add(sp);
+                    dynamicpanel.revalidate();
+                    dynamicpanel.repaint();
+            try{
+                while(rs.next()){
+                    String[] item={rs.getString(1), rs.getString(8),rs.getString(2),rs.getString(3), 
+                        "",rs.getString(4), rs.getString(4),rs.getString(8),  rs.getString(6)};
+                        dtm.addRow(item);
+                    }
+                }catch(Exception f){
+                        System.out.println(f);
+                    }
+    }
     //------------------------------------------------------------------------------------------------
     void viewstaff_ui(){
             ResultSet rs;
