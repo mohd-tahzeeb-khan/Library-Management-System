@@ -341,6 +341,23 @@ public ResultSet DepartmentRetrieve(){
         return rs;
     }
 }
+public ResultSet PublicationRetrieve(){
+    Connection c=null;
+    Statement stmt=null;
+    PreparedStatement ps;
+    ResultSet rs;
+    rs=null;
+    try{
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:G:/Java Project/Library-Management-System/Library.db");
+        ps=c.prepareStatement("SELECT * FROM publication");
+        rs=ps.executeQuery();
+        return rs;
+    }catch(Exception e){
+        System.out.println(e);
+        return rs;
+    }
+}
     public static void main(String args[]){
         database insert=new database();
         //insert.bookINTOdb("dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,","dfgd,");
