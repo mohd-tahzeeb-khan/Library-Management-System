@@ -155,7 +155,7 @@ public void departmentINTOdb(String code, String name, String head,String date,S
                 if(i==0){
                     JOptionPane.showMessageDialog(null, "Error, something went wrong!", "Error", JOptionPane.ERROR_MESSAGE);
                 }else{
-                    JOptionPane.showMessageDialog(null, "New Student Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "New Publication Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
                 }
                 c.commit();
                 c.close();
@@ -198,7 +198,7 @@ public void departmentINTOdb(String code, String name, String head,String date,S
                 if(i==0){
                     JOptionPane.showMessageDialog(null, "Error, something went wrong!", "Error", JOptionPane.ERROR_MESSAGE);
                 }else{
-                    JOptionPane.showMessageDialog(null, "New Student Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "New Member Added", "Acknowlegde!!", JOptionPane.INFORMATION_MESSAGE);
                 }
                 c.commit();
                 c.close();
