@@ -1455,7 +1455,7 @@ JScrollPane sp=new JScrollPane(jt);
         jt.getColumnModel().getColumn(0).setPreferredWidth(10);
         jt.getColumnModel().getColumn(1).setPreferredWidth(20);
         jt.getColumnModel().getColumn(2).setPreferredWidth(20);
-        jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(3).setPreferredWidth(20);
         jt.getColumnModel().getColumn(4).setPreferredWidth(120);
         jt.getColumnModel().getColumn(5).setPreferredWidth(120);
         jt.getColumnModel().getColumn(6).setPreferredWidth(20);
@@ -1470,8 +1470,8 @@ JScrollPane sp=new JScrollPane(jt);
                     dynamicpanel.repaint();
                     try{
                         while(rs.next()){
-                            String[] item={rs.getString(1), rs.getString(8)," ", rs.getString(2),rs.getString(3), 
-                                "",rs.getString(14)};
+                            String[] item={rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5), 
+                                rs.getString(6),rs.getString(7)};
                             dtm.addRow(item);
                     }}catch(Exception f){
                         System.out.println(f);
