@@ -446,6 +446,8 @@ JScrollPane sp=new JScrollPane(jt);
             Admin.revalidate();
             Admin.repaint();
         }
+//-----------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------
         if(e.getSource()==viewbook){
             System.out.println("viewbook");
             this.viewbook_ui();
@@ -456,11 +458,13 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==removebook){
             System.out.println("removebook");
-            this.removebook();
+            this.removebook_functions();
         }
         if(e.getSource()==updatebook){
             System.out.println("updatebook");
         }
+//-----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
         if(e.getSource()==viewdepartment){
             System.out.println("viewdepartment");
             this.veiwDepartment_ui();
@@ -475,6 +479,8 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==updatedepartment){
             System.out.println("updatedepartment");
         }
+//-----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
         if(e.getSource()==viewpublication){
             System.out.println("viewPublication");
             this.viewPublication_ui();
@@ -608,9 +614,21 @@ JScrollPane sp=new JScrollPane(jt);
             dynamicpanel.revalidate();
             dynamicpanel.repaint();
         }
+//-----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
+if(e.getSource()==addstaff){
+            System.out.println("addstaff");
+            this.add_staff_ui();
+        }
+//-----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
         if(e.getSource()==viewstaff){
             System.out.println("viewstaff");
             this.viewstaff_ui();
+        }
+        if(e.getSource()==addstaff){
+            System.out.println("addstaff");
+            this.add_staff_ui();
         }
         if(e.getSource()==removestaff){
             System.out.println("removestaff");
@@ -618,10 +636,8 @@ JScrollPane sp=new JScrollPane(jt);
         if(e.getSource()==updatestaff){
             System.out.println("updatestaff");
         }
-        if(e.getSource()==addstaff){
-            System.out.println("addstaff");
-            this.add_staff_ui();
-        }
+//-----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
         if(e.getSource()==viewstudent){
             System.out.println("viewstudent");
             dynamicpanel.removeAll();
@@ -632,7 +648,6 @@ JScrollPane sp=new JScrollPane(jt);
             ResultSet rs;
             database dbdobj=new database();
             rs=dbdobj.StudentRetrieve();  
-            //String data[][]={{rs.getString(1),rs.getString(2), "163","Mohd Tahzeeb Khan","CSE","BTech", "4th", "7498518671", "9822130819", "mohdtahzeebk.csead20@sbjit.edu.in", "Active"}};
             String column[]={"REGISTRATION","ENROLLMENT" ,"NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
             DefaultTableModel dtm=new DefaultTableModel(column,0);
             final JTable jt=new JTable(dtm);    
@@ -672,6 +687,7 @@ JScrollPane sp=new JScrollPane(jt);
     }
         if(e.getSource()==removestudent){
             System.out.println("removestudent");
+            this.removestudent_functions();
         }//remove student
         if(e.getSource()==updatestudent){
             System.out.println("updatestudent");
@@ -1623,7 +1639,7 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.repaint();
     }//add_staff_UI();
 //-------------------------------------------------------------------------------------------------------------------
-    void removebook(){
+    void removebook_functions(){
         dynamicpanel.removeAll();
         Reffered=new JLabel("Reffered ID");
         Reffered.setBounds(300,414,200,40);
@@ -1678,6 +1694,54 @@ JScrollPane sp=new JScrollPane(jt);
                     }
                 
     }
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+    void removestudent_functions(){
+            dynamicpanel.removeAll();
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createEtchedBorder(), "              All STUDENTS              ", TitledBorder.LEFT, TitledBorder.TOP));
+            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
+            ResultSet rs;
+            database dbdobj=new database();
+            rs=dbdobj.StudentRetrieve();  
+            String column[]={"REGISTRATION","ENROLLMENT" ,"NAME","DEPARTMENT", "PROGRAM", "YEAR", "CONTACT", "ALTERCONTACT", "EMAIL", "STATUS"};         
+            DefaultTableModel dtm=new DefaultTableModel(column,0);
+            final JTable jt=new JTable(dtm);    
+            jt.setCellSelectionEnabled(false); 
+            jt.setEnabled(false);
+            //jt.setBounds(200, 200, 1300, 800);
+            jt.setRowHeight(20);
+            jt.getTableHeader().setFont(font_15_bold);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(5).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(7).setPreferredWidth(60);
+            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.setGridColor(grey);
+            jt.setFont(font_15_bold);
+            JScrollPane sp=new JScrollPane(jt);
+            sp.setPreferredSize(new Dimension(1420, 280));
+            dynamicpanel.add(sp);
+            //Admin.setBackground(black);
+            dynamicpanel.revalidate();
+            dynamicpanel.repaint();  
+            try{
+                while(rs.next()){
+                    String[] item={rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(13),rs.getString(10), 
+                        rs.getString(11),rs.getString(7), rs.getString(8),rs.getString(14)};
+                    dtm.addRow(item);
+            }}catch(Exception f){
+                System.out.println(f);
+            }
+    }
+//-----------------------------------------------------------------------------------------------------------------------------------
     public static void main(String args[]){
         admin adminobj=new admin();
     }//main
