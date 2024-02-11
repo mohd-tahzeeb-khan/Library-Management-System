@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.ListSelectionModel;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -27,7 +28,7 @@ public class admin extends JFrame implements ActionListener{
     JLabel name, logo_images, TotalBookslabel, TotalStudentlabel, TotalIssuedBookslabel, TotalDepartmentlabel,
     TotalPublicerlabel, Requirementlabel, TotalStafflabel, TotalBookAvailablelabel,TotalBookslabeltext, TotalStudentlabeltext, TotalIssuedBookslabeltext, TotalDepartmentlabeltext,
     TotalPublicerlabeltext, Requirementlabeltext, TotalStafflabeltext, TotalBookAvailablelabeltext, TotalBookAvailableicon, TotalBookslabelicon, TotalDepartmentlabelicon, Requirementlabelicon, 
-    TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon, 
+    TotalStafflabelicon,TotalStudentlabeltexticon, TotalIssuedBookslabelicon, TotalPublicerlabeltexticon, Reffered,
     //---------------------------------------------------------------------------------------------------------------
     RegistrationNo, usno, Name, Fathername, DOB, year, semester, Department, contactno, altercontactno, age, gender, emailid, Classrollno, Program,
     //--------------------------------------------------------------------------------------------------------------------
@@ -42,7 +43,7 @@ public class admin extends JFrame implements ActionListener{
     JTextField RegistrationNofield, usnofield, Namefield, Fathernamefield, DOBfield, contactnofield, altercontactnofield, agefield, emailidfield, Classrollnofield,
                publicationnamefiled, publicationcinfield, publicationemailfield, publicationinqueryemailfield, publicationinquerynoField, publicationfaxfield,publicationnofield, publicationnoofbookdfield,
                bookISBNnofield, booktitlefield, bookauthorfield, bookpublisherfield, bookpublicationyearfield, bookgenrefield, bookpricefield, bookquantityfield, booklanguagefield,bookdateaddedfield, bookEditionfield, bookpagesfield, bookformatfield, bookdepartmentfield,
-               deptcodeJTextField, deptnameJTextField, deptheadJTextField, deptcreatedateJTextField,deptsloganJTextField, deptheademailJTextField, deptemailJTextField,
+               deptcodeJTextField, deptnameJTextField, deptheadJTextField, deptcreatedateJTextField,deptsloganJTextField, deptheademailJTextField, deptemailJTextField, Refferedfield,
                firstnamJTextField, lastnamJTextField, addressJTextField, phonenoJTextField, collegJTextField, alternatenoJTextField, jobtitleJTextField, joiningdaJTextField, educationJTextField, qualificationJTextField;
     //--------------------------------------------------------------------------------------------------------------------
     JRadioButton malegender, femalegender, transgender;
@@ -124,7 +125,7 @@ public class admin extends JFrame implements ActionListener{
         updatebook.setIcon(icon);
         icon=new ImageIcon("images/deletebook.png");        
         removebook.setIcon(icon);
-        removebook.setEnabled(false);
+        removebook.setEnabled(true);
         bookmenu.add(viewbook);
         bookmenu.add(addbook);
         bookmenu.add(removebook);
@@ -455,6 +456,7 @@ JScrollPane sp=new JScrollPane(jt);
         }
         if(e.getSource()==removebook){
             System.out.println("removebook");
+            this.removebook();
         }
         if(e.getSource()==updatebook){
             System.out.println("updatebook");
@@ -1620,6 +1622,62 @@ JScrollPane sp=new JScrollPane(jt);
         dynamicpanel.revalidate();
         dynamicpanel.repaint();
     }//add_staff_UI();
+//-------------------------------------------------------------------------------------------------------------------
+    void removebook(){
+        dynamicpanel.removeAll();
+        Reffered=new JLabel("Reffered ID");
+        Reffered.setBounds(300,414,200,40);
+        Reffered.setFont(font_20_bold);
+        Refferedfield=new JTextField();
+        Refferedfield.setFont(font_20_bold);
+        Refferedfield.setBounds(350,220,200,50);
+        dynamicpanel.setLayout(null);
+        dynamicpanel.setBackground(grey);
+        dynamicpanel.setSize(1450, 630);
+        dynamicpanel.setLocation(20, 115);
+        ResultSet rs;
+        database dbobj=new database();
+        rs=dbobj.BooksRetrieve();
+        dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+        BorderFactory.createEtchedBorder(), "              REMOVE BOOKS              ", TitledBorder.LEFT, TitledBorder.TOP));
+        dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 10));
+        String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition", "Price", "Publication Contact"};         
+        DefaultTableModel dtm=new DefaultTableModel(column,0);
+        final JTable jt=new JTable(dtm);    
+        jt.setEnabled(false);
+        jt.setRowHeight(20);
+        jt.getTableHeader().setFont(font_15_bold);
+        jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+        jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+        jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+        jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+        jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+        jt.getColumnModel().getColumn(9).setPreferredWidth(20);
+        jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+        jt.setGridColor(grey);
+        jt.setFont(font_15_bold);
+        JScrollPane sp=new JScrollPane(jt);
+                    sp.setPreferredSize(new Dimension(1420, 100));
+                    dynamicpanel.add(Reffered);
+                    dynamicpanel.add(Refferedfield);
+                    dynamicpanel.add(sp);
+                    dynamicpanel.revalidate();
+                    dynamicpanel.repaint();
+                    try{
+                        while(rs.next()){
+                            String[] item={rs.getString(1), rs.getString(8)," ", rs.getString(2),rs.getString(3), 
+                                "",rs.getString(14), rs.getString(4),rs.getString(12),  rs.getString(6)," "};
+                            dtm.addRow(item);
+                    }}catch(Exception f){
+                        System.out.println(f);
+                    }
+                
+    }
     public static void main(String args[]){
         admin adminobj=new admin();
     }//main
