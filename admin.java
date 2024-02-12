@@ -631,6 +631,7 @@ if(e.getSource()==addstaff){
         }
         if(e.getSource()==removestaff){
             System.out.println("removestaff");
+            this.removestaff_functions();
         } 
         if(e.getSource()==updatestaff){
             System.out.println("updatestaff");
@@ -1790,6 +1791,49 @@ if(e.getSource()==addstaff){
     void removepublication_functions(){
         ResultSet rs;
             rs=dbobj.PublicationRetrieve();
+            dynamicpanel.removeAll();
+            dynamicpanel.setBackground(grey);
+            dynamicpanel.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createEtchedBorder(), "              ALL STAFF              ", TitledBorder.LEFT, TitledBorder.TOP));
+            dynamicpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 14)); 
+            String column[]={"Reffered ID","Quantity" ,"Available","NAME"," Author", "Subject", "Department", "Publication", "Edition"};         
+            DefaultTableModel dtm=new DefaultTableModel(column,0);  
+            final JTable jt=new JTable(dtm);      
+            jt.setCellSelectionEnabled(false); 
+            jt.setEnabled(false);
+            //jt.setBounds(200, 200, 1300, 800);
+            jt.setRowHeight(20);
+            jt.getTableHeader().setFont(font_15_bold);
+            jt.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jt.getColumnModel().getColumn(1).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(2).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(4).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(5).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(6).setPreferredWidth(20);
+            jt.getColumnModel().getColumn(7).setPreferredWidth(120);
+            jt.getColumnModel().getColumn(8).setPreferredWidth(10);
+            jt.setGridColor(grey);
+            jt.setFont(font_15_bold);
+            JScrollPane sp=new JScrollPane(jt);
+                        sp.setPreferredSize(new Dimension(1420, 580));
+                    dynamicpanel.add(sp);
+                    dynamicpanel.revalidate();
+                    dynamicpanel.repaint();
+            try{
+                while(rs.next()){
+                    String[] item={rs.getString(1), rs.getString(8),rs.getString(2),rs.getString(3), 
+                        "",rs.getString(4), rs.getString(4),rs.getString(8),  rs.getString(6)};
+                        dtm.addRow(item);
+                    }
+                }catch(Exception f){
+                        System.out.println(f);
+                    }
+    }
+//---------------------------------------------------------------------------------------------------------------------
+    void removestaff_functions(){
+        ResultSet rs;
+            rs=dbobj.StaffRetrieve();
             dynamicpanel.removeAll();
             dynamicpanel.setBackground(grey);
             dynamicpanel.setBorder(BorderFactory.createTitledBorder(
